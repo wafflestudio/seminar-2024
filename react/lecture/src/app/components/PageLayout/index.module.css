@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 8px 12px;
+  border-right: 1px solid #000;
+}
+
+.links {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content {
+  padding: 8px 12px;
+}
+
+ol.links {
+  margin: 0;
+  padding: 0;
+}
+
+li.linkItem {
+  list-style: none;
+}
