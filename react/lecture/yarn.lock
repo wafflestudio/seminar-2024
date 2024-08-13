@@ -2461,6 +2461,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lecture@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "lecture@workspace:."
+  dependencies:
+    "@types/react": "npm:18.3.3"
+    "@types/react-dom": "npm:18.3.0"
+    "@vitejs/plugin-react-swc": "npm:3.7.0"
+    "@woohm402/eslint-config-react": "npm:0.5.1"
+    eslint: "npm:9.9.0"
+    prettier: "npm:3.3.3"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
+    react-router-dom: "npm:6.26.0"
+    typescript: "npm:5.5.4"
+    vite: "npm:5.4.0"
+  languageName: unknown
+  linkType: soft
+
 "levn@npm:^0.4.1":
   version: 0.4.1
   resolution: "levn@npm:0.4.1"
@@ -3017,24 +3035,6 @@ __metadata:
   checksum: 10/d0c79a0f95a88730c0d2bfd098da9d6bdd4d7f08d4e1ddd152b5d013d3c01064afdd6fed57d4d3fa50c42c412e6d00e9217b2abd6cdbf4aaf810b7c33e728400
   languageName: node
   linkType: hard
-
-"react-seminar@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "react-seminar@workspace:."
-  dependencies:
-    "@types/react": "npm:18.3.3"
-    "@types/react-dom": "npm:18.3.0"
-    "@vitejs/plugin-react-swc": "npm:3.7.0"
-    "@woohm402/eslint-config-react": "npm:0.5.1"
-    eslint: "npm:9.9.0"
-    prettier: "npm:3.3.3"
-    react: "npm:18.3.1"
-    react-dom: "npm:18.3.1"
-    react-router-dom: "npm:6.26.0"
-    typescript: "npm:5.5.4"
-    vite: "npm:5.4.0"
-  languageName: unknown
-  linkType: soft
 
 "react@npm:18.3.1":
   version: 18.3.1
