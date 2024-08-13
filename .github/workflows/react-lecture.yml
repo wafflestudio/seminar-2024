@@ -1,0 +1,24 @@
+name: react-lecture-ci
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "react/lecture/**"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: react/lecture
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: yarn install
+      - name: Run Lint
+        run: yarn lint
