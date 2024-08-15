@@ -22,3 +22,7 @@ jobs:
         run: yarn install
       - name: Run Lint
         run: yarn lint
+      - name: Run Format
+        run: yarn format
+      - name: Check Types
+        run: yarn check-types
