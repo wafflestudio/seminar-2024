@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "check-types": "tsc",
     "lint": "eslint .",
+    "format": "prettier . --check",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -18,7 +20,7 @@
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react-swc": "3.7.0",
-    "@woohm402/eslint-config-react": "0.5.1",
+    "@woohm402/eslint-config-react": "0.6.0",
     "eslint": "9.9.0",
     "prettier": "3.3.3",
     "typescript": "5.5.4",
