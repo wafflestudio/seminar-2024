@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { implBrowserThemeController } from '@/infrastructures/implBrowserThemeController';
+import { implViteVirtualModuleLectureContentRepository } from '@/infrastructures/implViteVirtualModuleLectureContentRepository';
 import { implLectureUsecase } from '@/usecases/LectureUsecase';
 import { implThemeUsecase } from '@/usecases/ThemeUsecase';
 
@@ -14,7 +15,9 @@ const root = document.getElementById('root');
 if (root === null) throw new Error('Root element not found');
 
 const sidebarUsecase = implSidebarUsecase();
-const lectureUsecase = implLectureUsecase();
+const lectureUsecase = implLectureUsecase({
+  lectureContentRepository: implViteVirtualModuleLectureContentRepository(),
+});
 const themeUsecase = implThemeUsecase({
   themeController: implBrowserThemeController(),
 });
