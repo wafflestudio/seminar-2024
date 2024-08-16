@@ -1,4 +1,5 @@
-import './reset.css';
+import './styles/reset.css';
+import './styles/theme.css';
 
 import {
   createBrowserRouter,
