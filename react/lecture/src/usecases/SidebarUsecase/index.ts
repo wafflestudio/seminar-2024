@@ -1,5 +1,5 @@
-import { LECTURE_INDEXES } from '../../entities/lecture';
-import { Page, PageDetail } from '../../entities/page';
+import { LECTURE_INDEXES } from '@/entities/lecture';
+import { Page, PageDetail } from '@/entities/page';
 
 export type SidebarUsecase = {
   showSidebar: () => {

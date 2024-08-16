@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
 
-import { UsecaseContext } from '../../contexts/UsecaseContext';
-import { useGlobalContext } from '../../utils/useGlobalContext';
-import { Link } from '../Link';
+import { Link } from '@/app/components/Link';
+import { UsecaseContext } from '@/app/contexts/UsecaseContext';
+import { useGlobalContext } from '@/app/utils/useGlobalContext';
+
 import styles from './index.module.css';
 
 export const PageLayout = () => {

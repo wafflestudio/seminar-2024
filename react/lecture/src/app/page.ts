@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Page, PageParams } from '../entities/page';
+import { Page, PageParams } from '@/entities/page';
 
 export type PageComponent<P extends Page> = (props: {
   params: PageParams<P>;
