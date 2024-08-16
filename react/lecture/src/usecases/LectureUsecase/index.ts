@@ -1,12 +1,27 @@
+import { Lecture } from '@/entities/lecture';
+
 export type LectureUsecase = {
-  showLecture: (lectureIndex: number) => { markdown: string };
+  showLecture: (lectureIndex: Lecture['lectureIndex']) => Promise<{
+    sections: { markdown: string }[];
+  }>;
 };
 
-export const implLectureUsecase = (): LectureUsecase => {
+export const implLectureUsecase = ({
+  lectureContentRepository: lectureContentRepository,
+}: {
+  lectureContentRepository: {
+    loadLectureMarkdowns: (_: {
+      lectureIndex: Lecture['lectureIndex'];
+    }) => Promise<string[]>;
+  };
+}): LectureUsecase => {
   return {
-    showLecture: (lectureIndex) => {
+    showLecture: async (lectureIndex) => {
+      const markdowns = await lectureContentRepository.loadLectureMarkdowns({
+        lectureIndex,
+      });
       return {
-        markdown: `- Lecture ${lectureIndex}`,
+        sections: markdowns.map((markdown) => ({ markdown })),
       };
     },
   };
