@@ -1,23 +1,36 @@
-import './reset.css';
+import './styles/reset.css';
+import './styles/theme.css';
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useParams,
+} from 'react-router-dom';
 
-import { Page } from '../entities/page';
-import { PageLayout } from './components/PageLayout';
-import { PAGE_PATH } from './page';
-import { Home } from './pages/Home';
-import { Lecture } from './pages/Lecture';
+import { PageLayout } from '@/app/components/PageLayout';
+import { PAGE_PATH } from '@/app/page';
+import { Home } from '@/app/pages/Home';
+import { Lecture } from '@/app/pages/Lecture';
+import { LECTURE_INDEXES } from '@/entities/lecture';
+import { Page } from '@/entities/page';
 
 export function App() {
   return <RouterProvider router={router} />;
 }
 
 const Element = ({ page }: { page: Page }) => {
+  const params = useParams();
+
   switch (page) {
     case Page.HOME:
       return <Home params={{}} />;
-    case Page.LECTURE:
-      return <Lecture params={{ lectureIndex: 0 }} />;
+    case Page.LECTURE: {
+      const lectureIndex = LECTURE_INDEXES.find(
+        (index) => index.toString() === params.lectureIndex,
+      );
+      if (lectureIndex === undefined) throw new Error();
+      return <Lecture params={{ lectureIndex }} />;
+    }
   }
 };
 

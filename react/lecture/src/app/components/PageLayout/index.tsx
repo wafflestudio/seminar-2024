@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router-dom';
 
-import { UsecaseContext } from '../../contexts/UsecaseContext';
-import { useGlobalContext } from '../../utils/useGlobalContext';
-import { Link } from '../Link';
+import { Link } from '@/app/components/Link';
+import { UsecaseContext } from '@/app/contexts/UsecaseContext';
+import { useGlobalContext } from '@/app/utils/useGlobalContext';
+
 import styles from './index.module.css';
 
 export const PageLayout = () => {
-  const { sidebarUsecase } = useGlobalContext(UsecaseContext);
+  const { sidebarUsecase, themeUsecase } = useGlobalContext(UsecaseContext);
 
   const { homeLink, links } = sidebarUsecase.showSidebar();
 
@@ -18,14 +19,16 @@ export const PageLayout = () => {
         </Link>
 
         <nav className={styles.links}>
-          <ol className={styles.links}>
+          <ul className={styles.links}>
             {links.map((page) => (
               <li key={page.title + page.link.page} className={styles.linkItem}>
                 <Link page={page.link}>{page.title}</Link>
               </li>
             ))}
-          </ol>
+          </ul>
         </nav>
+
+        <button onClick={themeUsecase.toggleTheme}>테마 변경</button>
       </div>
       <div className={styles.content}>
         <Outlet />

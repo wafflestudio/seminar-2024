@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Page, PageDetail } from '../../../entities/page';
-import { PAGE_PATH } from '../../page';
-import { replacePathParams } from '../../utils/replacePathParams';
+import { PAGE_PATH } from '@/app/page';
+import { replacePathParams } from '@/app/utils/replacePathParams';
+import { Page, PageDetail } from '@/entities/page';
 
 export const Link = <P extends Page>({
   page,

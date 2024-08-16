@@ -1,5 +1,5 @@
-import { Page } from '../../../entities/page';
-import { PageComponent } from '../../page';
+import { PageComponent } from '@/app/page';
+import { Page } from '@/entities/page';
 
 export const Home: PageComponent<Page.HOME> = () => {
   return (
