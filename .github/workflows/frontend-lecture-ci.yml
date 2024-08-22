@@ -1,11 +1,11 @@
-name: react-lecture-ci
+name: frontend-lecture-ci
 
 on:
   pull_request:
     branches:
       - main
     paths:
-      - "react/lecture/**"
+      - "frontend/lecture/**"
 
 jobs:
   lint:
@@ -13,7 +13,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: react/lecture
+        working-directory: frontend/lecture
 
     steps:
       - uses: actions/checkout@v2

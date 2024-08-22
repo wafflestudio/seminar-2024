@@ -1,4 +1,4 @@
-# react lecture
+# frontend lecture note
 
 ```sh
 yarn dev
