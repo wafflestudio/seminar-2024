@@ -22,7 +22,7 @@
     "noUncheckedIndexedAccess": true,
 
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": ["src", "vite.config.ts"]
 }
