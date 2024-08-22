@@ -1,35 +1,19 @@
+import './global.css';
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
-import { implBrowserThemeController } from '@/infrastructures/implBrowserThemeController';
-import { implViteVirtualModuleLectureContentRepository } from '@/infrastructures/implViteVirtualModuleLectureContentRepository';
-import { implLectureUsecase } from '@/usecases/LectureUsecase';
-import { implThemeUsecase } from '@/usecases/ThemeUsecase';
-
-import { App } from './app/App';
-import { UsecaseContext } from './app/contexts/UsecaseContext';
-import { implSidebarUsecase } from './usecases/SidebarUsecase';
+import { App } from '@/App';
 
 const root = document.getElementById('root');
 
 if (root === null) throw new Error('Root element not found');
 
-const sidebarUsecase = implSidebarUsecase();
-const lectureUsecase = implLectureUsecase({
-  lectureContentRepository: implViteVirtualModuleLectureContentRepository(),
-});
-const themeUsecase = implThemeUsecase({
-  themeController: implBrowserThemeController(),
-});
-
-themeUsecase.setInitialTheme();
-
 createRoot(root).render(
   <StrictMode>
-    <UsecaseContext.Provider
-      value={{ sidebarUsecase, lectureUsecase, themeUsecase }}
-    >
+    <BrowserRouter>
       <App />
-    </UsecaseContext.Provider>
+    </BrowserRouter>
   </StrictMode>,
 );

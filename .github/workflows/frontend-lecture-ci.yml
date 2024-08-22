@@ -26,3 +26,5 @@ jobs:
         run: yarn format
       - name: Check Types
         run: yarn check-types
+      - name: Knip
+        run: yarn knip
