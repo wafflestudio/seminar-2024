@@ -1,4 +1,4 @@
-import { implThemeUsecase } from './../usecases/ThemeUsecase/index';
+import { implThemeUsecase } from '../usecases/ThemeUsecase/index';
 
 export const implBrowserThemeController = (): Parameters<
   typeof implThemeUsecase

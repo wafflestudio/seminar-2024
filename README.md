@@ -8,8 +8,8 @@
   - Python
 - iOS
   - Swift
-- React
-  - TypeScript
+- Frontend
+  - React + TypeScript
 - Kotlin Spring MVC + JPA
   - Kotlin
 
@@ -35,7 +35,7 @@
 | Android   |  |  |  |
 | Django   |  |  |  | 
 | iOS      |  |  |  | 
-| React  |  |  |  |
+| Frontend  |  |  |  |
 | Spring    |  |  |  |
 
 <br>
@@ -80,10 +80,10 @@
 ---
 
 <details>
-<summary>React</summary>
+<summary>Frontend</summary>
 <br>
 
-[수업 일정 및 자료](./react/README.md#수업-일정-및-자료)
+[수업 일정 및 자료](./frontend/README.md#수업-일정-및-자료)
 
 <br>
 </details>
