@@ -1,4 +1,4 @@
-# Seminar 2023 : iOS 강좌
+# Seminar 2024 : iOS 강좌
 
 > instructor: 
 

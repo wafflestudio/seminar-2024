@@ -1,4 +1,4 @@
-# Seminar 2023 : Spring 강좌
+# Seminar 2024 : Spring 강좌
 
 > instructor: 
 
