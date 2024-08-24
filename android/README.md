@@ -1,4 +1,4 @@
-# Seminar 2023 : Android 강좌
+# Seminar 2024 : Android 강좌
 
 > instructor: 
 
