@@ -4,4 +4,15 @@
 
 ## 수업 일정 및 자료
 
+### 일정
+
 TBD
+
+### 자료
+
+[(seminar-2024)/frontend/lecture](./lecture) 경로로 이동 후
+
+```sh
+yarn install
+yarn dev
+```

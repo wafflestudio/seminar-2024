@@ -1,13 +1,104 @@
+import { CalendarIcon } from '@radix-ui/react-icons';
+import { ReactNode } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import { Separator } from '@/designsystem/ui/separator';
 import { Home } from '@/pages/home';
 import { Lecture0 } from '@/pages/lecture0';
 
-const pages = {
-  home: { title: '', path: '/', element: <Home /> },
-  lecture0: { title: 'Lecture 0', path: '/lecture0', element: <Lecture0 /> },
-};
+const pages: (
+  | { type: 'index'; path: string; element: ReactNode }
+  | {
+      type: 'lecture';
+      title: string;
+      path: string;
+      description: string;
+      element: ReactNode;
+      date: Date;
+    }
+)[] = [
+  { type: 'index', path: '/', element: <Home /> },
+  {
+    type: 'lecture',
+    title: 'OT',
+    description: '세미나 목표, 방식, 과제, 평가',
+    date: new Date('2024-09-11'),
+    path: '/ot',
+    element: <Lecture0 />,
+  },
+  {
+    type: 'lecture',
+    title: '개발환경 세팅',
+    description: 'eslint, prettier, ci',
+    date: new Date('2024-09-11'),
+    path: '/environment',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '웹, html, css, js',
+    description: 'html, css, js의 역할과 동작',
+    date: new Date('2024-09-25'),
+    path: '/web-html-css-js',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '타입스크립트',
+    description: 'typescript 기초',
+    date: new Date('2024-09-25'),
+    path: '/typescript',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '리액트',
+    description: '리액트의 철학, props와 state, hooks',
+    date: new Date('2024-10-02'),
+    path: '/react-basic',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '스타일링',
+    description: 'inline style, css-in-js, css modules, atomic css',
+    date: new Date('2024-10-16'),
+    path: '/styling',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '비동기',
+    description: 'callback, Promise, event loop',
+    date: new Date('2024-11-06'),
+    path: '/async',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: 'SSR 프레임워크',
+    description: 'Next.js',
+    date: new Date('2024-11-20'),
+    path: '/SSR',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '프론트엔드 인프라',
+    description: '',
+    date: new Date('2024-11-20'),
+    path: '/infrastructure',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '마무리',
+    description: '',
+    date: new Date('2024-11-20'),
+    path: '/end',
+    element: <div>TBD</div>,
+  },
+];
 
 export const App = () => {
   return (
@@ -27,17 +118,31 @@ export const App = () => {
 
 const Sidebar = () => {
   return (
-    <div className="w-52 px-4 py-4 bg-blend-darken">
+    <div className="flex w-52 flex-col py-4 bg-blend-darken">
       <Link to="/">
-        <h1 className="text-3xl font-bold">Lecture</h1>
+        <h1 className="text-center text-3xl font-bold">Lecture</h1>
       </Link>
-      <nav className="mt-4 text-xl">
-        <ul className="flex flex-col gap-2">
-          {Object.entries(pages).map(([key, { title, path }]) => (
-            <li key={key}>
-              <Link to={path}>{title}</Link>
-            </li>
-          ))}
+      <nav className="mt-4 flex-1 overflow-y-scroll px-4 text-xl">
+        <ul className="flex flex-col gap-2 pt-4">
+          {pages.flatMap((page) =>
+            page.type === 'index' ? (
+              []
+            ) : (
+              <li
+                key={page.path}
+                className="rounded-sm px-4 py-2 hover:bg-slate-200"
+              >
+                <Link to={page.path} className="flex flex-col gap-1">
+                  <h3>{page.title}</h3>
+                  <p className="text-xs text-slate-400">{page.description}</p>
+                  <p className="flex items-center gap-2 text-xs text-slate-500">
+                    <CalendarIcon /> {page.date.getMonth() + 1}월{' '}
+                    {page.date.getDate()}일
+                  </p>
+                </Link>
+              </li>
+            ),
+          )}
         </ul>
       </nav>
     </div>
