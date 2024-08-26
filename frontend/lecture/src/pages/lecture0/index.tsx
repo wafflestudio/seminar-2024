@@ -12,6 +12,7 @@ import {
   SeminarDiff,
   SeminarGoal,
 } from '@/pages/lecture0/sections/SeminarGoal';
+import { Team } from '@/pages/lecture0/sections/Team';
 
 export const Lecture0 = () => {
   return (
@@ -26,6 +27,7 @@ export const Lecture0 = () => {
         { title: '세미나 목표', content: <SeminarContent /> },
         { title: '세미나 목표', content: <SeminarGoal /> },
         { title: '세미나 목표', content: <SeminarDiff /> },
+        { title: '조별과제', content: <Team /> },
       ]}
     />
   );
