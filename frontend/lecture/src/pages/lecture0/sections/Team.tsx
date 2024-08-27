@@ -18,13 +18,13 @@ export const Team = () => {
         <li>상대가 혹시나 트롤이어도 발목잡히지는 않는 구조</li>
         <li>
           조마다 채널 생성
-          <p className="text-base text-slate-600">
+          <p className="text-base text-slate-500">
             원한다면 개인 DM방도 가능, 단 세미나장 포함 필수
           </p>
         </li>
         <li>
           가능하면 친목이 가능한 형태로 배정
-          <p className="text-base text-slate-600">
+          <p className="text-base text-slate-500">
             학번이 비슷한 사람끼리, 같은 학과 사람끼리 등<br />
             같이 팀을 하고 싶은/싫은 사람이 있다면 미리 DM으로 알려주세요
           </p>
