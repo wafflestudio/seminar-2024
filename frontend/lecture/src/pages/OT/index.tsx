@@ -3,18 +3,18 @@ import {
   Websites,
   Webviews,
   WhatIsFrontend,
-} from '@/pages/lecture0/sections/AboutFrontend';
-import { AboutMe } from '@/pages/lecture0/sections/AboutMe';
-import { Lecture0Goal } from '@/pages/lecture0/sections/Lecture0Goal';
+} from '@/pages/OT/sections/AboutFrontend';
+import { AboutMe } from '@/pages/OT/sections/AboutMe';
+import { Lecture0Goal } from '@/pages/OT/sections/Lecture0Goal';
 import {
   GoodDeveloper,
   SeminarContent,
   SeminarDiff,
   SeminarGoal,
-} from '@/pages/lecture0/sections/SeminarGoal';
-import { Team } from '@/pages/lecture0/sections/Team';
+} from '@/pages/OT/sections/SeminarGoal';
+import { Team } from '@/pages/OT/sections/Team';
 
-export const Lecture0 = () => {
+export const OT = () => {
   return (
     <Slides
       slides={[
