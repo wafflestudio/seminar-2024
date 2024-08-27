@@ -1,11 +1,14 @@
 import { CalendarIcon } from '@radix-ui/react-icons';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Separator } from '@/designsystem/ui/separator';
+import { useToggleTheme } from '@/main';
+import { Environment } from '@/pages/Environment';
 import { Home } from '@/pages/home';
-import { Lecture0 } from '@/pages/lecture0';
+import { OT } from '@/pages/OT';
+import { formatDate } from '@/utils/utils';
 
 const pages: (
   | { type: 'index'; path: string; element: ReactNode }
@@ -17,6 +20,13 @@ const pages: (
       element: ReactNode;
       date: Date;
     }
+  | {
+      type: 'assignment';
+      title: string;
+      path: string;
+      element: ReactNode;
+      due: Date;
+    }
 )[] = [
   { type: 'index', path: '/', element: <Home /> },
   {
@@ -25,14 +35,28 @@ const pages: (
     description: '세미나 목표, 방식, 과제, 평가',
     date: new Date('2024-09-11'),
     path: '/ot',
-    element: <Lecture0 />,
+    element: <OT />,
+  },
+  {
+    type: 'assignment',
+    title: '코모 인증샷',
+    due: new Date('2024-09-25'),
+    path: '/como-1',
+    element: <div>TBD</div>,
   },
   {
     type: 'lecture',
     title: '개발환경 세팅',
-    description: 'eslint, prettier, ci',
+    description: 'IDE, eslint, prettier, ci',
     date: new Date('2024-09-11'),
     path: '/environment',
+    element: <Environment />,
+  },
+  {
+    type: 'assignment',
+    title: '개발 환경 설정',
+    due: new Date('2024-09-25'),
+    path: '/setup-environment',
     element: <div>TBD</div>,
   },
   {
@@ -65,6 +89,14 @@ const pages: (
     description: 'inline style, css-in-js, css modules, atomic css',
     date: new Date('2024-10-16'),
     path: '/styling',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '클린 코드',
+    description: 'DRY, SRP, DI',
+    date: new Date('2024-10-16'),
+    path: '/architecture',
     element: <div>TBD</div>,
   },
   {
@@ -117,36 +149,8 @@ export const App = () => {
   );
 };
 
-const useTheme = () => {
-  type Theme = 'light' | 'dark';
-  const themeKey = 'theme';
-
-  const getInitialTheme = (): Theme => {
-    const savedTheme = localStorage.getItem(themeKey);
-    if (savedTheme === 'dark') return 'dark';
-    if (savedTheme === 'light') return 'light';
-
-    if (window.matchMedia('(prefere-color-scheme: dark)').matches)
-      return 'dark';
-
-    return 'light';
-  };
-
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
-
-  const toggleTheme = () => {
-    window.document.documentElement.classList.remove('light', 'dark');
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    window.document.documentElement.classList.add(newTheme);
-    localStorage.setItem(themeKey, newTheme);
-  };
-
-  return { theme, toggleTheme };
-};
-
 const Sidebar = () => {
-  const { toggleTheme } = useTheme();
+  const toggleTheme = useToggleTheme();
 
   return (
     <div className="flex w-52 flex-col py-4 bg-blend-darken">
@@ -154,21 +158,34 @@ const Sidebar = () => {
         <h1 className="text-center text-3xl font-bold">Lecture</h1>
       </Link>
       <nav className="mt-4 flex-1 overflow-y-scroll px-4 text-xl">
-        <ul className="flex flex-col gap-2 pt-4">
+        <ul className="flex flex-col pt-4">
           {pages.flatMap((page) =>
             page.type === 'index' ? (
               []
+            ) : page.type === 'assignment' ? (
+              <li
+                key={page.path}
+                className="ml-2 rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800"
+              >
+                <Link to={page.path} className="flex flex-col gap-1">
+                  <h3 className="text-base">[과제] {page.title}</h3>
+                  <p className="flex items-center gap-2 text-xs text-slate-500">
+                    <CalendarIcon /> ~
+                    {formatDate(page.due, ({ MM, DD }) => `${MM}월 ${DD}일`)}
+                  </p>
+                </Link>
+              </li>
             ) : (
               <li
                 key={page.path}
-                className="rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800"
+                className="mt-4 rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800"
               >
                 <Link to={page.path} className="flex flex-col gap-1">
                   <h3>{page.title}</h3>
                   <p className="text-xs text-slate-400">{page.description}</p>
                   <p className="flex items-center gap-2 text-xs text-slate-500">
-                    <CalendarIcon /> {page.date.getMonth() + 1}월{' '}
-                    {page.date.getDate()}일
+                    <CalendarIcon />{' '}
+                    {formatDate(page.date, ({ MM, DD }) => `${MM}월 ${DD}일`)}
                   </p>
                 </Link>
               </li>
