@@ -1,7 +1,8 @@
 import { CalendarIcon } from '@radix-ui/react-icons';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { Separator } from '@/designsystem/ui/separator';
 import { Home } from '@/pages/home';
 import { Lecture0 } from '@/pages/lecture0';
@@ -116,7 +117,37 @@ export const App = () => {
   );
 };
 
+const useTheme = () => {
+  type Theme = 'light' | 'dark';
+  const themeKey = 'theme';
+
+  const getInitialTheme = (): Theme => {
+    const savedTheme = localStorage.getItem(themeKey);
+    if (savedTheme === 'dark') return 'dark';
+    if (savedTheme === 'light') return 'light';
+
+    if (window.matchMedia('(prefere-color-scheme: dark)').matches)
+      return 'dark';
+
+    return 'light';
+  };
+
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+
+  const toggleTheme = () => {
+    window.document.documentElement.classList.remove('light', 'dark');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    window.document.documentElement.classList.add(newTheme);
+    localStorage.setItem(themeKey, newTheme);
+  };
+
+  return { theme, toggleTheme };
+};
+
 const Sidebar = () => {
+  const { toggleTheme } = useTheme();
+
   return (
     <div className="flex w-52 flex-col py-4 bg-blend-darken">
       <Link to="/">
@@ -130,7 +161,7 @@ const Sidebar = () => {
             ) : (
               <li
                 key={page.path}
-                className="rounded-sm px-4 py-2 hover:bg-slate-200"
+                className="rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800"
               >
                 <Link to={page.path} className="flex flex-col gap-1">
                   <h3>{page.title}</h3>
@@ -145,6 +176,9 @@ const Sidebar = () => {
           )}
         </ul>
       </nav>
+      <div className="px-4 pt-4">
+        <ThemeToggle toggleTheme={toggleTheme} />
+      </div>
     </div>
   );
 };
