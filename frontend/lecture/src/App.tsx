@@ -69,6 +69,14 @@ const pages: (
   },
   {
     type: 'lecture',
+    title: '클린 코드',
+    description: 'DRY, SRP, DI',
+    date: new Date('2024-10-16'),
+    path: '/architecture',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
     title: '비동기',
     description: 'callback, Promise, event loop',
     date: new Date('2024-11-06'),
