@@ -1,9 +1,11 @@
 import { CalendarIcon } from '@radix-ui/react-icons';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Separator } from '@/designsystem/ui/separator';
+import { useToggleTheme } from '@/main';
+import { Environment } from '@/pages/Environment';
 import { Home } from '@/pages/home';
 import { OT } from '@/pages/OT';
 import { formatDate } from '@/utils/utils';
@@ -48,7 +50,7 @@ const pages: (
     description: 'IDE, eslint, prettier, ci',
     date: new Date('2024-09-11'),
     path: '/environment',
-    element: <div>TBD</div>,
+    element: <Environment />,
   },
   {
     type: 'assignment',
@@ -147,36 +149,8 @@ export const App = () => {
   );
 };
 
-const useTheme = () => {
-  type Theme = 'light' | 'dark';
-  const themeKey = 'theme';
-
-  const getInitialTheme = (): Theme => {
-    const savedTheme = localStorage.getItem(themeKey);
-    if (savedTheme === 'dark') return 'dark';
-    if (savedTheme === 'light') return 'light';
-
-    if (window.matchMedia('(prefere-color-scheme: dark)').matches)
-      return 'dark';
-
-    return 'light';
-  };
-
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
-
-  const toggleTheme = () => {
-    window.document.documentElement.classList.remove('light', 'dark');
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    window.document.documentElement.classList.add(newTheme);
-    localStorage.setItem(themeKey, newTheme);
-  };
-
-  return { theme, toggleTheme };
-};
-
 const Sidebar = () => {
-  const { toggleTheme } = useTheme();
+  const toggleTheme = useToggleTheme();
 
   return (
     <div className="flex w-52 flex-col py-4 bg-blend-darken">
