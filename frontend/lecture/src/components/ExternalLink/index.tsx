@@ -5,9 +5,11 @@ import { cn } from '@/utils/designsystem';
 
 export const ExternalLink = ({
   href,
+  label,
   className,
 }: {
   href: string;
+  label?: string;
   className?: string;
 }) => {
   const maxLen = 50;
@@ -20,7 +22,7 @@ export const ExternalLink = ({
         target="_blank"
         rel="noreferrer"
       >
-        {href.length > maxLen ? `${href.slice(0, maxLen)}...` : href}
+        {label ?? (href.length > maxLen ? `${href.slice(0, maxLen)}...` : href)}
         <ExternalLinkIcon width={size} height={size} />
       </a>
     </Button>

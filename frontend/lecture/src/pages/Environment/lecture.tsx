@@ -103,8 +103,19 @@ const IDE = () => {
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519"
       />
       <ExternalLink href="https://code.visualstudio.com/download" />
-
-      <p>선호하는 IDE가 있으시다면 원하는 거 쓰셔도 됩니다</p>
+      vscode의 settings JSON에 아래와 같이 설정해 주세요.
+      <CodeSnippet
+        code={[
+          `"editor.formatOnSave": true`,
+          `"eslint.format.enable": true`,
+          `"editor.codeActionsOnSave": { "source.fixAll.eslint": true }`,
+        ]}
+        language="json"
+      />
+      <p>
+        선호하는 IDE가 있으시다면 원하는 거 쓰셔도 되는데, 세미나장에게
+        노티주세요
+      </p>
     </div>
   );
 };
