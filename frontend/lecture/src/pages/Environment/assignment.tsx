@@ -18,7 +18,11 @@ export const EnvironmentAssignment = () => {
               #frontend-잡담
             </a>
             채널에 로컬 화면 녹화해서 업로드
-            <ExternalLink className="ml-4" href="" label="예시 보기" />
+            <ExternalLink
+              className="ml-4"
+              href="https://wafflestudio2-dqe6104.slack.com/archives/C07J7K23QUB/p1724839060380939"
+              label="예시 보기"
+            />
           </li>
           <li>잘 안 되는 건 채널이나 조원 통해서 질문</li>
           <li>조원이 잘 해결 못하고 있다면 적극적으로 도와주기</li>
