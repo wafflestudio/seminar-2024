@@ -10,6 +10,9 @@ import { Environment } from '@/pages/Environment/lecture';
 import { Home } from '@/pages/home';
 import { OTAssignment } from '@/pages/OT/assignment';
 import { OT } from '@/pages/OT/lecture';
+import { ReactBasicAssignment } from '@/pages/ReactBasic/assignment';
+import { ReactBasic } from '@/pages/ReactBasic/lecture';
+import { WebBasic } from '@/pages/WebBasic/lecture';
 import { formatDate } from '@/utils/utils';
 
 const pages: (
@@ -41,7 +44,7 @@ const pages: (
   },
   {
     type: 'assignment',
-    title: '코모 인증샷',
+    title: 'OT 과제',
     due: new Date('2024-09-25'),
     path: '/como-1',
     element: <OTAssignment />,
@@ -63,26 +66,33 @@ const pages: (
   },
   {
     type: 'lecture',
-    title: '웹, html, css, js',
-    description: 'html, css, js의 역할과 동작',
+    title: '웹과 언어',
+    description: '웹의 역사, html, css, js의 역할과 동작, typescript의 필요성',
     date: new Date('2024-09-25'),
-    path: '/web-html-css-js',
-    element: <div>TBD</div>,
+    path: '/web-html-css-js-ts',
+    element: <WebBasic />,
   },
   {
     type: 'lecture',
-    title: '타입스크립트',
-    description: 'typescript 기초',
+    title: '리액트 맛보기',
+    description: 'typescript 기초, React 의 JSX / state / props',
     date: new Date('2024-09-25'),
-    path: '/typescript',
-    element: <div>TBD</div>,
+    path: '/react-basic',
+    element: <ReactBasic />,
+  },
+  {
+    type: 'assignment',
+    title: '리액트 기초 과제',
+    due: new Date('2024-10-09'),
+    path: '/react-basic-assignment',
+    element: <ReactBasicAssignment />,
   },
   {
     type: 'lecture',
     title: '리액트',
-    description: '리액트의 철학, props와 state, hooks',
+    description: '리액트의 철학, 상태 설계, Context, Hook',
     date: new Date('2024-10-02'),
-    path: '/react-basic',
+    path: '/react',
     element: <div>TBD</div>,
   },
   {

@@ -29,6 +29,22 @@ export const OT = () => {
         { title: '세미나 목표', content: <SeminarContent /> },
         { title: '세미나 목표', content: <SeminarGoal /> },
         { title: '세미나 목표', content: <SeminarDiff /> },
+        {
+          title: '과제',
+          content: (
+            <div className="flex flex-col gap-8 text-3xl">
+              <p>
+                세미나에서 하나도 안 알려줘놓고
+                <br />
+                <br />
+                <i>할수있죠? 화이팅!</i>
+                <br />
+                <br />
+                하는 과제
+              </p>
+            </div>
+          ),
+        },
         { title: '조별과제', content: <Team /> },
         { title: '평가', content: <Grade /> },
       ]}
