@@ -6,10 +6,15 @@ export const CodeSnippet = ({
   language,
 }: {
   code: string[];
-  language: 'shell' | 'json';
+  language: 'shell' | 'json' | 'html' | 'css' | 'javascript' | 'typescript';
 }) => {
   return (
-    <Prism language={language} style={darcula} showLineNumbers>
+    <Prism
+      language={language}
+      style={darcula}
+      showLineNumbers
+      customStyle={{ fontSize: 16 }}
+    >
       {code.join('\n')}
     </Prism>
   );
