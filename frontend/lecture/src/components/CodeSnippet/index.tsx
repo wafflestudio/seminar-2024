@@ -6,7 +6,7 @@ export const CodeSnippet = ({
   language,
 }: {
   code: string[];
-  language: 'shell';
+  language: 'shell' | 'json';
 }) => {
   return (
     <Prism language={language} style={darcula} showLineNumbers>

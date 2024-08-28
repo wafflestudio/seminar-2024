@@ -24,11 +24,13 @@ export const OT = () => {
         { title: '프론트엔드란?', content: <WhatIsFrontend /> },
         { title: '프론트엔드란?', content: <Websites /> },
         { title: '프론트엔드란?', content: <Webviews /> },
+        { title: '프론트엔드란?', content: <Animations /> },
         { title: '세미나 목표', content: <GoodDeveloper /> },
         { title: '세미나 목표', content: <SeminarContent /> },
         { title: '세미나 목표', content: <SeminarGoal /> },
         { title: '세미나 목표', content: <SeminarDiff /> },
         { title: '조별과제', content: <Team /> },
+        { title: '평가', content: <Grade /> },
       ]}
     />
   );
@@ -60,7 +62,7 @@ const AboutMe = () => {
           <li>와플스튜디오 18.5기 루키</li>
           <li>2021~2022 동아리장</li>
           <li>2021년 리액트 세미나장</li>
-          <li>2022년 리액트 세미나 조교</li>
+          <li>2022년 리액트 세미나 관여</li>
           <li>2023년 리액트 세미나 조교</li>
           <li>2024년 리액트 세미나장</li>
           <li>2022.09 ~ 2024.05 SNUTT 팀원</li>
@@ -123,6 +125,23 @@ const ExampleIframe = ({
         {title}
       </Button>
       {isShow && <iframe className="h-[600px]" src={src} />}
+    </div>
+  );
+};
+
+const Animations = () => {
+  return (
+    <div className="flex flex-col gap-20">
+      <ExampleIframe
+        title="three.js"
+        className="w-[600px]"
+        src="https://threejs.org/examples/#webgl_animation_keyframes"
+      />
+      <ExampleIframe
+        title="css animations"
+        className="w-[600px]"
+        src="https://animate.style/"
+      />
     </div>
   );
 };
@@ -295,6 +314,15 @@ const Team = () => {
         ))}
       </div>
 
+      <h2 className="mt-16 text-3xl">왜?</h2>
+      <ul className="flex list-disc flex-col gap-2">
+        <li>세미나 두 달 동안 혼자여서 외로웠다는 예전 피드백</li>
+        <li>서로 질문하고 토론하면서 더 많이 성장할 수 있지 않을까?</li>
+        <li>
+          세미나 목표 중 하나인 <strong>친목</strong>에 큰 도움이 될 것 같다
+        </li>
+      </ul>
+
       <h2 className="mt-16 text-3xl">형태</h2>
       <ul className="flex list-disc flex-col gap-2">
         <li>서로 도움을 주고받는다</li>
@@ -306,19 +334,85 @@ const Team = () => {
           </p>
         </li>
         <li>
-          가능하면 친목이 가능한 형태로 배정
+          친목이나 과제 삽질 측면에서, 가능하면 비슷한 사람들끼리 배정
           <p className="text-base text-slate-500">
-            학번이 비슷한 사람끼리, 같은 학과 사람끼리 등<br />
-            같이 팀을 하고 싶은/싫은 사람이 있다면 미리 DM으로 알려주세요
+            학번이 비슷한 사람끼리, 같은 OS를 쓰는 사람끼리, 학교에서 거리
+            비슷한 사람끼리 등
           </p>
         </li>
-      </ul>
-
-      <h2 className="mt-16 text-3xl">과제</h2>
-      <ul className="flex list-disc flex-col gap-2">
-        <li>코모 (모각코) 세미나마다 최소 1번</li>
+        <li>코모 (모각코) 매 세미나마다 최소 1시간 최소 1번씩, 인증샷 필수</li>
         <li>상호 채점과 코드리뷰</li>
       </ul>
+    </div>
+  );
+};
+
+const Grade = () => {
+  return (
+    <div className="flex flex-col gap-24">
+      <section>
+        <div className="flex items-center justify-between">
+          <h2 className="font-extrabold">세미나 통과 기준</h2>
+          <div className="mt-4 flex items-center justify-center gap-8 text-base">
+            참고) 이전 세미나 합격률
+            <dl className="grid w-fit grid-cols-2 gap-x-4 gap-y-2 border-2 p-2">
+              <dt>2021년</dt>
+              <dd>19 / 33</dd>
+              <dt>2022년</dt>
+              <dd>24 / 37</dd>
+              <dt>2023년</dt>
+              <dd>8 / 18</dd>
+            </dl>
+          </div>
+        </div>
+        <ul className="flex list-disc flex-col gap-4">
+          <li>모든 과제 통과</li>
+          <li>
+            출석 100%{' '}
+            <b className="text-base text-slate-500">
+              (합당한 이유가 있다면 비대면 참여 또는 결석 후 영상시청 가능)
+            </b>
+          </li>
+          <li>
+            세미나장, 운영팀, 조원이 종합적으로 판단했을 때 프리라이더로 보이지
+            않는 사람
+          </li>
+          <li>
+            본인 판단 하에 <strong>개발이 재미있고 계속 하고 싶은 사람</strong>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="mb-4 font-extrabold">
+          평가 / 부정행위 / 공정성 관련 이것저것
+        </h2>
+        <ul className="flex list-disc flex-col gap-4">
+          <li>
+            와플스튜디오 {'=>'} 공부가 좀더 효율적일 수 있겠지만, 아무튼 한 만큼
+            배워가는 곳
+          </li>
+          <li>
+            <b>합격</b> 자체만으로는 좋은 거 하나도 없고, 공부 안 하고 통과하면
+            나만 더 힘들어지는 구조
+          </li>
+          <li>
+            개발 {'=>'} 커밋 기록 다 남고 슬랙 기록 다 세미나장이 볼 수 있고,
+            코드도 모두 오픈된 동네
+          </li>
+          <li>
+            구글링, GPT, Copilot, 세미나장/조원에게 질문, 조원 코드 복붙 모두
+            가능
+          </li>
+          <li>
+            <strong className="text-amber-500">
+              지속가능하지 않은 방식은 허용되지 않습니다.
+            </strong>
+            <b className="ml-4 text-base">
+              (ex: 잘하는 친구한테 대신 해달라고 부탁)
+            </b>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 };

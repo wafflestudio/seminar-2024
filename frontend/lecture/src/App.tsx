@@ -5,9 +5,11 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Separator } from '@/designsystem/ui/separator';
 import { useToggleTheme } from '@/main';
-import { Environment } from '@/pages/Environment';
+import { EnvironmentAssignment } from '@/pages/Environment/assignment';
+import { Environment } from '@/pages/Environment/lecture';
 import { Home } from '@/pages/home';
-import { OT } from '@/pages/OT';
+import { OTAssignment } from '@/pages/OT/assignment';
+import { OT } from '@/pages/OT/lecture';
 import { formatDate } from '@/utils/utils';
 
 const pages: (
@@ -42,7 +44,7 @@ const pages: (
     title: '코모 인증샷',
     due: new Date('2024-09-25'),
     path: '/como-1',
-    element: <div>TBD</div>,
+    element: <OTAssignment />,
   },
   {
     type: 'lecture',
@@ -57,7 +59,7 @@ const pages: (
     title: '개발 환경 설정',
     due: new Date('2024-09-25'),
     path: '/setup-environment',
-    element: <div>TBD</div>,
+    element: <EnvironmentAssignment />,
   },
   {
     type: 'lecture',
