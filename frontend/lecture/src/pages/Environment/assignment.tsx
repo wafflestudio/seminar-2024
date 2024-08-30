@@ -1,41 +1,52 @@
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/designsystem/ui/card';
 
 export const EnvironmentAssignment = () => {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-32">
-      <section>
-        <h3 className="mb-4 text-center">과제</h3>
-        <ul className="flex list-disc flex-col gap-4 pl-10">
-          <li>
-            개발 환경 셋업 완료 후 아래 가이드에 따라
-            <a
-              className="mx-2 underline"
-              target="_blank"
-              href="https://wafflestudio2-dqe6104.slack.com/archives/C07J7K23QUB"
-              rel="noreferrer"
-            >
-              #frontend-잡담
-            </a>
-            채널에 로컬 화면 녹화해서 업로드
-            <ExternalLink
-              className="ml-4"
-              href="https://wafflestudio2-dqe6104.slack.com/archives/C07J7K23QUB/p1724839060380939"
-              label="예시 보기"
-            />
-          </li>
-          <li>잘 안 되는 건 채널이나 조원 통해서 질문</li>
-          <li>조원이 잘 해결 못하고 있다면 적극적으로 도와주기</li>
-        </ul>
-      </section>
+    <div className="flex h-full flex-col items-center justify-center gap-12">
+      <Card>
+        <CardHeader className="mb-4 text-center">
+          <CardTitle>과제</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="flex list-disc flex-col gap-4 pl-10">
+            <li>
+              개발 환경 셋업 완료 후 아래 가이드에 따라
+              <a
+                className="mx-2 underline"
+                target="_blank"
+                href="https://wafflestudio2-dqe6104.slack.com/archives/C07J7K23QUB"
+                rel="noreferrer"
+              >
+                #frontend-잡담
+              </a>
+              채널에 로컬 화면 녹화해서 업로드
+              <ExternalLink
+                className="ml-4"
+                href="https://wafflestudio2-dqe6104.slack.com/archives/C07J7K23QUB/p1724839060380939"
+                label="예시 보기"
+              />
+            </li>
+            <li>잘 안 되는 건 채널이나 조원 통해서 질문</li>
+            <li>조원이 잘 해결 못하고 있다면 적극적으로 도와주기</li>
+          </ul>
+        </CardContent>
+      </Card>
 
-      <article className="flex flex-col items-center gap-10 text-base">
-        <div className="text-center">
-          <h3 className="mb-4 text-2xl">가이드</h3>
-          <p>
+      <Card className="flex flex-col items-center gap-10 text-base">
+        <CardHeader className="text-center">
+          <CardTitle>가이드</CardTitle>
+          <CardDescription>
             아래 순서대로 수행해 주세요. 더 잘 할 수 있다면 더 잘 하셔도 됩니다.
-          </p>
-        </div>
+          </CardDescription>
+        </CardHeader>
 
         <ol className="flex list-decimal flex-col gap-4">
           <li>
@@ -77,7 +88,7 @@ export const EnvironmentAssignment = () => {
             도구 연 다음 이 과제 페이지까지 진입
           </li>
         </ol>
-      </article>
+      </Card>
     </div>
   );
 };
