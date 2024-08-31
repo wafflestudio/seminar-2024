@@ -4,7 +4,7 @@
 2024 세미나는 다음 학기부터 개발 프로젝트에 참여할 수 있는 __22.5기 Programmers의 양성__ 및 __기존 부원의 실력 향상__ 을 목표로 합니다.
 - Android
   - Kotlin
-- Django
+- FastAPI
   - Python
 - iOS
   - Swift
@@ -33,7 +33,7 @@
 | 세미나            | 요일   | 시간        | 세미나장 |
 | :--------------- | ----- | :---------- | ----- |
 | Android   |  |  |  |
-| Django   |  |  |  | 
+| FastAPI   |  |  |  | 
 | iOS      |  |  |  | 
 | Frontend  |  |  |  |
 | Spring    |  |  |  |
@@ -58,10 +58,10 @@
 ---
 
 <details>
-<summary>Django</summary>
+<summary>FastAPI</summary>
 <br>
   
-[수업 일정 및 자료](./django/README.md#수업-일정-및-자료)
+[수업 일정 및 자료](./fastapi/README.md#수업-일정-및-자료)
 
 <br>
 </details>
