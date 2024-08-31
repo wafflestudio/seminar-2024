@@ -1,4 +1,4 @@
-# Seminar 2024 : Django 강좌
+# Seminar 2024 : FastAPI 강좌
 
 > instructor: 
 
