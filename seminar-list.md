@@ -24,7 +24,7 @@
 
 | 이름          | GitHub Email            | 1지망       | 2지망       | 3지망       |
 | ------------- | ----------------------- | ----------- | ----------- | ----------- |
-| (예시) 우혁준 | whjoon0225@naver.com    |             |             |             |
+| (예시) 우혁준 | whjoon0225@naver.com    | spring |   frontend    | iOS   |
 | 김정훈 | jafarock@naver.com |         |         |         |
 | 현주영 | jooyounghyun3.14@gmail.com |         |         |         |
 | 최서현 | lily_choi7@snu.ac.kr |         |         |         |
@@ -128,7 +128,7 @@
 | 김민성 | skywood0526@snu.ac.kr |         |         |         |
 | 이종호 | leafguyk@gmail.com |         |         |         |
 | 원종범 | jim8697@snu.ac.kr |         |         |         |
-| 변민규 | seatosky2002@naver.com |         |         |         |
+| 변민규 | seatosky2002@gmail.com |         |         |         |
 | 안진영 | andy0808opp@snu.ac.kr |         |         |         |
 | 정택진 | yeo7965@snu.ac.kr |         |         |         |
 | 이호석 | hslee0324@snu.ac.kr |         |         |         |
