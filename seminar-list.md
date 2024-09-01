@@ -111,7 +111,7 @@
 | 김범준 | johnbie0627@gmail.com |         |         |         |
 | 전진현 | jjh8477mtl@gmail.com |         |         |         |
 | 백민우 | bmw06004@gmail.com |         |         |         |
-| 임광섭 | endermaru@snu.ac.kr |         |         |         |
+| 임광섭 | endermaru@snu.ac.kr | spring | fastapi | frontend |
 | 이현우 | hwlee0@snu.ac.kr |         |         |         |
 | 신정민 | tlswjdals535@snu.ac.kr |         |         |         |
 | 정희우 | huiwooj@snu.ac.kr |         |         |         |
