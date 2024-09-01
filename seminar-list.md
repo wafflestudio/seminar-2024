@@ -51,7 +51,7 @@
 | 윤석민 | yunsukmin522@snu.ac.kr |         |         |         |
 | 박세준 | oraelonge@gmail.com |         |         |         |
 | 박인혁 | alexander211@naver.com |         |         |         |
-| 김민수 | dennis0405@snu.ac.kr |         |         |         |
+| 김민수 | dennis0405@snu.ac.kr | spring | fastapi | frontend |
 | 박선홍 | twinpsh1@gmail.com |         |         |         |
 | 최지웅 | anggodji2422@snu.ac.kr |         |         |         |
 | 박상현 | qkrtkdgus39@snu.ac.kr |         |         |         |
