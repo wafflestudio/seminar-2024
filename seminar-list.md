@@ -75,7 +75,7 @@
 | 김인호 | inho524890@gmail.com |         |         |         |
 | 권혁준 | todd4@naver.ac.kr |         |         |         |
 | 최진모 | jinmo040320@gmail.com |         |         |         |
-| 이우열 | wooyeol0519@snu.ac.kr |         |         |         |
+| 이우열 | wooyeol0519@snu.ac.kr | frontend | fastapi | iOS |
 | 김다인 | didak0423@gmail.com |         |         |         |
 | 김진서 | jsjamie05@gmail.com |         |         |         |
 | 오정윤 | jungyun_01@snu.ac.kr |         |         |         |
