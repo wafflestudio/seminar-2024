@@ -82,7 +82,7 @@
 | 서준빈 | sjb8032@gmail.com |         |         |         |
 | 김도연 | pega501@snu.ac.kr |         |         |         |
 | 심형오 | amma0209@naver.com |         |         |         |
-| 김용범 | kybs0627@snu.ac.kr |         |         |         |
+| 김용범 | kybs0627@snu.ac.kr | spring | fastapi | android |
 | 임형석 | anvil1028@snu.ac.kr |         |         |         |
 | 이재현 | jhlee2483@gmail.com |         |         |         |
 | 구자운 | k45238376@gmail.com |         |         |         |
