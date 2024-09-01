@@ -47,7 +47,7 @@
 | 조용현 | dyddyd8574@snu.ac.kr |         |         |         |
 | 박준영 | ezypuz@snu.ac.kr |         |         |         |
 | 정해찬 | qdrptd@gmail.com |         |         |         |
-| 윤시헌 | honeyyyoon64@snu.ac.kr |         |         |         |
+| 윤시헌 | honeyyyoon64@snu.ac.kr | frontend | fastapi | spring |
 | 윤석민 | yunsukmin522@snu.ac.kr |         |         |         |
 | 박세준 | oraelonge@gmail.com |         |         |         |
 | 박인혁 | alexander211@naver.com |         |         |         |
