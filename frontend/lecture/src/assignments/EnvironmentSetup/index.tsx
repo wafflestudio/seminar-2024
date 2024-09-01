@@ -11,7 +11,7 @@ import {
 
 export const environmentSetupAssignment = getAssignmentItem({
   title: '개발 환경 설정',
-  schedule: [new Date('2024-09-04'), new Date('2024-09-11')],
+  due: new Date('2024-09-10 23:59:59'),
   element: (
     <div className="flex h-full flex-col justify-center gap-4">
       <Card>

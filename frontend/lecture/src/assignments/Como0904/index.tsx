@@ -3,7 +3,7 @@ import { InlineCode } from '@/components/InlineCode';
 
 export const como0904Assignment = getAssignmentItem({
   title: '세미나 0 코모',
-  schedule: [new Date('2024-09-04'), new Date('2024-09-11')],
+  due: new Date('2024-09-10 23:59:59'),
   element: (
     <h2 className="flex h-full flex-col items-center justify-center">
       <div>

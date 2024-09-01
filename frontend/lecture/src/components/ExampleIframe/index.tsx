@@ -1,7 +1,7 @@
-import { useReducer } from "react";
+import { useReducer } from 'react';
 
-import { Button } from "@/designsystem/ui/button";
-import { cn } from "@/utils/designsystem";
+import { Button } from '@/designsystem/ui/button';
+import { cn } from '@/utils/designsystem';
 
 export const ExampleIframe = ({
   title,

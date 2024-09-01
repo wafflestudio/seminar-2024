@@ -264,6 +264,16 @@ export const environmentLecture = getLectureItem({
         { title: '정적 분석 도구 - Prettier', content: <Prettier /> },
         { title: '정적 분석 도구 - Knip', content: <Knip /> },
         { title: 'Browser', content: <Browser /> },
+        {
+          title: 'Vercel 가입',
+          content: (
+            <div>
+              <ExternalLink href="https://vercel.com/" />
+              <div>깃헙 소셜 로그인을 추천합니다</div>
+              <div>배포를 매우 빠르고 편하게 할 수 있도록 도와주는 도구</div>
+            </div>
+          ),
+        },
       ]}
     />
   ),

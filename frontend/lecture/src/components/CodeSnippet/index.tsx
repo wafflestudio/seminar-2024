@@ -6,7 +6,15 @@ export const CodeSnippet = ({
   language,
 }: {
   code: string[];
-  language: 'shell' | 'json' | 'html' | 'css' | 'javascript' | 'typescript';
+  language:
+    | 'shell'
+    | 'json'
+    | 'html'
+    | 'css'
+    | 'javascript'
+    | 'typescript'
+    | 'jsx'
+    | 'tsx';
 }) => {
   return (
     <Prism

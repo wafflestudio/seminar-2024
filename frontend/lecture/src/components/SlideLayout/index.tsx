@@ -5,13 +5,13 @@ export const AssetDescriptionLayout = ({
   description,
 }: {
   asset: ReactNode;
-  description: string[];
+  description: ReactNode[];
 }) => {
   return (
     <div className="grid grid-cols-1 gap-8 xl:grid-cols-[4fr_6fr]">
       <ul className="flex flex-col justify-center gap-6">
-        {description.map((d) => (
-          <li key={d}>{d}</li>
+        {description.map((d, i) => (
+          <li key={i}>{d}</li>
         ))}
       </ul>
 

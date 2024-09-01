@@ -4,7 +4,7 @@ import { InlineCode } from '@/components/InlineCode';
 
 export const reactTutorialAssignment = getAssignmentItem({
   title: '리액트 튜토리얼',
-  schedule: [new Date('2021-09-04'), new Date('2021-09-25')],
+  due: new Date('2021-09-10 23:59:59'),
   element: (
     <div className="flex h-full flex-col items-center justify-center gap-12">
       <h2 className="text-center">

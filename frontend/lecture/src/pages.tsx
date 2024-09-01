@@ -3,16 +3,14 @@ import { ReactNode } from 'react';
 import { como0904Assignment } from '@/assignments/Como0904';
 import { environmentSetupAssignment } from '@/assignments/EnvironmentSetup';
 import { makeGame1Assignment } from '@/assignments/MakeGame1/assignment';
+import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { reactTutorialAssignment } from '@/assignments/ReactTutorial';
 import { environmentLecture } from '@/lectures/Environment';
+import { initializeProjectLecture } from '@/lectures/InitializeProject';
 import { otLecture } from '@/lectures/OT';
-import { reactBasicLecture } from '@/lectures/ReactBasic/lecture';
+import { reactLecture } from '@/lectures/React/lecture';
 import { webBasicLecture } from '@/lectures/WebBasic/lecture';
-import { Environment } from '@/pages/Environment/lecture';
 import { Home } from '@/pages/home';
-import { ReactBasicAssignment } from '@/pages/ReactBasic/assignment';
-import { ReactBasic } from '@/pages/ReactBasic/lecture';
-import { WebBasic } from '@/pages/WebBasic/lecture';
 
 export const pages: (
   | { type: 'index'; path: string; element: ReactNode }
@@ -29,31 +27,33 @@ export const pages: (
       title: string;
       path: string;
       element: ReactNode;
-      schedule: [Date, Date];
+      due: Date;
     }
 )[] = [
   { path: '/', type: 'index', element: <Home /> },
   { path: '/ot', ...otLecture },
   { path: '/environment', ...environmentLecture },
+  { path: '/initialize-project', ...initializeProjectLecture },
   { path: '/como-0904', ...como0904Assignment },
   { path: '/react-tutorial', ...reactTutorialAssignment },
   { path: '/environment-setup', ...environmentSetupAssignment },
   { path: '/web-html-css-js-ts', ...webBasicLecture },
-  { path: '/react-basic', ...reactBasicLecture },
+  { path: '/react', ...reactLecture },
+  { path: '/profile', ...profilePageAssignment },
   { path: '/make-game-1', ...makeGame1Assignment },
   {
     type: 'lecture',
-    title: '리액트',
-    description: '리액트의 철학, 상태 설계, Context, Hook',
+    title: 'TypeScript',
+    description: 'type과 interface, generic',
     date: new Date('2024-09-25'),
-    path: '/react',
+    path: '/typescript',
     element: <div>TBD</div>,
   },
   {
     type: 'lecture',
     title: '스타일링',
     description: 'inline style, css-in-js, css modules, atomic css',
-    date: new Date('2024-10-02'),
+    date: new Date('2024-09-25'),
     path: '/styling',
     element: <div>TBD</div>,
   },
@@ -63,6 +63,14 @@ export const pages: (
     description: 'DRY, SRP, DI',
     date: new Date('2024-10-02'),
     path: '/architecture',
+    element: <div>TBD</div>,
+  },
+  {
+    type: 'lecture',
+    title: '상태 관리',
+    description: 'Redux, React Query',
+    date: new Date('2024-10-02'),
+    path: '/state-management',
     element: <div>TBD</div>,
   },
   {

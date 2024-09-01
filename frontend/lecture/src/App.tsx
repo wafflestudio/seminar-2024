@@ -7,7 +7,7 @@ import { Separator } from '@/designsystem/ui/separator';
 import { Tabs, TabsList, TabsTrigger } from '@/designsystem/ui/tabs';
 import { useToggleTheme } from '@/main';
 import { pages } from '@/pages';
-import { formatDate } from '@/utils/utils';
+import { formatDate } from '@/utils/formatDate';
 
 export const App = () => {
   return (
@@ -62,11 +62,11 @@ const Sidebar = () => {
                 >
                   <h3 className="text-base">{page.title}</h3>
                   <p className="flex items-center gap-2 text-xs text-slate-500">
-                    {page.schedule
-                      .map((s) =>
-                        formatDate(s, ({ MM, DD }) => `${MM}월 ${DD}일`),
-                      )
-                      .join(' ~ ')}
+                    {formatDate(
+                      page.due,
+                      ({ MM, DD, HH, mm, ss }) =>
+                        `${MM}월 ${DD}일 ${HH}:${mm}:${ss}까지`,
+                    )}
                   </p>
                 </Link>
               </li>
