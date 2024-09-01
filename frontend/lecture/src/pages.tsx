@@ -34,13 +34,8 @@ export const pages: (
   { path: '/ot', ...otLecture },
   { path: '/environment', ...environmentLecture },
   { path: '/initialize-project', ...initializeProjectLecture },
-  { path: '/como-0904', ...como0904Assignment },
-  { path: '/react-tutorial', ...reactTutorialAssignment },
-  { path: '/environment-setup', ...environmentSetupAssignment },
   { path: '/web-html-css-js-ts', ...webBasicLecture },
   { path: '/react', ...reactLecture },
-  { path: '/profile', ...profilePageAssignment },
-  { path: '/make-game-1', ...makeGame1Assignment },
   {
     type: 'lecture',
     title: 'TypeScript',
@@ -113,4 +108,9 @@ export const pages: (
     path: '/end',
     element: <div>TBD</div>,
   },
+  { path: '/como-0904', ...como0904Assignment },
+  { path: '/environment-setup', ...environmentSetupAssignment },
+  { path: '/react-tutorial', ...reactTutorialAssignment },
+  { path: '/profile', ...profilePageAssignment },
+  { path: '/make-game-1', ...makeGame1Assignment },
 ];
