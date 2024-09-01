@@ -109,7 +109,7 @@
 | 조인우 | hanoinwoo@snu.ac.kr |         |         |         |
 | 임혁준 | dlagurwns03@gmail.com |         |         |         |
 | 김범준 | johnbie0627@gmail.com |         |         |         |
-| 전진현 | jjh8477mtl@gmail.com |         |         |         |
+| 전진현 | jjh8477mtl@gmail.com |  spring  |  fastapi  |  iOS  |
 | 백민우 | bmw06004@gmail.com |         |         |         |
 | 임광섭 | endermaru@snu.ac.kr |         |         |         |
 | 이현우 | hwlee0@snu.ac.kr |         |         |         |
