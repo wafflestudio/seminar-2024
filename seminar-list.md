@@ -98,7 +98,7 @@
 | 양진혁 | icecandle@snu.ac.kr |         |         |         |
 | 최장혁 | goranikin@snu.ac.kr |         |         |         |
 | 이윤철 | yiyc02@naver.com |         |         |         |
-| 박종경 | jongkyung2005@gmail.com |         |         |         |
+| 박종경 | jongkyung2005@gmail.com | frontend | android | fastapi |
 | 이승원 | better4088@gmail.com |         |         |         |
 | 박수인 | hyperion1019@naver.com |         |         |         |
 | 곽승연 | tmddus0723@snu.ac.kr |         |         |         |
