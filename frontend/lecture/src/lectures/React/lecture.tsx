@@ -1,9 +1,13 @@
 import { CodeSnippet } from '@/components/CodeSnippet';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
 import { Slides } from '@/components/Slides';
+import { getLectureItem } from '@/lectures';
 
-export const ReactBasic = () => {
-  return (
+export const reactLecture = getLectureItem({
+  title: '리액트',
+  description: 'JSX, state, props, hooks, context, 합성',
+  date: new Date('2024-09-11'),
+  element: (
     <Slides
       slides={[
         {
@@ -41,7 +45,7 @@ export const ReactBasic = () => {
                   />
                   <h2>리액트로</h2>
                   <CodeSnippet
-                    language="typescript"
+                    language="tsx"
                     code={[
                       `const [count, setCount] = useState(0);`,
                       ``,
@@ -58,35 +62,7 @@ export const ReactBasic = () => {
             />
           ),
         },
-        {
-          title: 'TypeScript와 JavaScript의 차이',
-          content: (
-            <AssetDescriptionLayout
-              description={['정적 타입 검사를 수행해 준다!']}
-              asset={
-                <>
-                  <CodeSnippet
-                    language="javascript"
-                    code={[
-                      `// JavaScript`,
-                      `const getName = (person) => person.name;`,
-                      `getName({ nmae: 'Hyunmin' }); // undefined`,
-                    ]}
-                  />
-                  <CodeSnippet
-                    language="typescript"
-                    code={[
-                      `// TypeScript`,
-                      `const getName = (person: { name: string }) => person.name;`,
-                      `getName({ nmae: 'Hyunmin' }); // Type Error`,
-                    ]}
-                  />
-                </>
-              }
-            />
-          ),
-        },
       ]}
     />
-  );
-};
+  ),
+});

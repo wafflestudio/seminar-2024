@@ -3,33 +3,13 @@ import { ReactNode } from 'react';
 import { CodeSnippet } from '@/components/CodeSnippet';
 import { ExternalLink } from '@/components/ExternalLink';
 import { Slides } from '@/components/Slides';
+import { getLectureItem } from '@/lectures';
 
 import chromtDevtoolPng from './chrome-devtool.png';
 import gitPng from './git.png';
 import linterror from './linterror.png';
 import stateofjsStatictyping from './stateofjs-statictyping.png';
 import typeerror from './typeerror.png';
-
-export const Environment = () => {
-  return (
-    <Slides
-      slides={[
-        { title: 'Why', content: <Why /> },
-        { title: 'OS', content: <OS /> },
-        { title: 'Git', content: <Git /> },
-        { title: 'IDE', content: <IDE /> },
-        { title: 'Node.js', content: <NodeJS /> },
-        { title: 'Yarn', content: <Yarn /> },
-        { title: '정적 분석 도구', content: <Tool /> },
-        { title: '정적 분석 도구 - TypeScript', content: <TypeScript /> },
-        { title: '정적 분석 도구 - ESLint', content: <ESLint /> },
-        { title: '정적 분석 도구 - Prettier', content: <Prettier /> },
-        { title: '정적 분석 도구 - Knip', content: <Knip /> },
-        { title: 'Browser', content: <Browser /> },
-      ]}
-    />
-  );
-};
 
 const Why = () => {
   return (
@@ -212,7 +192,7 @@ const TypeScript = () => {
     <div className="flex flex-col items-center gap-10">
       <p>자바스크립트로 컴파일되는, 자바스크립트의 superset 언어</p>
       <p>
-        <strong>너가 이거라며, 이거 맞아?</strong>를 잡아주는 도구
+        <strong>니가 이거라며, 이거 맞아?</strong>를 잡아주는 도구
       </p>
       <img src={typeerror} />
       <img src={stateofjsStatictyping} />
@@ -264,3 +244,37 @@ const Browser = () => {
     </div>
   );
 };
+
+export const environmentLecture = getLectureItem({
+  title: '개발환경 세팅',
+  description: 'IDE, eslint, prettier, ci',
+  date: new Date('2024-09-04'),
+  element: (
+    <Slides
+      slides={[
+        { title: 'Why', content: <Why /> },
+        { title: 'OS', content: <OS /> },
+        { title: 'Git', content: <Git /> },
+        { title: 'IDE', content: <IDE /> },
+        { title: 'Node.js', content: <NodeJS /> },
+        { title: 'Yarn', content: <Yarn /> },
+        { title: '정적 분석 도구', content: <Tool /> },
+        { title: '정적 분석 도구 - TypeScript', content: <TypeScript /> },
+        { title: '정적 분석 도구 - ESLint', content: <ESLint /> },
+        { title: '정적 분석 도구 - Prettier', content: <Prettier /> },
+        { title: '정적 분석 도구 - Knip', content: <Knip /> },
+        { title: 'Browser', content: <Browser /> },
+        {
+          title: 'Vercel 가입',
+          content: (
+            <div>
+              <ExternalLink href="https://vercel.com/" />
+              <div>깃헙 소셜 로그인을 추천합니다</div>
+              <div>배포를 매우 빠르고 편하게 할 수 있도록 도와주는 도구</div>
+            </div>
+          ),
+        },
+      ]}
+    />
+  ),
+});

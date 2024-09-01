@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, ReactNode } from 'react';
 
 export const Description = ({
   items,
 }: {
-  items: { key: string; value: string }[];
+  items: { key: string; value: ReactNode }[];
 }) => {
   return (
     <dl className="grid w-fit grid-cols-[min-content_min-content]">

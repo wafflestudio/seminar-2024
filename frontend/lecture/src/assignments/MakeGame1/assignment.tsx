@@ -1,8 +1,11 @@
+import { getAssignmentItem } from '@/assignments';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 
-export const ReactBasicAssignment = () => {
-  return (
+export const makeGame1Assignment = getAssignmentItem({
+  title: '게임 만들기 (1)',
+  due: new Date('2024-09-24 23:59:59'),
+  element: (
     <div>
       <h1>게임 만들기</h1>
       <ul>
@@ -16,5 +19,5 @@ export const ReactBasicAssignment = () => {
         </li>
       </ul>
     </div>
-  );
-};
+  ),
+});
