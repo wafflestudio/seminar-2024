@@ -70,7 +70,7 @@
 | 임우찬 | woochan226544@snu.ac.kr |         |         |         |
 | 박정현 | junghyunpark2001@naver.com |         |         |         |
 | 최승민 | seungmin960@gmail.com |         |         |         |
-| 김온 | kimon2002@snu.ac.kr |         |         |         |
+| 김온 | kimon2002@snu.ac.kr | spring | frontend | android |
 | 강명석 | tomskang@naver.com |         |         |         |
 | 김인호 | inho524890@gmail.com |         |         |         |
 | 권혁준 | todd4@naver.ac.kr |         |         |         |
