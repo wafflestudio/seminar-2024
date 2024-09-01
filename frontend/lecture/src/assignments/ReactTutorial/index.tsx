@@ -1,8 +1,11 @@
+import { getAssignmentItem } from '@/assignments';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 
-export const OTAssignment = () => {
-  return (
+export const reactTutorialAssignment = getAssignmentItem({
+  title: '리액트 튜토리얼',
+  schedule: [new Date('2021-09-04'), new Date('2021-09-25')],
+  element: (
     <div className="flex h-full flex-col items-center justify-center gap-12">
       <h2 className="text-center">
         벨로퍼트와 함께 하는 모던 리액트 <InlineCode code="1.3~1.16" /> 까지
@@ -18,5 +21,5 @@ export const OTAssignment = () => {
         확인 후 스킵 가능합니다
       </b>
     </div>
-  );
-};
+  ),
+});

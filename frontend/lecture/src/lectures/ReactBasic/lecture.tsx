@@ -1,9 +1,13 @@
 import { CodeSnippet } from '@/components/CodeSnippet';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
 import { Slides } from '@/components/Slides';
+import { getLectureItem } from '@/lectures';
 
-export const ReactBasic = () => {
-  return (
+export const reactBasicLecture = getLectureItem({
+  title: '리액트 맛보기',
+  description: 'typescript 기초, React 의 JSX / state / props',
+  date: new Date('2024-09-11'),
+  element: (
     <Slides
       slides={[
         {
@@ -88,5 +92,5 @@ export const ReactBasic = () => {
         },
       ]}
     />
-  );
-};
+  ),
+});

@@ -13,9 +13,13 @@ import {
   TableHeader,
   TableRow,
 } from '@/designsystem/ui/table';
+import { getLectureItem } from '@/lectures';
 
-export const WebBasic = () => {
-  return (
+export const webBasicLecture = getLectureItem({
+  title: '웹과 언어',
+  description: '웹의 역사, html, css, js의 역할과 동작, typescript의 필요성',
+  date: new Date('2024-09-11'),
+  element: (
     <Slides
       slides={[
         {
@@ -512,5 +516,5 @@ export const WebBasic = () => {
         },
       ]}
     />
-  );
-};
+  ),
+});
