@@ -56,7 +56,7 @@
 | 최지웅 | anggodji2422@snu.ac.kr |         |         |         |
 | 박상현 | qkrtkdgus39@snu.ac.kr |         |         |         |
 | 박정민 | james1990a@snu.ac.kr |         |         |         |
-| 박찬영 | pcy1203@snu.ac.kr |         |         |         |
+| 박찬영 | pcy1203@snu.ac.kr | android | spring |         |
 | 김연우 | ywk0524@snu.ac.kr |         |         |         |
 | 이준용 | leejunyong02@snu.ac.kr |         |         |         |
 | 오민혁 | minhyuk5@snu.ac.kr |         |         |         |
