@@ -62,7 +62,7 @@
 | 오민혁 | minhyuk5@snu.ac.kr |         |         |         |
 | 박준병 | jby2021@snu.ac.kr |         |         |         |
 | 이경표 | imsmile2004@naver.com |         |         |         |
-| 문재영 | 1234aiden@naver.com |         |         |         |
+| 문재영 | 1234aiden@naver.com | fastapi | spring | android |
 | 김동규 | kimdk0824@naver.com |         |         |         |
 | 허태윤 | hty050216@gmail.com |         |         |         |
 | 이권재 | gwonjae@icloud.com |         |         |         |
