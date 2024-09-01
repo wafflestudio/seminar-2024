@@ -104,7 +104,7 @@
 | 곽승연 | tmddus0723@snu.ac.kr |         |         |         |
 | 서종환 | mujigae1020@gmail.com |         |         |         |
 | 조유진 | uzinfamily@naver.com |         |         |         |
-| 이상우 | dltkddn233@snu.ac.kr |         |         |         |
+| 이상우 | dltkddn233@snu.ac.kr | android | frontend | spring |
 | 킨웨이 | khinwaiyan@snu.ac.kr |         |         |         |
 | 조인우 | hanoinwoo@snu.ac.kr |         |         |         |
 | 임혁준 | dlagurwns03@gmail.com |         |         |         |
