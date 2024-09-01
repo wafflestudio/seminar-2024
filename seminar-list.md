@@ -24,7 +24,7 @@
 
 | 이름          | GitHub Email            | 1지망       | 2지망       | 3지망       |
 | ------------- | ----------------------- | ----------- | ----------- | ----------- |
-| (예시) 우혁준 | whjoon0225@naver.com    |             |             |             |
+| (예시) 우혁준 | whjoon0225@naver.com    | spring |   frontend    | iOS   |
 | 김정훈 | jafarock@naver.com |         |         |         |
 | 현주영 | jooyounghyun3.14@gmail.com |         |         |         |
 | 최서현 | lily_choi7@snu.ac.kr |         |         |         |
