@@ -108,7 +108,7 @@
 | 킨웨이 | khinwaiyan@snu.ac.kr |         |         |         |
 | 조인우 | hanoinwoo@snu.ac.kr |         |         |         |
 | 임혁준 | dlagurwns03@gmail.com |         |         |         |
-| 김범준 | johnbie0627@gmail.com |         |         |         |
+| 김범준 | johnbie0627@gmail.com | fastapi | frontend | android |
 | 전진현 | jjh8477mtl@gmail.com |         |         |         |
 | 백민우 | bmw06004@gmail.com |         |         |         |
 | 임광섭 | endermaru@snu.ac.kr |         |         |         |
