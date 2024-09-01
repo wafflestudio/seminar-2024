@@ -28,7 +28,7 @@
 | 김정훈 | jafarock@naver.com |         |         |         |
 | 현주영 | jooyounghyun3.14@gmail.com |         |         |         |
 | 최서현 | lily_choi7@snu.ac.kr |         |         |         |
-| 최성환 | bchoi9852@gmail.com |         |         |         |
+| 최성환 | bchoi9852@gmail.com | fastapi | frontend | spring |
 | 서주원 | juwon0718@naver.com |         |         |         |
 | 박재민 | arnoldpark03@gmail.com |         |         |         |
 | 조민경 | oke08034@snu.ac.kr |         |         |         |
