@@ -93,7 +93,7 @@
 | 권재영 | jaylions@snu.ac.kr |         |         |         |
 | 최재혁 | jaychoi2001@gmail.com |         |         |         |
 | 박예현 | pyh0275@snu.ac.kr |         |         |         |
-| 김도현 | kdh8156@snu.ac.kr |         |         |         |
+| 김도현 | kdh8156@snu.ac.kr |   spring    |  fastapi        |   frontend      |
 | 김인서 | insuhkim@naver.com |         |         |         |
 | 양진혁 | icecandle@snu.ac.kr |         |         |         |
 | 최장혁 | goranikin@snu.ac.kr |         |         |         |
