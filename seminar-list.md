@@ -41,7 +41,7 @@
 | 손유진 | qeugene2328@gamil.com |         |         |         |
 | 김채민 | brian2562@gmail.com |         |         |         |
 | 신중원 | joongwon0204@gmail.com |         |         |         |
-| 최성준 | csjun@snu.ac.kr |         |         |         |
+| 최성준 | csjun@snu.ac.kr | frontend | spring | android |
 | 박송희 | pine98@snu.ac.kr |         |         |         |
 | 박원석 | pws031122@snu.ac.kr |         |         |         |
 | 조용현 | dyddyd8574@snu.ac.kr |         |         |         |
