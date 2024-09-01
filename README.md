@@ -21,7 +21,7 @@
 
 |  시간           | 장소 | 자료         | 참여 링크 | 
 | --------------- | ---- | ----------- | --------- | 
-| 9월 1일 19시 ~ 20시 30분 | 비대면 | .  | (당일 슬랙 참고) |
+| 9월 1일 19시 ~ 20시 30분 | 비대면 |[ OT자료 ](https://docs.google.com/presentation/d/1rLB9hjdq3wbUL3z9bFf2dpt7kH91wstz6HEoy1oO5UA/edit?usp=sharing) |[ 줌 ](https://snu-ac-kr.zoom.us/j/89011292855?pwd=kWclGWJ6XOSRobPMYLCp1Myy3ml2sA.1)|
 
 <br>
 
