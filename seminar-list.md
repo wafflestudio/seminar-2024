@@ -125,7 +125,7 @@
 | 권성안 | sungahn0206@gmail.com |         |         |         |
 | 이건무 | lgmoo2002@snu.ac.kr |         |         |         |
 | 오지현 | math_98@naver.com |         |         |         |
-| 김민성 | skywood0526@snu.ac.kr |         |         |         |
+| 김민성 | skywood0526@snu.ac.kr | fastapi | android | frontend |
 | 이종호 | leafguyk@gmail.com |         |         |         |
 | 원종범 | jim8697@snu.ac.kr |         |         |         |
 | 변민규 | seatosky2002@naver.com |         |         |         |
