@@ -43,7 +43,7 @@
 | 신중원 | joongwon0204@gmail.com |         |         |         |
 | 최성준 | csjun@snu.ac.kr |         |         |         |
 | 박송희 | pine98@snu.ac.kr |         |         |         |
-| 박원석 | pws031122@snu.ac.kr |         |         |         |
+| 박원석 | pws031122@snu.ac.kr | spring  | fastapi |frontend |
 | 조용현 | dyddyd8574@snu.ac.kr |         |         |         |
 | 박준영 | ezypuz@snu.ac.kr |         |         |         |
 | 정해찬 | qdrptd@gmail.com |         |         |         |
