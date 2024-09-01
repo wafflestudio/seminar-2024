@@ -68,7 +68,7 @@
 | 이권재 | gwonjae@icloud.com |         |         |         |
 | 김재민 | odumag99@snu.ac.kr |         |         |         |
 | 임우찬 | woochan226544@snu.ac.kr |         |         |         |
-| 박정현 | junghyunpark2001@naver.com |         |         |         |
+| 박정현 | junghyunpark2001@naver.com | android | frontend | spring   |
 | 최승민 | seungmin960@gmail.com |         |         |         |
 | 김온 | kimon2002@snu.ac.kr |         |         |         |
 | 강명석 | tomskang@naver.com |         |         |         |
