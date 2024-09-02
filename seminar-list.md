@@ -127,8 +127,8 @@
 | 오지현 | math_98@naver.com |         |         |         |
 | 김민성 | skywood0526@snu.ac.kr |         |         |         |
 | 이종호 | leafguyk@gmail.com |         |         |         |
-| 원종범 | jim8697@snu.ac.kr |         |         |         |
-| 변민규 | seatosky2002@gmail.com |         |         |         |
+| 원종범 | jim8697@snu.ac.kr | spring | fastapi | iOS |
+| 변민규 | seatosky2002@naver.com |         |         |         |
 | 안진영 | andy0808opp@snu.ac.kr |         |         |         |
 | 정택진 | yeo7965@snu.ac.kr |         |         |         |
 | 이호석 | hslee0324@snu.ac.kr |         |         |         |
