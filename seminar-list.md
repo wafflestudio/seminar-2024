@@ -35,7 +35,7 @@
 | 이채영 | cyrhee7@snu.ac.kr |         |         |         |
 | 오하준 | ohajun@snu.ac.kr |         |         |         |
 | 신지원 | shinjigo221@snu.ac.kr |         |         |         |
-| 최은우 | soarhigh03@gmail.com |         |         |         |
+| 최은우 | soarhigh03@gmail.com | iOS | fastapi | frontend |
 | 김창민 | akuxxr0422@gmail.com |         |         |         |
 | 김도향 | kimdohyang4@gmail.com |         |         |         |
 | 손유진 | qeugene2328@gamil.com |         |         |         |
