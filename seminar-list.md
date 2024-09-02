@@ -84,7 +84,7 @@
 | 심형오 | amma0209@naver.com |         |         |         |
 | 김용범 | kybs0627@snu.ac.kr |         |         |         |
 | 임형석 | anvil1028@snu.ac.kr |         |         |         |
-| 이재현 | jhlee2483@gmail.com |         |         |         |
+| 이재현 | jhlee2483@gmail.com | spring  | fastapi | frontend |
 | 구자운 | k45238376@gmail.com |         |         |         |
 | 전종원 | cjw107@snu.ac.kr |         |         |         |
 | 허용재 | quad.heo@snu.ac.kr |         |         |         |
