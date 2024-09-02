@@ -55,7 +55,7 @@
 | 박선홍 | twinpsh1@gmail.com |         |         |         |
 | 최지웅 | anggodji2422@snu.ac.kr |         |         |         |
 | 박상현 | qkrtkdgus39@snu.ac.kr |         |         |         |
-| 박정민 | james1990a@snu.ac.kr |         |         |         |
+| 박정민 | james1990a@snu.ac.kr |  fastmri   |  spring  |  frontend  |
 | 박찬영 | pcy1203@snu.ac.kr |         |         |         |
 | 김연우 | ywk0524@snu.ac.kr |         |         |         |
 | 이준용 | leejunyong02@snu.ac.kr |         |         |         |
