@@ -97,7 +97,7 @@
 | 김인서 | insuhkim@naver.com |         |         |         |
 | 양진혁 | icecandle@snu.ac.kr |         |         |         |
 | 최장혁 | goranikin@snu.ac.kr |         |         |         |
-| 이윤철 | yiyc02@naver.com |         |         |         |
+| 이윤철 | yiyc02@naver.com | fastapi | spring | frontend |
 | 박종경 | jongkyung2005@gmail.com |         |         |         |
 | 이승원 | better4088@gmail.com |         |         |         |
 | 박수인 | hyperion1019@naver.com |         |         |         |
