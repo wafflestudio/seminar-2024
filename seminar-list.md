@@ -121,7 +121,7 @@
 | 김무진 | vladimir@snu.ac.kr |         |         |         |
 | 이찬회 | dlcksghl159@gmail.com |         |         |         |
 | 박규동 | gyudong0909@snu.ac.kr |         |         |         |
-| 이종현 | lukeqwaszx@snu.ac.kr | spring | fastapi | android |
+| 이종현 | lukeqwaszx@snu.ac.kr | spring | fastapi | frontend |
 | 권성안 | sungahn0206@gmail.com |         |         |         |
 | 이건무 | lgmoo2002@snu.ac.kr |         |         |         |
 | 오지현 | math_98@naver.com |         |         |         |
