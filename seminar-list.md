@@ -40,7 +40,7 @@
 | 김도향 | kimdohyang4@gmail.com |         |         |         |
 | 손유진 | qeugene2328@gamil.com |         |         |         |
 | 김채민 | brian2562@gmail.com |         |         |         |
-| 신중원 | joongwon0204@gmail.com |         |         |         |
+| 신중원 | joongwon0204@gmail.com | iOS | frontend | spring |
 | 최성준 | csjun@snu.ac.kr |         |         |         |
 | 박송희 | pine98@snu.ac.kr |         |         |         |
 | 박원석 | pws031122@snu.ac.kr |         |         |         |
