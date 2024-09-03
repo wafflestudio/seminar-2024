@@ -1,5 +1,6 @@
 import { Description } from '@/components/Description';
 import { ExampleIframe } from '@/components/ExampleIframe';
+import { ExternalLink } from '@/components/ExternalLink';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
 import { Slides } from '@/components/Slides';
 import { Badge } from '@/designsystem/ui/badge';
@@ -21,6 +22,15 @@ export const otLecture = getLectureItem({
   element: (
     <Slides
       slides={[
+        {
+          title: '강좌 소개',
+          content: (
+            <ExternalLink
+              href="https://github.com/wafflestudio/seminar-2024/tree/main/frontend"
+              label="강의계획서 같이 읽기"
+            />
+          ),
+        },
         {
           title: '자기소개',
           content: (
