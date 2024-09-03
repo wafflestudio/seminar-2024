@@ -366,6 +366,10 @@ export const otLecture = getLectureItem({
                   세미나 목표 중 하나인 <strong>친목</strong>에 큰 도움이 될 것
                   같다
                 </li>
+                <li>
+                  저도 이렇게 해 보는 게 처음이라 잘 될지 모르겠어요 아니다
+                  싶으면 바로 접겠습니다
+                </li>
               </ul>
 
               <h2 className="mt-16 text-3xl">형태</h2>
@@ -373,10 +377,15 @@ export const otLecture = getLectureItem({
                 <li>서로 도움을 주고받는다</li>
                 <li>상대가 혹시나 트롤이어도 발목잡히지는 않는 구조</li>
                 <li>
-                  조마다 세미나장 포함한 DM방을 생성해 드립니다
+                  조마다 세미나장 포함한 비공개 채널을 생성해 드립니다
                   <p className="text-base text-slate-500">
                     각자 얼마나 기여하시는지 봐야 하고, 질문을 받아 드려야 해서
                     저는 항상 채팅방에 포함되어야 합니다
+                  </p>
+                  <p className="text-base text-slate-500">
+                    당연히 저 빼고 DM하셔도 되고 그런 건 상관 없는데, 그렇게
+                    되면 질문받아드리거나 얼마나 기여하시는지 체크하는 건 어렵단
+                    점 참고 부탁드립니다
                   </p>
                 </li>
                 <li>
