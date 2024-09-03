@@ -31,7 +31,7 @@
 | 최성환 | bchoi9852@gmail.com |         |         |         |
 | 서주원 | juwon0718@naver.com |         |         |         |
 | 박재민 | arnoldpark03@gmail.com |         |         |         |
-| 조민경 | oke08034@snu.ac.kr |         |         |         |
+| 조민경 | oke08034@snu.ac.kr | spring  | fastapi | frontend |
 | 이채영 | cyrhee7@snu.ac.kr |         |         |         |
 | 오하준 | ohajun@snu.ac.kr |         |         |         |
 | 신지원 | shinjigo221@snu.ac.kr |         |         |         |
