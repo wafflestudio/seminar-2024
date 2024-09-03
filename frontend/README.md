@@ -36,9 +36,4 @@
 
 ## 자료
 
-[(seminar-2024)/frontend/lecture](./lecture) 경로로 이동 후
-
-```sh
-yarn install
-yarn dev
-```
+https://seminar-2024.vercel.app
