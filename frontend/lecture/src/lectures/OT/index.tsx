@@ -452,7 +452,8 @@ export const otLecture = getLectureItem({
                   </li>
                   <li>
                     개발 {'=>'} 커밋 기록 다 남고 슬랙 기록 다 세미나장이 볼 수
-                    있고, 코드도 모두 오픈된 동네
+                    있고, 코드도 모두 오픈된 동네{' '}
+                    <b className="ml-4 text-base">안 볼 것 같지만 다 봅니다</b>
                   </li>
                   <li>
                     구글링, GPT, Copilot, 세미나장/조원에게 질문, 조원 코드 복붙
