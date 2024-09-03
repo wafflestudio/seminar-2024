@@ -34,7 +34,7 @@ export const environmentSetupAssignment = getAssignmentItem({
               <ExternalLink
                 className="ml-4"
                 href="https://wafflestudio2-dqe6104.slack.com/archives/C07J7K23QUB/p1724839060380939"
-                label="예시 보기"
+                label="제출 예시 보기"
               />
             </li>
             <li>잘 안 되는 건 채널이나 조원 통해서 질문</li>

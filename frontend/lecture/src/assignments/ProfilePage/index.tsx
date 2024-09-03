@@ -10,11 +10,11 @@ export const profilePageAssignment = getAssignmentItem({
   due: new Date('2021-09-11 23:59:59'),
   element: (
     <div className="flex h-full flex-col items-center justify-center gap-8">
-      <ol className="flex list-decimal flex-col justify-center gap-4 pl-8">
+      <ol className="flex list-decimal flex-col justify-center gap-4 pl-8 leading-10">
         <li>
-          프로젝트 이름을 정합니다. 뭐로 할지 잘 모르겠다면{' '}
+          프로젝트 이름을 정합니다.
           <InlineCode code="wafflestudio-seminar-2024-frontend-profile-page-assignment" />
-          로 해 주세요
+          로 하셔도 되고 <InlineCode code="profile-page" />로 하셔도 됩니다
         </li>
         <li>GitHub 에 위 이름대로 repository를 생성합니다.</li>
         <li>
@@ -49,7 +49,7 @@ export const profilePageAssignment = getAssignmentItem({
       </ol>
       <ExternalLink
         href="https://wafflestudio2-dqe6104.slack.com/archives/C07J7K23QUB/p1725179752382779"
-        label="예시 보기"
+        label="제출 예시 보기"
       />
     </div>
   ),
