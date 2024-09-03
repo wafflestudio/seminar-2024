@@ -28,14 +28,17 @@ export const Slides = ({
   const slide = slides[page - 1];
 
   useEffect(() => {
-    const keydownHandler = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowRight') onChangePage(page + 1);
-      else if (event.key === 'ArrowLeft') onChangePage(page - 1);
+    const handler = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowRight') onChangePage({ type: 'diff', diff: 1 });
+      else if (event.key === 'ArrowLeft')
+        onChangePage({ type: 'diff', diff: -1 });
     };
 
-    window.addEventListener('keydown', keydownHandler);
+    const event = 'keyup';
+
+    window.addEventListener(event, handler);
     return () => {
-      window.removeEventListener('keydown', keydownHandler);
+      window.removeEventListener(event, handler);
     };
   }, [page, onChangePage]);
 
@@ -62,7 +65,7 @@ export const Slides = ({
               <PaginationItem
                 key={itemPage}
                 onClick={() => {
-                  onChangePage(itemPage);
+                  onChangePage({ type: 'page', page: itemPage });
                 }}
               >
                 <PaginationLink
@@ -90,28 +93,50 @@ const usePage = ({
   const key = 'page';
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const pageParams = searchParams.get(key);
+  const getPageFromSearchParams = useCallback(
+    (sp: URLSearchParams) => {
+      const pageParams = sp.get(key);
 
-  const page = (() => {
-    const calculatedPage =
-      pageParams !== null && `${parseInt(pageParams)}` === pageParams
-        ? parseInt(pageParams)
-        : 1;
+      const calculatedPage =
+        pageParams !== null && `${parseInt(pageParams)}` === pageParams
+          ? parseInt(pageParams)
+          : 1;
 
-    if (calculatedPage < minPage) return minPage;
-    if (calculatedPage > maxPage) return maxPage;
-    return calculatedPage;
-  })();
-
-  const onChangePage = useCallback(
-    (newPage: number) => {
-      if (newPage < 1 || newPage > maxPage) return;
-      const newSearchParams = new URLSearchParams(searchParams);
-      newSearchParams.set(key, newPage.toString());
-      setSearchParams(newSearchParams, { replace: true });
+      if (calculatedPage < minPage) return minPage;
+      if (calculatedPage > maxPage) return maxPage;
+      return calculatedPage;
     },
-    [searchParams, setSearchParams, maxPage],
+    [maxPage, minPage],
   );
 
-  return { page, onChangePage };
+  const onChangePage = useCallback(
+    (args: { type: 'page'; page: number } | { type: 'diff'; diff: 1 | -1 }) => {
+      switch (args.type) {
+        case 'page': {
+          const newPage = args.page;
+          if (newPage < minPage || newPage > maxPage) return;
+          const newSearchParams = new URLSearchParams(searchParams);
+          newSearchParams.set(key, newPage.toString());
+          setSearchParams(newSearchParams, { replace: true });
+          break;
+        }
+        case 'diff': {
+          setSearchParams(
+            (prev) => {
+              const page = getPageFromSearchParams(prev);
+              const newPage = page + args.diff;
+              if (newPage < minPage || newPage > maxPage) return prev;
+              const newSearchParams = new URLSearchParams(prev);
+              newSearchParams.set(key, newPage.toString());
+              return newSearchParams;
+            },
+            { replace: true },
+          );
+        }
+      }
+    },
+    [searchParams, setSearchParams, maxPage, minPage, getPageFromSearchParams],
+  );
+
+  return { page: getPageFromSearchParams(searchParams), onChangePage };
 };

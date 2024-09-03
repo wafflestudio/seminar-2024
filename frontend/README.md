@@ -36,4 +36,5 @@
 
 ## 자료
 
-https://seminar-2024.vercel.app
+- 강의자료: https://seminar-2024.vercel.app
+- 리액트 템플릿: https://github.com/wafflestudio/seminar-2024-frontend-template
