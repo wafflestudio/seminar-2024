@@ -119,7 +119,7 @@
 | 임수호 | dalitravan@gmail.com |         |         |         |
 | 안우진 | awj1204@snu.ac.kr |         |         |         |
 | 김무진 | vladimir@snu.ac.kr |         |         |         |
-| 이찬회 | dlcksghl159@gmail.com |         |         |         |
+| 이찬회 | dlcksghl159@gmail.com | android | spring   | fastapi  |
 | 박규동 | gyudong0909@snu.ac.kr |         |         |         |
 | 이종현 | lukeqwaszx@snu.ac.kr |         |         |         |
 | 권성안 | sungahn0206@gmail.com |         |         |         |
