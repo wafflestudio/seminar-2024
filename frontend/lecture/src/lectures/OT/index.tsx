@@ -277,8 +277,8 @@ export const otLecture = getLectureItem({
                       curr: 'public 레포에서 조별과제',
                     },
                     {
-                      prev: '질문을 정리해서 올려야 함',
-                      curr: '모르겠을 때 더 편하게 질문',
+                      prev: '질문을 정제해서 GitHub Discussion으로',
+                      curr: '모르겠을 때 맥락없이 바로 멘션해서 질문',
                     },
                     {
                       prev: 'ppt / markdown 형태의 강의자료',
@@ -286,7 +286,7 @@ export const otLecture = getLectureItem({
                     },
                     {
                       prev: '코드 리뷰 형태의 과제 채점',
-                      curr: '(아직 고민중..)',
+                      curr: '코드 리뷰 없이 과제 채점, 대신 자율적으로 #frontend-잡담 에 리뷰 요청 가능',
                     },
                   ].map((diff, index) => (
                     <TableRow key={index}>
