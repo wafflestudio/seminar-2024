@@ -83,12 +83,14 @@ const IDE = () => {
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519"
       />
       <ExternalLink href="https://code.visualstudio.com/download" />
-      vscode의 settings JSON에 아래와 같이 설정해 주세요.
+      vscode의 settings JSON에 아래 옵션들을 설정해 주세요.
       <CodeSnippet
         code={[
-          `"editor.formatOnSave": true`,
-          `"eslint.format.enable": true`,
-          `"editor.codeActionsOnSave": { "source.fixAll.eslint": true }`,
+          `{`,
+          `  "editor.formatOnSave": true,`,
+          `  "eslint.format.enable": true,`,
+          `  "editor.codeActionsOnSave": { "source.fixAll.eslint": true }`,
+          `}`,
         ]}
         language="json"
       />
