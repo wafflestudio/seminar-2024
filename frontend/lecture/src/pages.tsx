@@ -8,7 +8,8 @@ import { tutorialAssignment } from '@/assignments/Tutorial';
 import { environmentLecture } from '@/lectures/Environment';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
 import { otLecture } from '@/lectures/OT';
-import { reactLecture } from '@/lectures/React/lecture';
+import { reactApisLecture } from '@/lectures/ReactApis/lecture';
+import { reactBasicLecture } from '@/lectures/ReactBasic/lecture';
 import { webBasicLecture } from '@/lectures/WebBasic/lecture';
 import { Home } from '@/pages/home';
 
@@ -35,7 +36,8 @@ export const pages: (
   { path: '/environment', ...environmentLecture },
   { path: '/initialize-project', ...initializeProjectLecture },
   { path: '/web-html-css-js-ts', ...webBasicLecture },
-  { path: '/react', ...reactLecture },
+  { path: '/react-basic', ...reactBasicLecture },
+  { path: '/react-apis', ...reactApisLecture },
   {
     type: 'lecture',
     title: 'TypeScript',
