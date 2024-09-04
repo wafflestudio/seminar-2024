@@ -1,4 +1,5 @@
 import { CodeSnippet } from '@/components/CodeSnippet';
+import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { SlideContent } from '@/components/SlideContent';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
@@ -82,11 +83,25 @@ export const webBasicLecture = getLectureItem({
         {
           title: '역사에서 알 수 있는 포인트들',
           content: (
-            <ul className="flex flex-col gap-12">
-              <li>웹은 처음에 문서를 보는 도구로 만들어졌다</li>
-              <li>표준 없이 꽤 오랜 기간을 지나왔다</li>
-              <li>계속해서 새로운 기술이 등장하고 발전하고 있다</li>
-            </ul>
+            <AssetDescriptionLayout
+              description={[
+                <div key="doc">
+                  웹은 처음에 문서를 보는 도구로 만들어졌다{' '}
+                  <ExternalLink
+                    href="https://www.ucw.cz/moe/isolate.1.html"
+                    label='웹의 변화 체감하기: "문서"의 예시'
+                  />
+                </div>,
+                '표준 없이 브라우저간 경쟁 상태에서 꽤 오랜 기간을 지나왔다',
+                '계속해서 새로운 기술이 등장하고 발전하고 있다',
+              ]}
+              asset={
+                <img
+                  className="max-h-full w-full"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_caSk12tsDJ8YDuzfnNHo6MIL5xv5Y0_HJw&s"
+                />
+              }
+            />
           ),
         },
         {
@@ -136,14 +151,14 @@ export const webBasicLecture = getLectureItem({
         {
           title: 'HTML이란?',
           content: (
-            <div className="flex flex-col gap-16">
-              <h2>Hyper Text Markup Language</h2>
-              <div className="flex gap-8">
-                <ul className="flex flex-col gap-6">
-                  <li>웹 문서의 구조를 정의하는 언어</li>
-                  <li>태그를 사용하여 문서의 구조를 정의</li>
-                  <li>태그는 속성을 가질 수 있음</li>
-                </ul>
+            <AssetDescriptionLayout
+              description={[
+                'Hyper Text Markup Language',
+                '웹 문서의 구조를 정의하는 언어',
+                '태그를 사용하여 문서의 구조를 정의',
+                '태그는 속성을 가질 수 있음',
+              ]}
+              asset={
                 <CodeSnippet
                   code={[
                     '<!DOCTYPE html>',
@@ -159,8 +174,8 @@ export const webBasicLecture = getLectureItem({
                   ]}
                   language="html"
                 />
-              </div>
-            </div>
+              }
+            />
           ),
         },
         {
@@ -250,13 +265,13 @@ export const webBasicLecture = getLectureItem({
         {
           title: 'CSS란?',
           content: (
-            <div className="flex flex-col gap-16">
-              <h2>Cascading Style Sheets</h2>
-              <div className="flex gap-8">
-                <ul className="flex flex-col gap-6">
-                  <li>웹 문서의 스타일을 정의하는 언어</li>
-                  <li>선택자와 속성을 통해 문서의 구조를 정의</li>
-                </ul>
+            <AssetDescriptionLayout
+              description={[
+                'Cascading Style Sheets',
+                '웹 문서의 스타일을 정의하는 언어',
+                '선택자와 속성을 통해 문서의 구조를 정의',
+              ]}
+              asset={
                 <CodeSnippet
                   code={[
                     '.title {',
@@ -271,8 +286,8 @@ export const webBasicLecture = getLectureItem({
                   ]}
                   language="css"
                 />
-              </div>
-            </div>
+              }
+            />
           ),
         },
         {
@@ -394,7 +409,7 @@ export const webBasicLecture = getLectureItem({
           title: 'JavaScript란?',
           content: (
             <div className="flex flex-col gap-16">
-              <h2>JavaScript (이름 잘못 지음)</h2>
+              <h2>[오피셜] 이름 잘못 지음</h2>
               <div className="grid grid-cols-2 gap-8">
                 <ul className="flex flex-col gap-6">
                   <li>웹 문서의 동적인 기능을 담당하는 언어</li>
@@ -418,22 +433,14 @@ export const webBasicLecture = getLectureItem({
           content: (
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col justify-center gap-8 leading-10">
-                <p>
-                  우리는 TypeScript로 시작할 거고, 그것도 React 에서 자주 쓰는
-                  TypeScript 문법에 익숙해져야 하는 것이기에 JavaScript를 너무
-                  깊게 보진 않겠습니다
-                </p>
+                <p>JavaScript 문법은 대부분 안다고 가정합니다.</p>
                 <p>
                   이미 JavaScript 를 할 줄 아시는 분들을 위해 조금 스포하자면,
                   <br />
                   <InlineCode code="for문" />
                   이나 <InlineCode code="let" />, <InlineCode code="function" />
-                  , <InlineCode code="this" /> 등 은 거의/아예 사용하지 않습니다
-                </p>
-                <p>
-                  물론 JavaScript를 잘 하는 것은 프론트엔드 개발자에게 너무나도
-                  중요하고 기본적인 소양입니다. 세미나 시간이 너무 짧아서
-                  이번에만 포기했을 뿐
+                  , <InlineCode code="this" />, <InlineCode code="class" /> 등
+                  은 거의/아예 사용하지 않습니다
                 </p>
               </div>
 
@@ -472,7 +479,7 @@ export const webBasicLecture = getLectureItem({
                 'JavaScript 에 정적 타입 검사 기능을 더한 Superset 언어',
                 '컴파일(트랜스파일) 시 JavaScript로 변환됨',
                 'JavaScript vs TypeScript 에서 이제는 TypeScript가 압승',
-                '오히려 처음 배우는 입장에서도, 뭘 할 수 있고 하면 안 되는지 더 빨리 알 수 있는 TypeScript가 더 유리',
+                '오히려 처음 배우는 입장에서도, 뭘 할 수 있고 하면 안 되는지 더 빨리 알 수 있는 TypeScript가 더 쉬운 언어이다',
               ]}
               asset={
                 <CodeSnippet
@@ -480,6 +487,13 @@ export const webBasicLecture = getLectureItem({
                   code={[
                     `const x = 1;`,
                     `const add = (a: number, b: number) => a + b;`,
+                    ``,
+                    `// 물론 얘도 나중 가면 이런 복잡한 타입을 쓸 수 있게 되지만, 세미나 수준에서는 이런 건 몰라도 됩니다`,
+                    `type ComplexType<T> = T extends Array<infer U>`,
+                    `  ? U extends { [K in keyof U]: U[K] extends (...args: any[]) => any ? U[K] : never }`,
+                    `    ? { [K in keyof U]: ReturnType<U[K]> }`,
+                    `    : never`,
+                    `  : never;`,
                   ]}
                 />
               }
@@ -490,7 +504,12 @@ export const webBasicLecture = getLectureItem({
           title: 'TypeScript와 JavaScript의 차이',
           content: (
             <AssetDescriptionLayout
-              description={['정적 타입 검사를 수행해 준다!']}
+              description={[
+                '정적 타입 검사를 수행해 준다!',
+                'IDE에 빨간 줄이 떠서 문제를 미리 파악할 수 있다!',
+                '자동완성이 더 쉽다!',
+                '코드량은 좀 늘어나긴 한다',
+              ]}
               asset={
                 <>
                   <CodeSnippet
