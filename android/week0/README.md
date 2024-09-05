@@ -97,7 +97,7 @@ fun main() {
 앞서 공부한 코틀린의 다양한 syntax sugar를 활용해서, 코드를 최대한 간결하게 작성해 보세요.
 
 # 제출 방법
-[seminar-2024 레포](https://github.com/wafflestudio/seminar-2024-android-assignment)를 fork 한 뒤, week0 폴더의 submit.md 파일에 
+[과제 전용 레포](https://github.com/wafflestudio/seminar-2024-android-assignment)를 fork 한 뒤, week0 폴더의 submit.md 파일에 
 1. 안드로이드 스튜디오 환경설정 스크린샷
 2. 코테 문제 전/후 코드
 3. 코틀린 기초 문법 2번 항목 읽으면서 자신이 알고 있는 언어와 어떤 점에서 비슷하고 뭐가 달랐는지, 난생 처음보는 문법이 있었다면 뭐가 있었는지 간략하게 정리 (3~4가지 정도)
