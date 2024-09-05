@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import { como0904Assignment } from '@/assignments/Como0904';
+import { como0911Assignment } from '@/assignments/Como0911';
 import { environmentSetupAssignment } from '@/assignments/EnvironmentSetup';
 import { makeGame1Assignment } from '@/assignments/MakeGame1/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
@@ -114,5 +115,6 @@ export const pages: (
   { path: '/environment-setup', ...environmentSetupAssignment },
   { path: '/tutorial', ...tutorialAssignment },
   { path: '/profile', ...profilePageAssignment },
+  { path: '/como-0911', ...como0911Assignment },
   { path: '/make-game-1', ...makeGame1Assignment },
 ];

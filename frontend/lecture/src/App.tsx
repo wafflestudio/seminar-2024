@@ -5,6 +5,7 @@ import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Separator } from '@/designsystem/ui/separator';
 import { Tabs, TabsList, TabsTrigger } from '@/designsystem/ui/tabs';
+import { Toaster } from '@/designsystem/ui/toaster';
 import { useToggleTheme } from '@/main';
 import { pages } from '@/pages';
 import { formatDate } from '@/utils/formatDate';
@@ -21,6 +22,7 @@ export const App = () => {
           ))}
         </Routes>
       </main>
+      <Toaster />
     </div>
   );
 };
