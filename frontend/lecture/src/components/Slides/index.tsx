@@ -26,6 +26,16 @@ export const Slides = ({
   });
 
   const slide = slides[page - 1];
+  const slideTitle = slide?.title;
+
+  useEffect(() => {
+    if (slideTitle === undefined) return;
+    const originalTitle = document.title;
+    document.title = `(${page}) ${slideTitle}`;
+    return () => {
+      document.title = originalTitle;
+    };
+  }, [slideTitle, page]);
 
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
