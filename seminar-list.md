@@ -36,7 +36,7 @@
 | 오하준 | ohajun@snu.ac.kr |         |         |         |
 | 신지원 | shinjigo221@snu.ac.kr |         |         |         |
 | 최은우 | soarhigh03@gmail.com |         |         |         |
-| 김창민 | akuxxr0422@gmail.com |         |         |         |
+| 김창민 | akuxxr0422@gmail.com | fastapi | spring | ios |
 | 김도향 | kimdohyang4@gmail.com |         |         |         |
 | 손유진 | qeugene2328@gamil.com |         |         |         |
 | 김채민 | brian2562@gmail.com |         |         |         |
