@@ -477,6 +477,7 @@ export const reactBasicLecture = getLectureItem({
             </div>
           ),
         },
+        { title: 'render 확인해보기', content: '라이브 코딩' },
         {
           title: 'hooks',
           content: (
