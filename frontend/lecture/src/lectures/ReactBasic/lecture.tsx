@@ -34,8 +34,16 @@ export const reactBasicLecture = getLectureItem({
             <div className="flex flex-col gap-4">
               <p>
                 브라우저는 이미 <InlineCode code="getElementById" /> 나{' '}
-                <InlineCode code="querySelector" /> 같은 DOM API를 제공
+                <InlineCode code="appendChild" /> 같은 DOM API를 제공
               </p>
+              <Callout title="Point">
+                이 점을 이해하는 게 매우 중요합니다. 리액트 역시 이{' '}
+                <InlineCode code="getElementById" /> 같은 걸 이쁘게 잘 감싸둔
+                코드 쪼가리일 뿐입니다.
+                <br />
+                단지 리액트가 강제하는 패러다임과 제공하는 유틸성 코드
+                쪼가리들을 활용해서 더 편하게 개발할 수 있을 뿐입니다.
+              </Callout>
               <p>
                 그런데, 얘들만으로 웹 어플리케이션을 만들기에는 무리가 있습니다.
               </p>
@@ -249,6 +257,12 @@ export const reactBasicLecture = getLectureItem({
                 <IncrementButton />
                 <IncrementButton />
               </div>
+              <Separator />
+              <img
+                src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_dom_tree.dark.png&w=1080&q=75"
+                alt="React Component Tree"
+                className="mx-auto mt-4 w-full max-w-2xl"
+              />
             </div>
           ),
         },
@@ -538,8 +552,8 @@ export const reactBasicLecture = getLectureItem({
                 <strong>상태가 변경되면 모두 날리고 다시 그린다</strong>고 했음
               </p>
               <p>
-                그러면 리액트를 만든 사람 입장에서, 최상단 컴포넌트의 상태가
-                바뀌면 모든 element 를 날리고 다시 만들어야 하나?
+                그러면 내가 리액트를 만들었다고 생각했을 때, 최상단 컴포넌트의
+                상태가 바뀌면 모든 element 를 날리고 다시 만들어야 하나?
               </p>
               <CodeSnippet
                 language="javascript"
