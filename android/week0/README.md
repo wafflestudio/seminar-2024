@@ -8,7 +8,7 @@
 
 # 과제 0-a. 안드로이드 스튜디오 설치하고 첫 앱 실행하기
 
-현재 공식 버전은 [Koala](https://developer.android.com/studio)입니다. 이걸 다운받으셔도 되고, 조금 더 최신 버전을 받고 싶으시다면 [Preview 버전(Jellyfish)](https://developer.android.com/studio/preview)를 다운받아 주세요.
+현재 공식 버전은 [Koala](https://developer.android.com/studio)입니다. 이걸 다운받으셔도 되고, 조금 더 최신 버전을 받고 싶으시다면 [Preview 버전(Ladybug)](https://developer.android.com/studio/preview)를 다운받아 주세요.
 
 ## 첫 프로젝트 만들기
 
