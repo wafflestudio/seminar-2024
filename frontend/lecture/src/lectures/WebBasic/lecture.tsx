@@ -31,7 +31,7 @@ export const webBasicLecture = getLectureItem({
                 <h2 className="mb-16 text-center">웹의 역사</h2>
                 <SlideContent
                   title="1969: 인터넷의 탄생"
-                  content="미국 vs 소련 냉전의 영향으로 정보를 더 빠르게 주고받기 위해 인터넷 발달"
+                  content="미국 vs 소련 냉전"
                 />
                 <SlideContent
                   title="1990: 웹의 시작"
@@ -65,16 +65,20 @@ export const webBasicLecture = getLectureItem({
                   content="하킴 와이 브라우저가 CSS를 제안, 웹 디자인 혁신"
                 />
                 <SlideContent
-                  title="1995-1999: JavaScript 개발"
+                  title="1995: JavaScript 등장"
                   content="넷스케이프에서 JavaScript 개발, 동적 웹 페이지 가능"
                 />
                 <SlideContent
-                  title="2000-2010: 웹 표준화"
-                  content="W3C 주도로 HTML, CSS, JS 표준화 진행"
+                  title="1996: JScript 등장"
+                  content="Microsoft에서 비슷하게 생긴 언어를 개발해서 IE에 탑재"
                 />
                 <SlideContent
-                  title="2010-현재: 모던 웹 기술"
-                  content="HTML5, CSS3, ES6+ 등 새로운 웹 기술 등장 및 발전"
+                  title="1999: ES3 | 2009: ES5 | 2015: ES6"
+                  content="JavaScript 표준화를 위한 여정"
+                />
+                <SlideContent
+                  title="2010-현재: 프론트엔드 프레임워크의 시대"
+                  content="Angular, React, Vue, Svelte 등"
                 />
               </div>
             </div>
@@ -109,18 +113,25 @@ export const webBasicLecture = getLectureItem({
           content: (
             <div className="flex flex-col items-center gap-12">
               <ul className="flex flex-col gap-12">
-                <li>자바스크립트의 이해할 수 없는 동작들 (baNaNa)</li>
+                <li>
+                  자바스크립트의 이해할 수 없는 동작들 (baNaNa) <br />
+                  <b className="text-base text-slate-500">급하게 만드느라..</b>
+                </li>
                 <li>
                   CSS의 <InlineCode code="float" />, HTML의{' '}
                   <InlineCode code="align" />, JS의 <InlineCode code="var" /> 등
                   <i className="font-semibold">이건 왜 있지?</i> 라는 생각이
                   드는 여러 구시대의 기능들
+                  <br />
+                  <b className="text-base text-slate-500">
+                    웹 특성상, 구식 기능에 대한 지원을 중단할 수 없다
+                  </b>
                 </li>
                 <li>
-                  기업도 기술도 뭔가 하나가 중심이 잡혀 있지 않은, 모든 구성원이
-                  참여하고 경쟁하고 발전시키는 생태계 <br />
+                  시대의 영향을 많이 받기에 계속해서 변화하고 경쟁하는 기술
+                  <br />
                   <b className="text-base text-slate-500">
-                    React, Svelte, Next.js, Remix, Web Component, WASM, ...
+                    React도 어느덧 10년 묵은 옛날 기술이 되었습니다
                   </b>
                 </li>
               </ul>
