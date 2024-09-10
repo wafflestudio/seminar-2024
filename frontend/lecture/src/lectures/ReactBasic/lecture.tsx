@@ -301,13 +301,15 @@ export const reactBasicLecture = getLectureItem({
                     language="tsx"
                     code={[
                       `// ❌`,
+                      `// 설명 편의를 위한 코드이고 애초에 JavaScript 에서 불가능하긴 한데,`,
+                      `// 아무튼 이런 식으로 접근하면 안 된다`,
                       `const Counter = () => {`,
                       `  const [count, setCount] = useState(0);`,
                       `  return (`,
                       `    <div>`,
                       `      <p>You clicked {count} times</p>`,
                       `      <button onClick={() => { count = count + 1; }}>`,
-                      `        Click me (잘못된 방법)`,
+                      `        Click me`,
                       `      </button>`,
                       `    </div>`,
                       `  );`,
@@ -324,8 +326,8 @@ export const reactBasicLecture = getLectureItem({
           content: (
             <div className="flex flex-col gap-4">
               <p>
-                상태 === 값을 저장하는 곳이라고 생각하기 쉬운데, React 의 상태는
-                그렇게 간단한 개념이 아닙니다
+                상태 === 값을 저장하는 곳이라고 생각하기 쉬운데, 잘 짜려면 -
+                React 의 상태는 고민이 많이 필요한 개념입니다
               </p>
               <p>
                 리액트 개발 경험을 기반으로, 정말 이 컴포넌트의{' '}
@@ -337,7 +339,7 @@ export const reactBasicLecture = getLectureItem({
               </p>
               <ExternalLink
                 href="https://velog.io/@woohm402/design-react-component-state"
-                label="제 블로그에 관련 좋은 글이 있습니다"
+                label="제 블로그에 관련 괜찮은 글이 있습니다"
               />
             </div>
           ),
