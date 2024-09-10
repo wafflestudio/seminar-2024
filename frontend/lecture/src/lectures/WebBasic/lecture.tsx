@@ -450,8 +450,16 @@ export const webBasicLecture = getLectureItem({
                   <br />
                   <InlineCode code="for문" />
                   이나 <InlineCode code="let" />, <InlineCode code="function" />
-                  , <InlineCode code="this" />, <InlineCode code="class" /> 등
-                  은 거의/아예 사용하지 않습니다
+                  , <InlineCode code="this" />, <InlineCode code="class" />,{' '}
+                  <InlineCode code="Array의 push()" />,{' '}
+                  <InlineCode code="new" /> 등 은 거의/아예 사용하지 않습니다
+                </p>
+                <p>
+                  <InlineCode code="Array의 map(), filter(), find()" />
+                  , <InlineCode code="const" />
+                  , <InlineCode code="() => {}" />, <InlineCode code="{}" />,{' '}
+                  <InlineCode code="[]" />
+                  엄청 많이 씁니다
                 </p>
               </div>
 
