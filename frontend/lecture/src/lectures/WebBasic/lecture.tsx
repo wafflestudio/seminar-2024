@@ -544,6 +544,10 @@ export const webBasicLecture = getLectureItem({
             />
           ),
         },
+        {
+          title: 'TypeScript와 JavaScript의 차이',
+          content: 'TypeScript 에서 자동완성 되는 거 라이브코딩',
+        },
       ]}
     />
   ),
