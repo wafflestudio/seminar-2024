@@ -49,19 +49,19 @@ export const reactApisLecture = getLectureItem({
               />
               <CodeSnippet
                 code={[`const [state, setState] = useState(0);`]}
-                language="typescript"
+                language="tsx"
               />
               <Separator />
               <div>초기값을 넣는 두가지 방법</div>
               <CodeSnippet
                 code={[`setCount(0);`, `setCount(() => 0);`]}
-                language="typescript"
+                language="tsx"
               />
               <Separator />
               <div>상태를 변경하는 두 가지 방법</div>
               <CodeSnippet
                 code={[`setCount(count + 1);`, `setCount((c) => c + 1);`]}
-                language="typescript"
+                language="tsx"
               />
             </div>
           ),
@@ -84,7 +84,7 @@ export const reactApisLecture = getLectureItem({
                     ``,
                     `return <button onClick={handleClick}>클릭</button>;`,
                   ]}
-                  language="typescript"
+                  language="tsx"
                 />
                 <CodeSnippet
                   code={[
@@ -98,7 +98,7 @@ export const reactApisLecture = getLectureItem({
                     ``,
                     `return <button onClick={handleClick}>클릭</button>;`,
                   ]}
-                  language="typescript"
+                  language="tsx"
                 />
               </div>
             </div>
@@ -127,7 +127,7 @@ export const reactApisLecture = getLectureItem({
                       `  setFullName(firstName + ' ' + lastName);`,
                       `};`,
                     ]}
-                    language="typescript"
+                    language="tsx"
                   />
                   <div>
                     🙅 불가능할 상태에 도달할 여지를 남기게 되고,
@@ -151,7 +151,7 @@ export const reactApisLecture = getLectureItem({
                       `  setLastName('Doe');`,
                       `};`,
                     ]}
-                    language="typescript"
+                    language="tsx"
                   />
                   <div>🙆 애초에 불가능한 상태가 생길 수 없음</div>
                 </div>
@@ -198,7 +198,7 @@ export const reactApisLecture = getLectureItem({
                   `  };`,
                   `}, [slideTitle, page]);`,
                 ]}
-                language="typescript"
+                language="tsx"
               />
               <div>
                 <InlineCode code="slideTitle" /> 은 리액트 내부,{' '}
@@ -221,7 +221,7 @@ export const reactApisLecture = getLectureItem({
               />
               <CodeSnippet
                 code={[`useEffect(콜백, 의존성 배열);`]}
-                language="typescript"
+                language="tsx"
               />
               <div>
                 콜백에서 사용하는 모든 reactive value 가 들어 있어야 한다
@@ -251,7 +251,7 @@ export const reactApisLecture = getLectureItem({
                   `  document.title = '안녕';`,
                   `}, [count]);`,
                 ]}
-                language="typescript"
+                language="tsx"
               />
               <div>
                 이런 <strong>더</strong> 잘못된 코드가 매우 많습니다
@@ -263,7 +263,7 @@ export const reactApisLecture = getLectureItem({
                   `  document.title = '안녕 ' + count;`,
                   `}, []);`,
                 ]}
-                language="typescript"
+                language="tsx"
               />
               <div>
                 사실 지금은 <InlineCode code="useEffect" />를 쓸 일이 그리 많진
@@ -313,7 +313,7 @@ export const reactApisLecture = getLectureItem({
                   `  };`,
                   `}, [incrementCount]);`,
                 ]}
-                language="typescript"
+                language="tsx"
               />
               <div>
                 <b>함수</b>라는 객체는 매 렌더마다 다시 생성되기 때문
@@ -355,7 +355,7 @@ export const reactApisLecture = getLectureItem({
                   `  };`,
                   `}, [incrementCount]);`,
                 ]}
-                language="typescript"
+                language="tsx"
               />
               <div>
                 그래야 주소값이 유지되어 이펙트가 다시 수행되지 않습니다
@@ -376,8 +376,131 @@ export const reactApisLecture = getLectureItem({
             </div>
           ),
         },
-        { title: 'Custom Hooks', content: <div></div> },
-        { title: 'Context API', content: <div></div> },
+        {
+          title: '',
+          content: (
+            <div>
+              여기까지는 없으면 개발 못하는 훅들
+              <br />
+              다음 슬라이드부터는 있으면 좀더 잘할 수 있는 기능들
+            </div>
+          ),
+        },
+        {
+          title: 'Custom Hooks',
+          content: (
+            <div>
+              <div>
+                훅을 쓰다 보면 리액트 로직을 마크업에서 분리하고 싶다는 욕심이
+                생긴다
+              </div>
+              <CodeSnippet
+                code={[
+                  `const [nicknames, setNicknames] = useState<string[]>([]);`,
+                  ``,
+                  `const addNickname = (nickname: string) => {`,
+                  `  setNicknames((n) => [...n, nickname]);`,
+                  `};`,
+                  ``,
+                  `const removeNickname = (nickname: string) => {`,
+                  `  setNicknames((n) => n.filter((nn) => nn !== nickname));`,
+                  `};`,
+                  ``,
+                  `return <button onClick={() => addNickname('hello')}>Add</button>;`,
+                ]}
+                language="tsx"
+              />
+              <div>
+                이렇게 <InlineCode code="use" />로 시작하는 함수 (훅) 를
+                만들어서 분리
+              </div>
+              <CodeSnippet
+                code={[
+                  `const useNicknames = () => {`,
+                  `  const [nicknames, setNicknames] = useState<string[]>([]);`,
+                  ``,
+                  `  const addNickname = (nickname: string) => {`,
+                  `    setNicknames((n) => [...n, nickname]);`,
+                  `  };`,
+                  ``,
+                  `  const removeNickname = (nickname: string) => {`,
+                  `    setNicknames((n) => n.filter((nn) => nn !== nickname));`,
+                  `  };`,
+                  ``,
+                  `  return { nicknames, addNickname, removeNickname };`,
+                  `};`,
+                ]}
+                language="tsx"
+              />
+              <div>그리고 이렇게 사용</div>
+              <CodeSnippet
+                code={[
+                  `const { addNickname } = useNicknames();`,
+                  ``,
+                  `return <button onClick={() => addNickname('hello')}>Add</button>;`,
+                ]}
+                language="tsx"
+              />
+              <Separator className="my-20" />
+              <div>
+                대표적인 예시: <InlineCode code="useOutsideClick" />
+              </div>
+              <CodeSnippet
+                code={[
+                  `const useOutsideClick = (ref: RefObject<HTMLElement>, callback: () => void) => {`,
+                  `  useEffect(() => {`,
+                  `    const handleClick = (event: MouseEvent) => {`,
+                  `      if (ref.current && !ref.current.contains(event.target as Node)) {`,
+                  `        callback();`,
+                  `      }`,
+                  `    };`,
+                  ``,
+                  `    document.addEventListener('mousedown', handleClick);`,
+                  ``,
+                  `    return () => {`,
+                  `      document.removeEventListener('mousedown', handleClick);`,
+                  `    };`,
+                  `  }, [ref, callback]);`,
+                  `};`,
+                ]}
+                language="tsx"
+              />
+            </div>
+          ),
+        },
+        {
+          title: 'Context API',
+          content: (
+            <div className="flex flex-col items-center justify-center gap-4">
+              <div>리액트의 컴포넌트 트리</div>
+              <div className="flex">
+                <img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_prop_drilling.dark.png&w=640&q=75" />
+                <img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_far.dark.png&w=640&q=75" />
+              </div>
+              <CodeSnippet
+                code={[
+                  `import { createContext } from 'react';`,
+                  ``,
+                  `const ThemeContext = createContext('light');`,
+                  ``,
+                  `const App = () => {`,
+                  `  return (`,
+                  `    <ThemeContext.Provider value="dark">`,
+                  `      <Header />`,
+                  `    </ThemeContext.Provider>`,
+                  `  );`,
+                  `};`,
+                  ``,
+                  `const Header = () => {`,
+                  `  const theme = useContext(ThemeContext);`,
+                  `  return <header style={{ backgroundColor: theme === 'dark' ? 'black' : 'white' }}>Header</header>;`,
+                  `};`,
+                ]}
+                language="tsx"
+              />
+            </div>
+          ),
+        },
       ]}
     />
   ),

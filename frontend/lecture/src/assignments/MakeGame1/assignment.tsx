@@ -170,10 +170,13 @@ export const makeGame1Assignment = getAssignmentItem({
           <Fragment key="0">
             <ExternalLink href="https://play2048.co/" /> 를 클론코딩해옵니다.
           </Fragment>,
-          '오른쪽 사진에 있는 ui는 필수입니다.',
+          '규칙을 잘 모르신다면 몇 판 해 보시면 바로 아실 거예요',
+          '오른쪽 사진처럼, 4x4 게임판이 있어야 합니다.',
           '아직 CSS 안 배웠으니 스타일은 못생겨도 됩니다.',
-          '방향키로 조작 가능해야 하고, 128을 만들었으면 게임이 끝납니다.',
-          '그리고 아래 기능들 중 하나 이상을 골라서 추가 구현해 주세요.',
+          '방향키로 조작 가능해야 합니다.',
+          '2048 대신, 128을 만들었으면 게임이 끝나게 해 주세요.',
+          '게임이 끝났을 때 ui는 적당하게 구현해주세요.',
+          '그리고 아래 기능들 중 하나 이상을 추가 구현해 주세요.',
           <ul key="1" className="flex list-disc flex-col gap-2 pl-6">
             <li>
               새로고침 시 게임판 유지 <Badge>난이도 하</Badge>
