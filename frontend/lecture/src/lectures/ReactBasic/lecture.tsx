@@ -356,6 +356,13 @@ export const reactBasicLecture = getLectureItem({
                   `return <div className="App" style={{ color: 'blue' }}>Hello, world!</div>;`,
                 ]}
               />
+              <p>실제 HTML이었다면 이것과 비슷한 코드</p>
+              <CodeSnippet
+                language="tsx"
+                code={[
+                  `<div class="App" style="color: blue;">Hello, world!</div>;`,
+                ]}
+              />
               <Separator />
               <div>
                 하지만 묘하게 다른데, 가령
@@ -370,6 +377,10 @@ export const reactBasicLecture = getLectureItem({
                   </li>
                   <li>
                     <InlineCode code="style" />에 객체를 넣음
+                  </li>
+                  <li>
+                    규칙이 좀더 strict하다 (<InlineCode code="<br>" /> 이런 거
+                    불가능)
                   </li>
                 </ul>
               </div>
