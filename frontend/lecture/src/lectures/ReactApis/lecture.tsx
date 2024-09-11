@@ -119,12 +119,12 @@ export const reactApisLecture = getLectureItem({
                       ``,
                       `const handleFirstNameChange = (e) => {`,
                       `  setFirstName(e.target.value);`,
-                      `  setFullName(firstName + ' ' + lastName);`,
+                      `  setFullName(e.target.value + ' ' + lastName);`,
                       `};`,
                       ``,
                       `const handleLastNameChange = (e) => {`,
-                      `  setLastName('Doe');`,
-                      `  setFullName(firstName + ' ' + lastName);`,
+                      `  setLastName(e.target.value);`,
+                      `  setFullName(firstName + ' ' + e.target.value);`,
                       `};`,
                     ]}
                     language="tsx"
@@ -141,6 +141,7 @@ export const reactApisLecture = getLectureItem({
                     code={[
                       `const [firstName, setFirstName] = useState('');`,
                       `const [lastName, setLastName] = useState('');`,
+                      ``,
                       `const fullName = firstName + ' ' + lastName;`,
                       ``,
                       `const handleFirstNameChange = (e) => {`,
@@ -148,7 +149,7 @@ export const reactApisLecture = getLectureItem({
                       `};`,
                       ``,
                       `const handleLastNameChange = (e) => {`,
-                      `  setLastName('Doe');`,
+                      `  setLastName(e.target.value);`,
                       `};`,
                     ]}
                     language="tsx"
