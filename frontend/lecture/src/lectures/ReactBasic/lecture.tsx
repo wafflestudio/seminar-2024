@@ -580,6 +580,7 @@ export const reactBasicLecture = getLectureItem({
                 <li>메모리에만 존재하므로 실제 DOM보다 빠르게 조작 가능</li>
                 <li>변경사항을 일괄 처리하여 실제 DOM에 한 번에 적용</li>
               </ul>
+              <img src="https://media.licdn.com/dms/image/D5612AQHrTcE_Vu_qjQ/article-cover_image-shrink_600_2000/0/1694674429966?e=2147483647&v=beta&t=veXPTTqusbyai02Fix6ZscKdywGztVxSlShgv9Uab1U" />
               <Separator />
               <p>흔한 오해: Virtual DOM을 이용하면 성능이 높다</p>
               <p>
