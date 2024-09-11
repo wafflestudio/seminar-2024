@@ -38,8 +38,8 @@ export const webBasicLecture = getLectureItem({
                   content="팀 버너스리가 WWW를 개발하며 첫 웹 브라우저가 출시"
                 />
                 <SlideContent
-                  title="1995: 닷컴 붐과 버블"
-                  content="인터넷 기업의 급성장, e-commerce 시작"
+                  title="1995-2000: 닷컴 버블"
+                  content="인터넷 기업의 급성장과 붕괴"
                 />
                 <SlideContent
                   title="2000: 웹 2.0 시대"
@@ -57,12 +57,8 @@ export const webBasicLecture = getLectureItem({
               <div>
                 <h2 className="mb-16 text-center">HTML, CSS, JS의 역사</h2>
                 <SlideContent
-                  title="1989: HTML 탄생"
+                  title="1991: HTML 탄생"
                   content="팀 버너스리가 HTML을 개발하여 웹 문서 구조화"
-                />
-                <SlideContent
-                  title="1994: CSS 등장"
-                  content="하킴 와이 브라우저가 CSS를 제안, 웹 디자인 혁신"
                 />
                 <SlideContent
                   title="1995: JavaScript 등장"
@@ -73,12 +69,16 @@ export const webBasicLecture = getLectureItem({
                   content="Microsoft에서 비슷하게 생긴 언어를 개발해서 IE에 탑재"
                 />
                 <SlideContent
+                  title="1996: CSS 등장"
+                  content="스타일을 더 편하게 작성하기 위해 CSS가 탄생"
+                />
+                <SlideContent
                   title="1999: ES3 | 2009: ES5 | 2015: ES6"
-                  content="JavaScript 표준화를 위한 여정"
+                  content="JavaScript 표준화를 향한 여정"
                 />
                 <SlideContent
                   title="2010-현재: 프론트엔드 프레임워크의 시대"
-                  content="Angular, React, Vue, Svelte 등"
+                  content="Angular, React, Vue, Svelte, Next, Nuxt 등"
                 />
               </div>
             </div>
@@ -135,7 +135,7 @@ export const webBasicLecture = getLectureItem({
                   </b>
                 </li>
               </ul>
-              <h2>덕지덕지</h2>
+              <h2>덕지덕지 뭐가 되게 많음</h2>
             </div>
           ),
         },
