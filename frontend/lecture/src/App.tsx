@@ -53,7 +53,12 @@ const Sidebar = () => {
         <ul className="mt-4 flex flex-col gap-4">
           {pages.flatMap((page) =>
             tab === 'assignment' && page.type === 'assignment' ? (
-              <li key={page.path}>
+              <li
+                key={page.path}
+                className={
+                  Date.now() > page.due.getTime() ? 'opacity-50' : undefined
+                }
+              >
                 <Link
                   to={page.path}
                   className={`flex flex-col gap-1 rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800 ${
@@ -73,7 +78,12 @@ const Sidebar = () => {
                 </Link>
               </li>
             ) : tab === 'lecture' && page.type === 'lecture' ? (
-              <li key={page.path}>
+              <li
+                key={page.path}
+                className={
+                  Date.now() > page.date.getTime() ? 'opacity-50' : undefined
+                }
+              >
                 <Link
                   to={page.path}
                   className={`flex flex-col gap-1 rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800 ${

@@ -250,7 +250,7 @@ const Browser = () => {
 export const environmentLecture = getLectureItem({
   title: '개발환경 세팅',
   description: 'IDE, eslint, prettier, ci',
-  date: new Date('2024-09-04'),
+  date: new Date('2024-09-04 20:30:00'),
   element: (
     <Slides
       slides={[
