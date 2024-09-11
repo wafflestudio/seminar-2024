@@ -341,6 +341,7 @@ export const reactBasicLecture = getLectureItem({
                 href="https://velog.io/@woohm402/design-react-component-state"
                 label="제 블로그에 관련 괜찮은 글이 있습니다"
               />
+              <p>다음 챕터에서 좀더 자세히</p>
             </div>
           ),
         },
@@ -474,26 +475,100 @@ export const reactBasicLecture = getLectureItem({
                   `};`,
                 ]}
               />
+              <Separator />
               <p>리렌더링이 발생하는 경우:</p>
               <ul className="list-disc pl-6">
                 <li>상태(state)가 변경될 때</li>
                 <li>부모 컴포넌트가 리렌더링될 때</li>
                 <li>context로 구독한 값이 변경될 때</li>
               </ul>
+              <Separator />
               <div className="mb-4 border-l-4 border-yellow-500 bg-yellow-100 p-4 text-base text-yellow-700">
                 <p className="font-bold">주의:</p>
-                <p>
-                  리렌더링이 발생한다고 해서 항상 DOM이 업데이트되는 것은 아님
-                </p>
-                <p>
-                  리액트는 Virtual DOM을 사용하여 실제로 변경된 부분만 실제
-                  DOM에 반영
-                </p>
+                <p>브라우저의 render 와는 다름</p>
               </div>
+              <Separator />
+              <p>렌더의 너무 당연한 특징</p>
+              <ul className="list-disc pl-6">
+                <li>렌더되는 동안 값이 고정된다</li>
+              </ul>
             </div>
           ),
         },
-        { title: 'render 확인해보기', content: '라이브 코딩' },
+        {
+          title: 'render는 잘 이해하고 넘어가야 합니다',
+          content: (
+            <div className="flex flex-col gap-4">
+              <p>예제 1</p>
+
+              <CodeSnippet
+                language="tsx"
+                code={[
+                  `// 퀴즈: 리렌더가 세 번 되었다면,`,
+                  `// { name: '우현민' } 이라는 코드로 정의된 객체는 몇 번 생성되었을까?`,
+                  ``,
+                  `const Welcome = () => {`,
+                  `  const [count, setCount] = useState(0);`,
+                  ``,
+                  `  const me = { name: '우현민' };`,
+                  ``,
+                  `  return (`,
+                  `    <div onClick={() => setCount(count + 1)}>`,
+                  `      <h1>{count} {me.name}</h1>`,
+                  `    </div>`,
+                  `  );`,
+                  `};`,
+                ]}
+              />
+
+              <p>예제 2</p>
+              <CodeSnippet
+                language="tsx"
+                code={[
+                  `const Welcome = () => {`,
+                  `  const [count, setCount] = useState(0);`,
+                  ``,
+                  `  const handleClick = () => {`,
+                  `    setCount(count + 1);`,
+                  `    console.log(count); // 뭐가 출력될까?`,
+                  `  };`,
+                  ``,
+                  `  return (`,
+                  `    <div onClick={handleClick}>`,
+                  `      <h1>{count}</h1>`,
+                  `    </div>`,
+                  `  );`,
+                  `};`,
+                ]}
+              />
+
+              <p>예제 3</p>
+              <CodeSnippet
+                language="tsx"
+                code={[
+                  `const Welcome = () => {`,
+                  `  const [state, setState] = useState({ count: 0 });`,
+                  ``,
+                  `  const handleClick = () => {`,
+                  `    setState({ count: count + 1 });`,
+                  `    console.log(state); // 뭐가 출력될까?`,
+                  `  };`,
+                  ``,
+                  `  return (`,
+                  `    <div onClick={handleClick}>`,
+                  `      <h1>{count}</h1>`,
+                  `    </div>`,
+                  `  );`,
+                  `};`,
+                ]}
+              />
+            </div>
+          ),
+        },
+        {
+          title: 'render 확인해보기',
+          content: '라이브 코딩 w/ 리액트 개발자도구',
+        },
         {
           title: 'hooks',
           content: (
