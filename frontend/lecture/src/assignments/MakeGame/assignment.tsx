@@ -159,8 +159,8 @@ const CopyButton = () => {
   );
 };
 
-export const makeGame1Assignment = getAssignmentItem({
-  title: '2048 클론코딩 (1)',
+export const makeGameAssignment = getAssignmentItem({
+  title: '2048 클론코딩',
   due: new Date('2024-09-24 23:59:59'),
   element: (
     <div className="flex h-full items-center justify-center">

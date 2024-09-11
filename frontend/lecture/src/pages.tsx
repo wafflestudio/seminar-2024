@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { getComoAssignment } from '@/assignments/Como';
 import { environmentSetupAssignment } from '@/assignments/EnvironmentSetup';
-import { makeGame1Assignment } from '@/assignments/MakeGame1/assignment';
+import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { tutorialAssignment } from '@/assignments/Tutorial';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -43,7 +43,7 @@ export const pages: (
     type: 'lecture',
     title: '비동기',
     description: 'callback, Promise, event loop',
-    date: new Date('2024-09-25'),
+    date: new Date('2024-09-25 20:30:00'),
     path: '/async',
     element: <div>TBD</div>,
   },
@@ -51,7 +51,7 @@ export const pages: (
     type: 'lecture',
     title: 'TypeScript',
     description: 'type과 interface, generic',
-    date: new Date('2024-10-02'),
+    date: new Date('2024-10-02 20:30:00'),
     path: '/typescript',
     element: <div>TBD</div>,
   },
@@ -59,7 +59,7 @@ export const pages: (
     type: 'lecture',
     title: '스타일링',
     description: 'inline style, css-in-js, css modules, atomic css',
-    date: new Date('2024-10-02'),
+    date: new Date('2024-10-02 20:30:00'),
     path: '/styling',
     element: <div>TBD</div>,
   },
@@ -67,7 +67,7 @@ export const pages: (
     type: 'lecture',
     title: '클린 코드와 아키텍처',
     description: 'DRY, SRP, DI',
-    date: new Date('2024-10-16'),
+    date: new Date('2024-10-16 20:30:00'),
     path: '/architecture',
     element: <div>TBD</div>,
   },
@@ -75,7 +75,7 @@ export const pages: (
     type: 'lecture',
     title: '상태 관리',
     description: 'Redux, React Query',
-    date: new Date('2024-10-16'),
+    date: new Date('2024-10-16 20:30:00'),
     path: '/state-management',
     element: <div>TBD</div>,
   },
@@ -83,7 +83,7 @@ export const pages: (
     type: 'lecture',
     title: '성능과 SSR',
     description: 'Next.js',
-    date: new Date('2024-11-06'),
+    date: new Date('2024-11-06 20:30:00'),
     path: '/SSR',
     element: <div>TBD</div>,
   },
@@ -91,7 +91,7 @@ export const pages: (
     type: 'lecture',
     title: '프론트엔드 인프라',
     description: '',
-    date: new Date('2024-11-06'),
+    date: new Date('2024-11-06 20:30:00'),
     path: '/infrastructure',
     element: <div>TBD</div>,
   },
@@ -99,7 +99,7 @@ export const pages: (
     type: 'lecture',
     title: '생태계',
     description: 'Next.js',
-    date: new Date('2024-11-20'),
+    date: new Date('2024-11-20 20:30:00'),
     path: '/meta-framework',
     element: <div>TBD</div>,
   },
@@ -107,7 +107,7 @@ export const pages: (
     type: 'lecture',
     title: '마무리',
     description: '',
-    date: new Date('2024-11-20'),
+    date: new Date('2024-11-20 20:30:00'),
     path: '/end',
     element: <div>TBD</div>,
   },
@@ -122,7 +122,7 @@ export const pages: (
     path: '/como-1',
     ...getComoAssignment({ seminar: 1, due: new Date('2024-09-24 23:59:59') }),
   },
-  { path: '/make-game-1', ...makeGame1Assignment },
+  { path: '/make-game', ...makeGameAssignment },
   {
     path: '/como-2',
     ...getComoAssignment({ seminar: 2, due: new Date('2024-10-01 23:59:59') }),

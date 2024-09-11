@@ -24,7 +24,7 @@ const IncrementButton = () => {
 export const reactBasicLecture = getLectureItem({
   title: '리액트 기본',
   description: 'JSX, state, props, hooks, Virtual DOM',
-  date: new Date('2024-09-11'),
+  date: new Date('2024-09-11 20:30:00'),
   element: (
     <Slides
       slides={[

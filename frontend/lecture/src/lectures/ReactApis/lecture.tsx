@@ -12,7 +12,7 @@ export const reactApisLecture = getLectureItem({
   title: '리액트 기능들',
   description:
     'Context API, useState, useEffect, useMemo, memo, useCallback, Custom Hooks',
-  date: new Date('2024-09-11'),
+  date: new Date('2024-09-11 20:30:00'),
   element: (
     <Slides
       slides={[

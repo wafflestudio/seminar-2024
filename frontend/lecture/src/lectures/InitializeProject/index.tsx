@@ -12,7 +12,7 @@ import templateRepositoryPng from './template-repository.png';
 export const initializeProjectLecture = getLectureItem({
   title: '프로젝트 생성하기',
   description: '프로젝트 생성 후 코드 둘러보기',
-  date: new Date('2024-09-04'),
+  date: new Date('2024-09-04 20:30:00'),
   element: (
     <Slides
       slides={[

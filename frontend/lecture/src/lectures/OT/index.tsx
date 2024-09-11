@@ -18,7 +18,7 @@ import { getLectureItem } from '@/lectures';
 export const otLecture = getLectureItem({
   title: 'OT',
   description: '세미나 목표, 방식, 과제, 평가',
-  date: new Date('2024-09-04'),
+  date: new Date('2024-09-04 20:30:00'),
   element: (
     <Slides
       slides={[

@@ -19,7 +19,7 @@ import { getLectureItem } from '@/lectures';
 export const webBasicLecture = getLectureItem({
   title: '웹 기초',
   description: '웹의 역사, html, css, js의 역할과 동작, typescript의 필요성',
-  date: new Date('2024-09-11'),
+  date: new Date('2024-09-11 20:30:00'),
   element: (
     <Slides
       slides={[
