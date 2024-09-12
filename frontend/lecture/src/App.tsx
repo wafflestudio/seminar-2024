@@ -45,7 +45,7 @@ const Sidebar = () => {
   const currentPath = useLocation().pathname;
 
   return (
-    <div className="relative">
+    <div className="relative flex">
       <div
         className={cn(
           'flex flex-col overflow-hidden py-4 bg-blend-darken',

@@ -6,6 +6,7 @@ import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { tutorialAssignment } from '@/assignments/Tutorial';
 import { ExternalLink } from '@/components/ExternalLink';
+import { apiCallLecture } from '@/lectures/ApiCall/lecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { environmentLecture } from '@/lectures/Environment';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
@@ -41,6 +42,7 @@ export const pages: (
   { path: '/react-basic', ...reactBasicLecture },
   { path: '/react-apis', ...reactApisLecture },
   { path: '/async', ...asyncLecture },
+  { path: '/api-call', ...apiCallLecture },
   {
     type: 'lecture',
     title: 'TypeScript',
