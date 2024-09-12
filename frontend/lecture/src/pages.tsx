@@ -6,6 +6,7 @@ import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { tutorialAssignment } from '@/assignments/Tutorial';
 import { ExternalLink } from '@/components/ExternalLink';
+import { asyncLecture } from '@/lectures/Async/lecture';
 import { environmentLecture } from '@/lectures/Environment';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
 import { otLecture } from '@/lectures/OT';
@@ -39,14 +40,7 @@ export const pages: (
   { path: '/web-html-css-js-ts', ...webBasicLecture },
   { path: '/react-basic', ...reactBasicLecture },
   { path: '/react-apis', ...reactApisLecture },
-  {
-    type: 'lecture',
-    title: '비동기',
-    description: 'callback, Promise, event loop',
-    date: new Date('2024-09-25 20:30:00'),
-    path: '/async',
-    element: <div>TBD</div>,
-  },
+  { path: '/async', ...asyncLecture },
   {
     type: 'lecture',
     title: 'TypeScript',
