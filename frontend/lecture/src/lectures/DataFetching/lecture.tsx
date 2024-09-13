@@ -121,7 +121,7 @@ export const dataFetchingLecture = getLectureItem({
           title: 'API 요청/응답 스펙 예시 (2) SNUTT',
           content: (
             <div>
-              <ExternalLink href="https://snu4t-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/" />
+              <ExternalLink href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/" />
               <img src={snuttExample} />
             </div>
           ),
