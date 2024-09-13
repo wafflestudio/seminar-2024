@@ -1,18 +1,21 @@
 import { ReactNode } from 'react';
 
 import { getComoAssignment } from '@/assignments/Como';
+import { dataFetchingPracticeAssignment } from '@/assignments/DataFetchingPractice';
 import { environmentSetupAssignment } from '@/assignments/EnvironmentSetup';
 import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { tutorialAssignment } from '@/assignments/Tutorial';
 import { ExternalLink } from '@/components/ExternalLink';
-import { apiCallLecture } from '@/lectures/ApiCall/lecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
+import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
 import { environmentLecture } from '@/lectures/Environment';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
 import { otLecture } from '@/lectures/OT';
 import { reactApisLecture } from '@/lectures/ReactApis/lecture';
 import { reactBasicLecture } from '@/lectures/ReactBasic/lecture';
+import { stylingLecture } from '@/lectures/Styling';
+import { typescriptLecture } from '@/lectures/TypeScript';
 import { webBasicLecture } from '@/lectures/WebBasic/lecture';
 import { Home } from '@/pages/home';
 
@@ -42,23 +45,9 @@ export const pages: (
   { path: '/react-basic', ...reactBasicLecture },
   { path: '/react-apis', ...reactApisLecture },
   { path: '/async', ...asyncLecture },
-  { path: '/api-call', ...apiCallLecture },
-  {
-    type: 'lecture',
-    title: 'TypeScript',
-    description: 'type과 interface, generic',
-    date: new Date('2024-10-02 20:30:00'),
-    path: '/typescript',
-    element: <div>TBD</div>,
-  },
-  {
-    type: 'lecture',
-    title: '스타일링',
-    description: 'inline style, css-in-js, css modules, atomic css',
-    date: new Date('2024-10-02 20:30:00'),
-    path: '/styling',
-    element: <div>TBD</div>,
-  },
+  { path: '/api-call', ...dataFetchingLecture },
+  { path: '/typescript', ...typescriptLecture },
+  { path: '/styling', ...stylingLecture },
   {
     type: 'lecture',
     title: '클린 코드와 아키텍처',
@@ -123,18 +112,7 @@ export const pages: (
     path: '/como-2',
     ...getComoAssignment({ seminar: 2, due: new Date('2024-10-01 23:59:59') }),
   },
-  {
-    path: '/async-practice',
-    type: 'assignment',
-    due: new Date('2024-10-02 23:59:59'),
-    element: (
-      <div>
-        JSON Placeholder 를 이용해서 투두 목록과 상세를 보여주는 (조회 only)
-        서비스 구현. 투두페이지 | 상세페이지
-      </div>
-    ),
-    title: '비동기 연습',
-  },
+  { path: '/data-fetching-practice', ...dataFetchingPracticeAssignment },
   {
     path: '/como-3',
     ...getComoAssignment({ seminar: 3, due: new Date('2024-10-15 23:59:59') }),

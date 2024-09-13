@@ -1,6 +1,7 @@
 import { Callout } from '@/components/Callout';
 import { CodeSnippet } from '@/components/CodeSnippet';
 import { Description } from '@/components/Description';
+import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
 import { Slides } from '@/components/Slides';
@@ -159,8 +160,11 @@ export const asyncLecture = getLectureItem({
           content: (
             <div className="flex flex-col items-center gap-4">
               <p>
-                솔직히 JavaScript 진짜 이상하지만 비동기쪽은 정말 잘 만들어져
+                JavaScript 진짜 이상한 언어지만 비동기쪽은 정말 잘 만들어져
                 있습니다
+              </p>
+              <p>
+                개발자가 process 나 thread 를 신경쓰지 않고 비동기를 구현합니다
               </p>
               <CodeSnippet
                 language="javascript"
@@ -487,7 +491,34 @@ export const asyncLecture = getLectureItem({
         },
         {
           title: 'JavaScript는 어떻게 싱글 스레드로 비동기를 처리할까?',
-          content: <div>TBD</div>,
+          content: (
+            <div className="flex flex-col gap-8">
+              <p>
+                JavaScript 는 기계어로 컴파일되는 게 아닌, 런타임이 실행해주는
+                언어
+              </p>
+              <p>런타임이 이런 느낌으로 돌린다 (이벤트 루프)</p>
+              <CodeSnippet
+                code={[
+                  `while (queue.waitForMessage()) {`,
+                  `  queue.processNextMessage();`,
+                  `}`,
+                ]}
+                language="javascript"
+              />
+              <p>
+                자바스크립트 런타임이 계속 돌면서, 큐에 할 일이 있다면 실행한다
+              </p>
+              <div>
+                <InlineCode code="Promise" />, <InlineCode code="setTimeout" />{' '}
+                등은 큐에 할 일을 넣는다
+              </div>
+              <ExternalLink
+                href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/#why-this-happens"
+                label="지금까지 본 글 중에 제일 좋은 설명. 같이 조금만 읽어봅시다"
+              />
+            </div>
+          ),
         },
       ]}
     />
