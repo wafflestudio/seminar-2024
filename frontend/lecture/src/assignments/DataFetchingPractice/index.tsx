@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/designsystem/ui/card';
-import { Separator } from '@/designsystem/ui/separator';
 
 const Design = () => {
   return (
