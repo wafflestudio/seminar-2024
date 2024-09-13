@@ -27,74 +27,8 @@
 
 ## 세미나
 
-<br>
-
-### 세미나 시간 및 세미나장
-| 세미나            | 요일   | 시간        | 세미나장 |
-| :--------------- | ----- | :---------- | ----- |
-| Android   |  |  |  |
-| FastAPI   |  |  |  | 
-| iOS      |  |  |  | 
-| Frontend  |  |  |  |
-| Spring    |  |  |  |
-
-<br>
-
-### 세미나 진행상황
-- 각 세미나의 일정과 과제, 이전 자료 등을 확인할 수 있습니다
-
-<br>
-
-
-<details>
-<summary>Android</summary>
-<br>
-
-[수업 일정 및 자료](./android/README.md#수업-일정-및-자료)
-
-<br>
-</details>
-
----
-
-<details>
-<summary>FastAPI</summary>
-<br>
-  
-[수업 일정 및 자료](./fastapi/README.md#수업-일정-및-자료)
-
-<br>
-</details>
-
----
-
-<details>
-<summary>iOS</summary>
-<br>
-
-[수업 일정 및 자료](./ios/README.md#수업-일정-및-자료)
-
-<br>
-</details>
-
----
-
-<details>
-<summary>Frontend</summary>
-<br>
-
-[수업 일정 및 자료](./frontend/README.md#수업-일정-및-자료)
-
-<br>
-</details>
-
----
-
-<details>
-<summary>Spring</summary>
-<br>
-
-[수업 일정 및 자료](./spring/README.md#수업-일정-및-자료)
-
-<br>
-</details>
+- [android](./android/README.md)
+- [fastapi](./fastapi/README.md)
+- [frontend](./frontend/README.md)
+- [ios](./ios/README.md)
+- [spring](./spring/README.md)
