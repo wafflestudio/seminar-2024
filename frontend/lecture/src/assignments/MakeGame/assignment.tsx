@@ -112,7 +112,7 @@ const logic = [
   ``,
   `  return {`,
   `    result: resultRow,`,
-  `    isMoved: row.some((cell, i) => cell !== result[i]),`,
+  `    isMoved: row.some((cell, i) => cell !== resultRow[i]),`,
   `  };`,
   `};`,
   ``,
