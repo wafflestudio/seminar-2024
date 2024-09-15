@@ -7,6 +7,7 @@ import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { tutorialAssignment } from '@/assignments/Tutorial';
 import { ExternalLink } from '@/components/ExternalLink';
+import { architectureLecture } from '@/lectures/Architecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
 import { environmentLecture } from '@/lectures/Environment';
@@ -48,14 +49,7 @@ export const pages: (
   { path: '/api-call', ...dataFetchingLecture },
   { path: '/typescript', ...typescriptLecture },
   { path: '/styling', ...stylingLecture },
-  {
-    type: 'lecture',
-    title: '클린 코드와 아키텍처',
-    description: 'DRY, SRP, DI',
-    date: new Date('2024-10-16 20:30:00'),
-    path: '/architecture',
-    element: <div>TBD</div>,
-  },
+  { path: '/architecture', ...architectureLecture },
   {
     type: 'lecture',
     title: '상태 관리',
