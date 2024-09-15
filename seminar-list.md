@@ -65,7 +65,7 @@
 | 문재영 | 1234aiden@naver.com |         |         |         |
 | 김동규 | kimdk0824@naver.com |         |         |         |
 | 허태윤 | hty050216@gmail.com |         |         |         |
-| 이권재 | gwonjae@icloud.com |         |         |         |
+| 이권재 | gwonjae@icloud.com | fastapi | spring | iOS |
 | 김재민 | odumag99@snu.ac.kr |         |         |         |
 | 임우찬 | woochan226544@snu.ac.kr |         |         |         |
 | 박정현 | junghyunpark2001@naver.com |         |         |         |
