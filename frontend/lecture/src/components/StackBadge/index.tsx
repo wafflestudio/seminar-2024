@@ -17,7 +17,12 @@ export const StackBadge = ({
     | 'CSS'
     | 'styled-components'
     | 'emotion'
-    | 'Tailwind CSS';
+    | 'Tailwind CSS'
+    | 'S3'
+    | 'CloudFront'
+    | 'Route 53'
+    | 'Azure'
+    | 'Google Cloud';
 }) => {
   const image = {
     Zustand:
@@ -43,6 +48,14 @@ export const StackBadge = ({
     emotion: 'https://avatars.githubusercontent.com/u/31557565?s=200&v=4',
     'Tailwind CSS':
       'https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png',
+    S3: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png',
+    CloudFront: 'https://cdn.worldvectorlogo.com/logos/aws-cloudfront.svg',
+    Azure:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2048px-Microsoft_Azure.svg.png',
+    'Google Cloud':
+      'https://static-00.iconduck.com/assets.00/google-cloud-icon-2048x1646-7admxejz.png',
+    'Route 53':
+      'https://static-00.iconduck.com/assets.00/aws-route53-icon-212x256-16an9num.png',
   }[stack];
 
   return (
