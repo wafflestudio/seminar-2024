@@ -11,10 +11,13 @@ import { architectureLecture } from '@/lectures/Architecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
 import { environmentLecture } from '@/lectures/Environment';
+import { infrastructureLecture } from '@/lectures/Infrastructure';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
 import { otLecture } from '@/lectures/OT';
+import { performanceLecture } from '@/lectures/Performance';
 import { reactApisLecture } from '@/lectures/ReactApis/lecture';
 import { reactBasicLecture } from '@/lectures/ReactBasic/lecture';
+import { stateManagementLecture } from '@/lectures/StateManagement';
 import { stylingLecture } from '@/lectures/Styling';
 import { typescriptLecture } from '@/lectures/TypeScript';
 import { webBasicLecture } from '@/lectures/WebBasic/lecture';
@@ -50,30 +53,9 @@ export const pages: (
   { path: '/typescript', ...typescriptLecture },
   { path: '/styling', ...stylingLecture },
   { path: '/architecture', ...architectureLecture },
-  {
-    type: 'lecture',
-    title: '상태 관리',
-    description: 'Redux, React Query',
-    date: new Date('2024-10-16 20:30:00'),
-    path: '/state-management',
-    element: <div>TBD</div>,
-  },
-  {
-    type: 'lecture',
-    title: '성능과 SSR',
-    description: 'Next.js',
-    date: new Date('2024-11-06 20:30:00'),
-    path: '/SSR',
-    element: <div>TBD</div>,
-  },
-  {
-    type: 'lecture',
-    title: '프론트엔드 인프라',
-    description: '',
-    date: new Date('2024-11-06 20:30:00'),
-    path: '/infrastructure',
-    element: <div>TBD</div>,
-  },
+  { path: '/state-management', ...stateManagementLecture },
+  { path: '/performance', ...performanceLecture },
+  { path: '/infrastructure', ...infrastructureLecture },
   {
     type: 'lecture',
     title: '생태계',
