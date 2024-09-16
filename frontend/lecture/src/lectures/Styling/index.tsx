@@ -4,6 +4,7 @@ import { CodeSnippet } from '@/components/CodeSnippet';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { Slides } from '@/components/Slides';
+import { StackBadge } from '@/components/StackBadge';
 import { getLectureItem } from '@/lectures';
 
 import cssIsAwesome from './cssisawesome.gif';
@@ -45,7 +46,7 @@ export const stylingLecture = getLectureItem({
           content: (
             <div>
               <div className="mb-4 text-2xl font-bold">
-                CSS (Cascading Style Sheets)
+                <StackBadge stack="CSS" /> (Cascading Style Sheets)
               </div>
               <div>브라우저 DOM 요소들에 스타일을 먹이는 언어</div>
               <img src={cssIsAwesome} />
@@ -190,7 +191,10 @@ export const stylingLecture = getLectureItem({
           title: 'CSS 생산성 - CSS in JS (2014~)',
           content: (
             <div>
-              <div>styled-components, emotion 등 라이브러리를 사용</div>
+              <div>
+                <StackBadge stack="styled-components" />,{' '}
+                <StackBadge stack="emotion" /> 등 라이브러리를 사용
+              </div>
               <CodeSnippet
                 code={[
                   `import styled from 'styled-components'`,
@@ -242,7 +246,7 @@ export const stylingLecture = getLectureItem({
               </div>
               <div className="mt-5">취향에 맞는 걸 잘 찾아서 사용하자!</div>
               <div className="mt-5">
-                저는 Tailwind 를 가장 선호합니다
+                저는 <StackBadge stack="Tailwind CSS" /> 를 가장 선호합니다
                 <br />
                 <b className="mt-2 text-base">
                   왜 Tailwind 가 제일 괜찮은지 30분 정도 떠들 수 있긴 한데
