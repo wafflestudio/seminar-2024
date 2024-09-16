@@ -42,5 +42,6 @@
 
 ## 자료
 
-- 강의자료: https://seminar-2024.vercel.app
+- 세미나 영상: https://www.youtube.com/watch?v=-x2fgCbPgao&list=PLoHXQ9xKafZPb9XBkGB3Wgu17JGMjFFEA
+- 세미나 자료: https://seminar-2024.vercel.app
 - 리액트 템플릿: https://github.com/wafflestudio/seminar-2024-frontend-template
