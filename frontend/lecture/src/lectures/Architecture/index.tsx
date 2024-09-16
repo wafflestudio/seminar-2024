@@ -6,6 +6,7 @@ import { CodeSnippet } from '@/components/CodeSnippet';
 import { Description } from '@/components/Description';
 import { ExternalLink } from '@/components/ExternalLink';
 import { Slides } from '@/components/Slides';
+import { StackBadge } from '@/components/StackBadge';
 import { getLectureItem } from '@/lectures';
 
 export const architectureLecture = getLectureItem({
@@ -46,7 +47,10 @@ export const architectureLecture = getLectureItem({
                 특히 요즘은 AI가 굉장히 빠르게 발전하고 있어서, 만드는 건{' '}
                 <strong>진짜</strong> 누구나 합니다
               </div>
-              <div>Claude Sonnet, v0 등등</div>
+              <div>
+                <StackBadge stack="Claude Sonnet" />, <StackBadge stack="v0" />{' '}
+                등등
+              </div>
               <div>
                 (개인 생각) 점점 개발자의 역량은 <strong>잘 만드는 것</strong> +
                 <strong>문제를 풀어내는 역량</strong>이 중요해질 것

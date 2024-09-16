@@ -11,6 +11,7 @@ import { architectureLecture } from '@/lectures/Architecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
 import { environmentLecture } from '@/lectures/Environment';
+import { futureLecture } from '@/lectures/Future';
 import { infrastructureLecture } from '@/lectures/Infrastructure';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
 import { otLecture } from '@/lectures/OT';
@@ -21,6 +22,7 @@ import { stateManagementLecture } from '@/lectures/StateManagement';
 import { stylingLecture } from '@/lectures/Styling';
 import { typescriptLecture } from '@/lectures/TypeScript';
 import { webBasicLecture } from '@/lectures/WebBasic/lecture';
+import { wrapupLecture } from '@/lectures/WrapUp';
 import { Home } from '@/pages/home';
 
 export const pages: (
@@ -56,22 +58,8 @@ export const pages: (
   { path: '/state-management', ...stateManagementLecture },
   { path: '/performance', ...performanceLecture },
   { path: '/infrastructure', ...infrastructureLecture },
-  {
-    type: 'lecture',
-    title: '생태계',
-    description: 'Next.js',
-    date: new Date('2024-11-20 20:30:00'),
-    path: '/meta-framework',
-    element: <div>TBD</div>,
-  },
-  {
-    type: 'lecture',
-    title: '마무리',
-    description: '',
-    date: new Date('2024-11-20 20:30:00'),
-    path: '/end',
-    element: <div>TBD</div>,
-  },
+  { path: '/future', ...futureLecture },
+  { path: '/wrapup', ...wrapupLecture },
   {
     path: '/como-0',
     ...getComoAssignment({ seminar: 0, due: new Date('2024-09-10 23:59:59') }),

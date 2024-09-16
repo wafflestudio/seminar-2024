@@ -145,7 +145,22 @@ export const performanceLecture = getLectureItem({
         },
         { title: '로딩 속도 개선: 용량 줄이기', content: <div>TBD</div> },
         { title: '로딩 속도 개선: 스켈레톤 ui', content: <div>TBD</div> },
-        { title: '로딩 속도 개선: 이미지 최적화', content: <div>TBD</div> },
+        {
+          title: '로딩 속도 개선: SSR (1) CSR 방식에 대한 이해',
+          content: <div>TBD</div>,
+        },
+        {
+          title: '로딩 속도 개선: SSR (2) SSR?',
+          content: <div>TBD</div>,
+        },
+        {
+          title: '로딩 속도 개선: SSR (3) 서버 컴포넌트',
+          content: <div>TBD</div>,
+        },
+        {
+          title: '로딩 속도 개선: SSR (4) 만능일까?',
+          content: <div>비용, 서버 리소스 관리, 프레임워크에 결합</div>,
+        },
       ]}
     />
   ),
