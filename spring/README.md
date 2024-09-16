@@ -8,7 +8,7 @@
 | 날짜 | 주제 | 장소 | 자료 |
 | --- | --- | --- | --- |
 | 09/12 | OT, 백엔드 서버의 데이터 흐름, Spring App Server 뜯어보기 | 서울대학교 301동 203호 | [seminar-0.pdf](./week0/seminar-0.pdf) |
-| 09/25 | Spring JPA | | |
+| 09/26 | Spring JPA | | |
 | 10/10 | Spring 동작 방식, Spring MVC Thread Model | | |
 | 11/07 | Swagger, Gradle | | |
 | 11/21 | Deploy (Docker, k8s) | | |
