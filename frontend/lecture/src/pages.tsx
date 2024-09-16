@@ -10,8 +10,8 @@ import { ExternalLink } from '@/components/ExternalLink';
 import { architectureLecture } from '@/lectures/Architecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
+import { ecosystemLecture } from '@/lectures/Ecosystem';
 import { environmentLecture } from '@/lectures/Environment';
-import { futureLecture } from '@/lectures/Future';
 import { infrastructureLecture } from '@/lectures/Infrastructure';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
 import { otLecture } from '@/lectures/OT';
@@ -58,7 +58,7 @@ export const pages: (
   { path: '/state-management', ...stateManagementLecture },
   { path: '/performance', ...performanceLecture },
   { path: '/infrastructure', ...infrastructureLecture },
-  { path: '/future', ...futureLecture },
+  { path: '/ecosystem', ...ecosystemLecture },
   { path: '/wrapup', ...wrapupLecture },
   {
     path: '/como-0',
