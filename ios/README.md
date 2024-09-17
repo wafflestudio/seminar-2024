@@ -19,8 +19,8 @@
     <td></td>
     <td>9월 12일 목 오후 5:00</td>
     <td>301-101</td>
-    <td>[seminar0](https://github.com/wafflestudio/seminar-2024/blob/main/ios/seminar0/seminar0.pdf)</td>
-    <td>[과제0](https://github.com/wafflestudio/seminar-2024-ios-assignment/tree/main/assignment0)</td>
+    <td><A href="https://github.com/wafflestudio/seminar-2024/blob/main/ios/seminar0/seminar0.pdf"> seminar0.pdf </A></td>
+    <td><A href="https://github.com/wafflestudio/seminar-2024-ios-assignment/tree/main/assignment0"> 과제0 </A></td>
     <td></td>
     <td></td>
   </tr>
