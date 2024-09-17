@@ -22,7 +22,17 @@ export const StackBadge = ({
     | 'CloudFront'
     | 'Route 53'
     | 'Azure'
-    | 'Google Cloud';
+    | 'Google Cloud'
+    | 'Figma'
+    | 'Zeplin'
+    | 'CSS Modules'
+    | 'Next.js'
+    | 'Vercel'
+    | 'Turbopack'
+    | 'Turborepo'
+    | 'Create React App'
+    | 'GitHub Copilot'
+    | 'React Router';
 }) => {
   const image = {
     Zustand:
@@ -31,7 +41,7 @@ export const StackBadge = ({
     Redux: 'https://redux.js.org/img/redux.svg',
     'Tanstack Query':
       'https://seeklogo.com/images/R/react-query-logo-1340EA4CE9-seeklogo.com.png',
-    SWR: null,
+    SWR: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi42tpID7bbxVYGkhd0BNQzgf1NvcABZZ8KA&s',
     Recoil:
       'https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/298/square_480/recoil.png',
     MobX: 'https://mobx.js.org/assets/mobx.png',
@@ -56,11 +66,30 @@ export const StackBadge = ({
       'https://static-00.iconduck.com/assets.00/google-cloud-icon-2048x1646-7admxejz.png',
     'Route 53':
       'https://static-00.iconduck.com/assets.00/aws-route53-icon-212x256-16an9num.png',
+    Figma:
+      'https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png',
+    Zeplin:
+      'https://static-00.iconduck.com/assets.00/apps-zeplin-icon-2048x2048-qh5y1ogk.png',
+    'CSS Modules':
+      'https://raw.githubusercontent.com/css-modules/logos/master/css-modules-logo.png',
+    'Next.js':
+      'https://static-00.iconduck.com/assets.00/nextjs-icon-512x512-y563b8iq.png',
+    Vercel: 'https://www.svgrepo.com/show/327408/logo-vercel.svg',
+    Turbopack:
+      'https://seeklogo.com/images/T/turbopack-icon-logo-77EE129FEC-seeklogo.com.png',
+    Turborepo:
+      'https://seeklogo.com/images/T/turborepo-logo-D9CF2C830E-seeklogo.com.png',
+    'Create React App':
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf8yndOQhIaFf36hkWn9w6UAff4nmPREbmvQ&s',
+    'GitHub Copilot':
+      'https://seeklogo.com/images/G/github-copilot-logo-C25AFBDF08-seeklogo.com.png',
+    'React Router':
+      'https://static-00.iconduck.com/assets.00/react-router-icon-2048x1116-jfeevj0l.png',
   }[stack];
 
   return (
     <span className="inline-flex items-center gap-2 rounded-md bg-slate-200 py-1 pl-2 pr-3 text-xl dark:bg-slate-700">
-      {image !== null && <img src={image} className="inline w-6 rounded" />}
+      <img src={image} className="inline w-6 rounded" />
       <span>{stack}</span>
     </span>
   );

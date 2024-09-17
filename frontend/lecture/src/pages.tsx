@@ -7,6 +7,8 @@ import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { tutorialAssignment } from '@/assignments/Tutorial';
 import { ExternalLink } from '@/components/ExternalLink';
+import { InlineCode } from '@/components/InlineCode';
+import { StackBadge } from '@/components/StackBadge';
 import { architectureLecture } from '@/lectures/Architecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
@@ -111,6 +113,11 @@ export const pages: (
         <br />
         전체적인 ui 레이아웃, 로그인, 로그아웃, 로그인 시 내 닉네임 조회 구현
         (나머지 데이터는 하드코딩)
+        <br />
+        <InlineCode code="react-router-dom" /> 라이브러리를 설치해서 사용하시면
+        됩니다.
+        <StackBadge stack="React Router" /> 사용법은 자습 (새로운 기술 적용하기
+        연습)
       </div>
     ),
     title: 'SNUTT 클론코딩 (1)',
