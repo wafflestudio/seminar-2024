@@ -152,8 +152,8 @@ export const stylingLecture = getLectureItem({
                 language="css"
               />
               <p className="flex items-center gap-2">
-                BEM 방식으로 className을 작성 <ArrowRightIcon /> 구조화된
-                이름으로 겹치는 문제는 없어짐
+                BEM 방식으로 className을 작성 <ArrowRightIcon /> (아마도) 이름이
+                겹치지는 않을 것
               </p>
               <p className="flex items-center gap-2">
                 하지만 여전히 연결점이 없으므로 유지보수가 어려움
@@ -199,12 +199,16 @@ export const stylingLecture = getLectureItem({
                 code={[
                   `import styled from 'styled-components'`,
                   `// ...`,
-                  `const Logo = styled.div\``,
+                  `const Wrapper = styled.div\``,
                   `  color: red;`,
                   `  margin: 2px 4px;`,
                   `\`;`,
                   `// ...`,
-                  `return <Logo />`,
+                  `return (`,
+                  `  <Wrapper>`,
+                  `    Hello World!`,
+                  `  </Wrapper>`,
+                  `)`,
                 ]}
                 language="jsx"
               />
@@ -227,7 +231,10 @@ export const stylingLecture = getLectureItem({
                 language="jsx"
               />
               <div>아예 패러다임을 전환하여 utility-first 로 개발</div>
-              <div>스타일 정보를 className에 모두 작성하는 방식</div>
+              <div>
+                자주 사용하는 스타일들에 해당하는 유틸성 className을 미리
+                만들어둔다
+              </div>
             </div>
           ),
         },
@@ -259,47 +266,78 @@ export const stylingLecture = getLectureItem({
         {
           title: '번외: CSS Framework',
           content: (
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-lg border p-4">
-                <img
-                  src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
-                  alt="Bootstrap Logo"
-                  className="mb-2 h-12"
-                />
-                <h3 className="mb-2 text-xl font-bold">Bootstrap</h3>
-                <p className="mb-4">옛날에 짱많이쓰던거</p>
-                <ExternalLink href="https://getbootstrap.com/" />
+            <div className="flex flex-col gap-4">
+              <div>미리 만들어져있는 이쁜 시스템들이 있습니다</div>
+              <div>
+                디자이너가 디자인해주는 상황이면 필요없지만, 어드민을 구축하거나
+                직접 디자인을 해야 할 경우 아주 편하게 사용 가능
               </div>
-              <div className="rounded-lg border p-4">
-                <img
-                  src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
-                  alt="Ant Design Logo"
-                  className="mb-2 h-12"
-                />
-                <h3 className="mb-2 text-xl font-bold">Ant Design</h3>
-                <p className="mb-4">중국꺼</p>
-                <ExternalLink href="https://ant.design/" />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-lg border p-4">
+                  <img
+                    src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
+                    alt="Bootstrap Logo"
+                    className="mb-2 h-12"
+                  />
+                  <h3 className="mb-2 text-xl font-bold">Bootstrap</h3>
+                  <p className="mb-4">옛날에 짱많이쓰던거</p>
+                  <ExternalLink href="https://getbootstrap.com/" />
+                </div>
+                <div className="rounded-lg border p-4">
+                  <img
+                    src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+                    alt="Ant Design Logo"
+                    className="mb-2 h-12"
+                  />
+                  <h3 className="mb-2 text-xl font-bold">Ant Design</h3>
+                  <p className="mb-4">중국꺼</p>
+                  <ExternalLink href="https://ant.design/" />
+                </div>
+                <div className="rounded-lg border p-4">
+                  <img
+                    src="https://mui.com/static/logo.png"
+                    alt="Material-UI Logo"
+                    className="mb-2 h-12"
+                  />
+                  <h3 className="mb-2 text-xl font-bold">Material-UI</h3>
+                  <p className="mb-4">구글꺼</p>
+                  <ExternalLink href="https://mui.com/" />
+                </div>
+                <div className="rounded-lg border p-4">
+                  <img
+                    src="https://ui.shadcn.com/favicon.ico"
+                    alt="shadcn/ui Logo"
+                    className="mb-2 h-12"
+                  />
+                  <h3 className="mb-2 text-xl font-bold">shadcn/ui</h3>
+                  <p className="mb-4">TMI) 이 강의자료는 shadcn을 썼습니다</p>
+                  <ExternalLink href="https://ui.shadcn.com/" />
+                </div>
               </div>
-              <div className="rounded-lg border p-4">
-                <img
-                  src="https://mui.com/static/logo.png"
-                  alt="Material-UI Logo"
-                  className="mb-2 h-12"
-                />
-                <h3 className="mb-2 text-xl font-bold">Material-UI</h3>
-                <p className="mb-4">구글꺼</p>
-                <ExternalLink href="https://mui.com/" />
+            </div>
+          ),
+        },
+        {
+          title: '시안 보고 구현하는 법',
+          content: (
+            <div className="flex flex-col gap-4">
+              <div>
+                디자이너분들은 보통 <StackBadge stack="Figma" />나{' '}
+                <StackBadge stack="Zeplin" /> 등을 이용해서 디자인하고 시안을
+                주십니다
               </div>
-              <div className="rounded-lg border p-4">
-                <img
-                  src="https://ui.shadcn.com/favicon.ico"
-                  alt="shadcn/ui Logo"
-                  className="mb-2 h-12"
-                />
-                <h3 className="mb-2 text-xl font-bold">shadcn/ui</h3>
-                <p className="mb-4">이 강의자료는 shadcn을 썼습니다</p>
-                <ExternalLink href="https://ui.shadcn.com/" />
+              <div>
+                요즘은 <StackBadge stack="Figma" />가 대세
               </div>
+              <div>
+                위에서 언급한 기술들 중 제일 기본인{' '}
+                <StackBadge stack="CSS Modules" /> 를 이용해서, SNUTT 모바일
+                로그인화면 라이브코딩 하겠습니다
+              </div>
+              <ExternalLink
+                label="SNUTT 모바일 피그마"
+                href="https://www.figma.com/design/7hZ00moj1GUEqcZAcQBdJp/Frontend-Seminar-Clone?m=dev"
+              />
             </div>
           ),
         },

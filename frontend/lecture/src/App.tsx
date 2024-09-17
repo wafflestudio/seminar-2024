@@ -3,11 +3,12 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from '@radix-ui/react-icons';
-import { useCallback, useEffect, useState } from 'react';
+import { Suspense, useCallback, useEffect, useState } from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Separator } from '@/designsystem/ui/separator';
+import { Skeleton } from '@/designsystem/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger } from '@/designsystem/ui/tabs';
 import { Toaster } from '@/designsystem/ui/toaster';
 import {
@@ -27,11 +28,13 @@ export const App = () => {
       <Sidebar />
       <Separator orientation="vertical" />
       <main className="flex-1 overflow-y-scroll p-4">
-        <Routes>
-          {Object.entries(pages).map(([key, { path, element }]) => (
-            <Route key={key} path={path} element={element} />
-          ))}
-        </Routes>
+        <Suspense fallback={<Skeleton className="h-full w-full" />}>
+          <Routes>
+            {Object.entries(pages).map(([key, { path, element }]) => (
+              <Route key={key} path={path} element={element} />
+            ))}
+          </Routes>
+        </Suspense>
       </main>
       <Toaster />
     </div>
