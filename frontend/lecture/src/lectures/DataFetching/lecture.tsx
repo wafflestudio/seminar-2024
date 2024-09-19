@@ -4,6 +4,7 @@ import { CodeSnippet } from '@/components/CodeSnippet';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { Slides } from '@/components/Slides';
+import { StackBadge } from '@/components/StackBadge';
 import { getLectureItem } from '@/lectures';
 
 import jsonPlaceholderExample from './jsonplaceholder-example.png';
@@ -16,6 +17,19 @@ export const dataFetchingLecture = getLectureItem({
   element: (
     <Slides
       slides={[
+        {
+          title: '목표',
+          content: (
+            <div>
+              <ul>
+                <li>
+                  React 어플리케이션에서 서버로 API 콜을 하고 응답을 받아
+                  유저에게 보여주는 일반적인 패턴을 이해한다
+                </li>
+              </ul>
+            </div>
+          ),
+        },
         {
           title: '(OT 복습) 프론트엔드 - 백엔드 구조',
           content: (
@@ -97,7 +111,7 @@ export const dataFetchingLecture = getLectureItem({
               <CodeSnippet
                 code={[
                   `fetch('https://jsonplaceholder.typicode.com, {`,
-                  `  method: 'GET'`,
+                  `  method: 'GET',`,
                   `  headers: {`,
                   `    'Content-Type': 'application/json'`,
                   `  }`,
@@ -113,7 +127,7 @@ export const dataFetchingLecture = getLectureItem({
           content: (
             <div>
               <ExternalLink href="https://jsonplaceholder.typicode.com/guide/" />
-              <img src={jsonPlaceholderExample} />
+              <img className="mt-4" src={jsonPlaceholderExample} />
             </div>
           ),
         },
@@ -122,7 +136,7 @@ export const dataFetchingLecture = getLectureItem({
           content: (
             <div>
               <ExternalLink href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/" />
-              <img src={snuttExample} />
+              <img className="mt-4" src={snuttExample} />
             </div>
           ),
         },
@@ -131,13 +145,45 @@ export const dataFetchingLecture = getLectureItem({
           content: (
             <div>
               <p>
-                브라우저 개발자 도구 열고, JSON Placeholder 에 GET 요청을
-                보내보세요
+                브라우저 개발자 도구 열고, JSON Placeholder 에 아무 GET 요청이나
+                보내고, 각 조별 채널에 스크린샷 올려주세요
               </p>
-              <br />
+            </div>
+          ),
+        },
+        {
+          title: 'React 에서 API 통신하기: 브레인스토밍',
+          content: (
+            <div>
+              <p className="mb-8">
+                데이터를 받아서 상태에 저장하긴 해야 할 것 같다
+              </p>
+              <p className="mb-8">
+                데이터를 받고 나서 컴포넌트를 렌더할 수 있을까?
+              </p>
+              <CodeSnippet
+                code={[
+                  `// ❌`,
+                  `const [data, setData] = useState(await fetch('...'))`,
+                ]}
+                language="javascript"
+              />
+              <p className="mb-8">
+                아쉽게도 이런 건 불가능. 조금 더 더럽게 접근해야 한다
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: 'React 에서 API 통신하기: 아이디어',
+          content: (
+            <div>
+              <p className="mb-8">데이터를 받아서 상태에 저장한다</p>
+              <p className="mb-8">데이터: 외부, 상태: 내부</p>
+              <p className="mb-8">외부와 내부 사이의 동기화!</p>
               <p>
-                제한시간 2분, 2분 후에 랜덤으로 한 분 잘 하셨는지 체크하러
-                가겠습니다
+                <InlineCode code="useEffect" />
+                에서 받아서 상태에 저장하면 된다 ✅
               </p>
             </div>
           ),
@@ -153,10 +199,16 @@ export const dataFetchingLecture = getLectureItem({
               <ExternalLink href="https://ko.react.dev/reference/react/useEffect#fetching-data-with-effects" />
               <CodeSnippet
                 code={[
-                  `type TodoResponse = { userId: number; id: number; title: string; completed: boolean }`,
+                  `type TodoResponse = {`,
+                  `  userId: number;`,
+                  `  id: number;`,
+                  `  title: string;`,
+                  `  completed: boolean;`,
+                  `};`,
                   ``,
                   `const fetchTodo = async (id: number) => {`,
-                  `  const response = await fetch(\`https://jsonplaceholder.typicode.com/todos/$\{id}\`);`,
+                  `  const baseUrl = 'https://jsonplaceholder.typicode.com';`,
+                  `  const response = await fetch(\`\${baseUrl}/todos/\${id}\`);`,
                   `  const data = await response.json() as TodoResponse;`,
                   `  return data;`,
                   `}`,
@@ -189,10 +241,14 @@ export const dataFetchingLecture = getLectureItem({
           content: (
             <div>
               <ul className="flex list-disc flex-col gap-6">
-                <li>비동기니까, 당연히 처음에는 상태가 비어있습니다.</li>
                 <li>
-                  버그를 방지하기 위해 useEffect cleanup (ignore 처리)는
+                  비동기니까, 당연히 처음에는 상태가 비어있습니다.{' '}
+                  <InlineCode code="undefined" />에 대한 조건부 렌더링이
                   필수입니다.
+                </li>
+                <li>
+                  버그를 방지하기 위해 <InlineCode code="useEffect" /> cleanup (
+                  <InlineCode code="ignore" /> 처리)도 필수입니다.
                 </li>
                 <li>
                   비동기는 동기 프로그래밍보다 어렵습니다. 익숙하지 않다면 async
@@ -206,6 +262,50 @@ export const dataFetchingLecture = getLectureItem({
           ),
         },
         {
+          title:
+            'API 통신 코드를 좀더 깔끔하게 작성하도록 도와주는 라이브러리도 많다',
+          content: (
+            <div>
+              <p>
+                대표적으로 <StackBadge stack="Tanstack Query" />
+              </p>
+              <CodeSnippet
+                code={[
+                  `import { useQuery } from '@tanstack/react-query';`,
+                  ``,
+                  `type TodoResponse = {`,
+                  `  userId: number;`,
+                  `  id: number;`,
+                  `  title: string;`,
+                  `  completed: boolean;`,
+                  `};`,
+                  ``,
+                  `const fetchTodo = async (id: number) => {`,
+                  `  const baseUrl = 'https://jsonplaceholder.typicode.com';`,
+                  `  const response = await fetch(\`\${baseUrl}/todos/\${id}\`);`,
+                  `  const data = await response.json() as TodoResponse;`,
+                  `  return data;`,
+                  `}`,
+                  ``,
+                  `export const TodoItem = ({ id }: { id: number }) => {`,
+                  `  const { data } = useQuery({`,
+                  `    queryKey: ['Todo', id] as const,`,
+                  `    queryFn: ({ queryKey }) => fetchTodo(queryKey[1]),`,
+                  `  });`,
+                  ``,
+                  `  return (`,
+                  `    <div>`,
+                  `      {data ? data.title : 'Loading...'}`,
+                  `    </div>`,
+                  `  );`,
+                  `}`,
+                ]}
+                language="tsx"
+              />
+            </div>
+          ),
+        },
+        {
           title: '잠시 성능에 대한 이야기',
           content: (
             <div>
@@ -214,6 +314,7 @@ export const dataFetchingLecture = getLectureItem({
                 정석이긴 합니다만, 성능적으로 하자가 있습니다. 너무 늦게
                 호출해요
               </p>
+              <br />
               <p>
                 이에 대한 이야기는 &quot;성능과 SSR&quot; 섹션에서 다시
                 다루겠습니다

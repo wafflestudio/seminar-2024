@@ -2,11 +2,13 @@ import { Callout } from '@/components/Callout';
 import { CodeSnippet } from '@/components/CodeSnippet';
 import { Description } from '@/components/Description';
 import { ExternalLink } from '@/components/ExternalLink';
+import { Illust } from '@/components/Illust';
 import { InlineCode } from '@/components/InlineCode';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
 import { Slides } from '@/components/Slides';
 import { Button } from '@/designsystem/ui/button';
 import { getLectureItem } from '@/lectures';
+import { cn } from '@/utils/designsystem';
 
 import fetchPromise from './fetch-promise.png';
 
@@ -28,10 +30,6 @@ export const asyncLecture = getLectureItem({
                 </li>
                 <li>
                   <InlineCode code="Promise" /> 에 익숙해진다
-                </li>
-                <li>
-                  React 어플리케이션에서 서버로 API 콜을 하고 응답을 받아
-                  유저에게 보여주는 패턴을 이해한다
                 </li>
                 <li>이벤트 루프를 이해한다</li>
               </ul>
@@ -77,7 +75,10 @@ export const asyncLecture = getLectureItem({
             <div className="flex flex-col gap-8">
               <Description
                 items={[
-                  { key: '동기', value: '앞 일이 끝나고 다음 일을 시작한다' },
+                  {
+                    key: '동기',
+                    value: '앞 일이 끝난 후에 다음 일을 시작한다',
+                  },
                   {
                     key: '비동기',
                     value: '앞 일이 끝나는 것과 무관하게 다음 일을 시작한다',
@@ -90,6 +91,44 @@ export const asyncLecture = getLectureItem({
                 <br />앞 일이 끝나는 것을 <strong>기다리지 않고</strong> 다음
                 일을 하게 하는 것
               </p>
+
+              <Illust>
+                <div className="flex gap-8">
+                  {['동기', '비동기'].map((label) => {
+                    return (
+                      <div key={label} className="flex-1">
+                        <h2 className="text-center">{label}</h2>
+                        <div className="mt-4 grid grid-cols-12">
+                          <div
+                            className={cn(
+                              'col-span-3 row-start-1 h-4 bg-red-500',
+                              label === '동기' ? 'col-start-1' : 'col-start-1',
+                            )}
+                          />
+                          <div
+                            className={cn(
+                              'col-span-5 row-start-2 h-4 bg-blue-500',
+                              label === '동기' ? 'col-start-4' : 'col-start-3',
+                            )}
+                          />
+                          <div
+                            className={cn(
+                              'col-span-1 row-start-3 h-4 bg-green-500',
+                              label === '동기' ? 'col-start-9' : 'col-start-2',
+                            )}
+                          />
+                          <div
+                            className={cn(
+                              'col-span-3 row-start-4 h-4 bg-purple-500',
+                              label === '동기' ? 'col-start-10' : 'col-start-2',
+                            )}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Illust>
             </div>
           ),
         },
@@ -97,7 +136,6 @@ export const asyncLecture = getLectureItem({
           title: '왜 비동기로 동작해야 할까',
           content: (
             <div className="flex flex-col items-center gap-8">
-              <p>느리니까</p>
               <ul className="list-disc">
                 <li>API 요청</li>
                 <li>File System I/O</li>
@@ -110,8 +148,8 @@ export const asyncLecture = getLectureItem({
               </p>
               <p>브라우저가 항상 동기적으로만 동작한다면, 매우매우 불편할 것</p>
               <p>
-                당연히 웹뿐 아니라 안드로이드, iOS도 비동기적으로 동작할 수
-                있습니다
+                당연히 웹뿐 아니라 서버, 안드, iOS도 마찬가지로 비동기를
+                공부합니다
               </p>
               <Button
                 variant="destructive"
@@ -123,7 +161,8 @@ export const asyncLecture = getLectureItem({
                   alert(`랜덤 숫자 10억개의 합: ${sum}`);
                 }}
               >
-                동기적으로 숫자 10억개를 랜덤 생성해서 합을 구하는 버튼
+                동기적으로 숫자 10억개를 랜덤 생성해서 합을 구하는 버튼. 이걸
+                클릭하면 사이트가 뻗습니다.
               </Button>
             </div>
           ),
@@ -156,9 +195,10 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
-          title: 'JavaScript 는 비동기를 쉽게 처리할 수 있는 언어',
+          title:
+            'JavaScript 는 비동기를 쉽게 처리할 수 있는 (쉽게 처리할 수밖에 없는) 언어',
           content: (
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col gap-4">
               <p>
                 JavaScript 진짜 이상한 언어지만 비동기쪽은 정말 잘 만들어져
                 있습니다
@@ -171,7 +211,7 @@ export const asyncLecture = getLectureItem({
                 code={[
                   `// 콜백`,
                   `setTimeout(() => {`,
-                  `    console.log("비동기 작업 완료!");`,
+                  `  console.log("비동기 작업 완료!");`,
                   `}, 2000);  // 2초 후에 실행`,
                 ]}
               />
@@ -189,7 +229,7 @@ export const asyncLecture = getLectureItem({
               <CodeSnippet
                 language="javascript"
                 code={[
-                  `// Promise async/await`,
+                  `// Promise async&await`,
                   `async function fetchData() {`,
                   `  const response = await fetch('https://api.example.com');`,
                   `  const data = await response.json();`,
@@ -208,7 +248,10 @@ export const asyncLecture = getLectureItem({
                 JavaScript 에는 스레드 개념이 없습니다 (프로세스는 당연히 더욱
                 없습니다)
               </p>
-              <p>JavaScript 의 비동기는 이벤트 루프를 기반으로 동작합니다</p>
+              <p>
+                JavaScript 의 비동기는 이벤트 루프를 기반으로, 브라우저가
+                돌려줍니다
+              </p>
               <p>코드를 먼저 보고, 그 다음에 원리를 이해해 보겠습니다</p>
             </div>
           ),
@@ -235,8 +278,11 @@ export const asyncLecture = getLectureItem({
                 '콜백 패턴을 사용하는 대표적인 비동기 코드',
                 '1 -> 3 -> 2 순서로 출력된다',
                 <>
-                  <InlineCode code="setTimeout" /> 을 수행하면, 브라우저가 delay
-                  후에 콜백을 수행해준다
+                  <InlineCode code="setTimeout" /> 은 브라우저가 제공하는 함수
+                </>,
+                <>
+                  <InlineCode code="setTimeout" /> 에 콜백을 넘기면, 브라우저가
+                  delay 후에 해당 콜백을 수행해준다
                 </>,
                 <Callout title="Note" key="callout">
                   JavaScript가 싱글스레드인거지, 브라우저는 스레드 많습니다
@@ -257,13 +303,21 @@ export const asyncLecture = getLectureItem({
                       `setTimeout(() => {`,
                       `  console.log('비동기 작업 완료!');`,
                       `}, 2000);`,
+                      ``,
+                      `// 모양만 다르지 위의 코드랑 동일함`,
+                      `const callback = () => console.log('비동기 작업 완료!');`,
+                      `setTimeout(callback, 2000);`,
                     ]}
                   />
                   <CodeSnippet
                     language="jsx"
                     code={[
                       `// 비동기 수업에서 다루긴 애매하지만, 이것도 콜백이다`,
-                      `<button onClick={() => setCount(count + 1)} />`,
+                      `return <button onClick={() => setCount(count + 1)} />;`,
+                      ``,
+                      `// 모양만 다르지 위의 코드랑 동일함`,
+                      `const onClick = () => setCount(count + 1);`,
+                      `return <button onClick={onClick} />;`,
                       ``,
                       `// 이것도 콜백`,
                       `document.addEventListener('keydown', (event) => {`,
@@ -275,7 +329,7 @@ export const asyncLecture = getLectureItem({
               }
               description={[
                 '함수의 인자로 함수를 넘겨서, "적절한 시점에 이거 호출해줘" 라고 요청하는 패턴',
-                '그래서 콜백',
+                '넘기는 함수를 콜백이라고 부른다',
               ]}
             />
           ),
@@ -364,7 +418,7 @@ export const asyncLecture = getLectureItem({
                 '콜백의 실행 권한은 개발자가 아닌 호출자에게 있다',
                 '카드 번호 입력 라이브러리를 만든 사람이 버그를 만들었다면 어떻게 될까?',
                 '유저는 결제를 한 번 했는데 돈이 5번 빠져나간다면?',
-                '억지스럽다고 느껴질 수 있지만 충분히 가능한 시나리오고, 좀더 나은 방법이 있다',
+                '억지스럽다고 느껴질 수 있지만 충분히 가능한 시나리오',
               ]}
             />
           ),
@@ -388,6 +442,7 @@ export const asyncLecture = getLectureItem({
                 />
               }
               description={[
+                'ES6 (2015년) 에 추가된 객체',
                 '좀더 발전된 비동기 패턴. 대부분의 비동기 처리는 Promise 로 합니다',
                 <>
                   <InlineCode code=".then()" />, <InlineCode code=".catch()" />,{' '}
@@ -486,6 +541,80 @@ export const asyncLecture = getLectureItem({
                 좀더 동기적인 코드처럼 보이게 해 줘서 읽기 편하게 만드는
                 syntatic sugar입니다
               </div>
+            </div>
+          ),
+        },
+        {
+          title: '우리는',
+          content: (
+            <div className="flex flex-col gap-4">
+              <p>콜백, Promise 둘다 알아야 하고 둘다 씁니다</p>
+              <p>개발자가 둘 중 하나를 선택할 수 있는 건 아님</p>
+              <p>
+                대부분의 최신 비동기 코드는 Promise 로 써야 하도록 설계되어
+                있습니다
+              </p>
+              <p>
+                단, <InlineCode code="setTimeout" /> 같은 옛날 기술은 콜백
+                패턴으로 써야 할 수도 있음
+              </p>
+              <p>
+                Promise 쓸 땐 대부분의 경우 async/await 문법을 사용하게 됩니다
+              </p>
+              <CodeSnippet
+                language="javascript"
+                code={[
+                  `// 아마도 제일 많이 보게 될 형태`,
+                  `const fetchAndAlert = async () => {`,
+                  `  try {`,
+                  `    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');`,
+                  `    const data = await response.json();`,
+                  `    return data as { title: string };`,
+                  `  } catch (error) {`,
+                  `    console.error('Error:', error);`,
+                  `  }`,
+                  `}`,
+                ]}
+              />
+            </div>
+          ),
+        },
+        {
+          title: '몇 가지 퀴즈와 예제들',
+          content: (
+            <div>
+              <p>출력 결과를 예상해봅시다</p>
+              <CodeSnippet
+                code={[
+                  `setTimeout(() => console.log(1), 0);`,
+                  `console.log(2);`,
+                  `setTimeout(() => console.log(3), 1000);`,
+                  `console.log(4);`,
+                  `setTimeout(() => console.log(5), 2000);`,
+                  `console.log(6);`,
+                  `setTimeout(() => console.log(7), 3000);`,
+                ]}
+                language="javascript"
+              />
+              <CodeSnippet
+                code={[
+                  `fetch('https://jsonplaceholder.typicode.com/todos/1')`,
+                  `  .then(() => console.log(1));`,
+                  ``,
+                  `console.log(2);`,
+                ]}
+                language="javascript"
+              />
+              <CodeSnippet
+                code={[
+                  `fetch('https://jsonplaceholder.typicode.com/todos')`,
+                  `  .then(() => console.log(1));`,
+                  ``,
+                  `fetch('https://jsonplaceholder.typicode.com/todos/1')`,
+                  `  .then(() => console.log(2));`,
+                ]}
+                language="javascript"
+              />
             </div>
           ),
         },
