@@ -411,6 +411,44 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
+          title: '리팩토링 (1) 리팩토링이란?',
+          content: (
+            <div>
+              <div>기존 코드의 동작 방식을 변경하지 않으면서 코드의 구조를</div>
+              <div>재조정하여 코드를 이해하기 쉽고 수정하기 쉽게 만드는 것</div>
+            </div>
+          ),
+        },
+        {
+          title: '리팩토링 (2) 언제 해야 할까?',
+          content: (
+            <div className="flex flex-col items-center gap-4">
+              <strong>언제든, 리팩토링이 필요하다고 느껴질 때</strong>
+              <Callout title="리팩터링이 필요한 코드를 일종의 '종양'이라고 생각하자.">
+                종양을 제거하려면 수술이 필요하다. 지금 바로 수술해서 아직
+                종양이 작을 때 제거할 수도 있다. 아니면 종양이 자라고 다른
+                곳으로 전이할 때까지 놓아둘 수도 있다.
+              </Callout>
+            </div>
+          ),
+        },
+        {
+          title: '시간이 없다는 핑계',
+          content: (
+            <div>
+              <div>
+                개발하다 보면 종종 <i>시간이 없어서 대충 짰다</i> 라거나{' '}
+                <i>시간이 없어서 리팩은 못했다</i> 와 같은 이야기를 듣게 되는데
+              </div>
+              <div>현실은, 잘 짜는 게 훨씬 빠릅니다</div>
+              <div>
+                진짜 과제 제출 기한이 10분 남았다 이런 거 아니면, 시간이 없다는
+                말은 변명일 뿐이다
+              </div>
+            </div>
+          ),
+        },
+        {
           title: '그 밖에도 하고 싶은 말이 너무 많지만..',
           content: (
             <div className="flex flex-col gap-6">
