@@ -5,6 +5,7 @@ import { Callout } from '@/components/Callout';
 import { CodeSnippet } from '@/components/CodeSnippet';
 import { Description } from '@/components/Description';
 import { ExternalLink } from '@/components/ExternalLink';
+import { InlineCode } from '@/components/InlineCode';
 import { Slides } from '@/components/Slides';
 import { StackBadge } from '@/components/StackBadge';
 import { getLectureItem } from '@/lectures';
@@ -141,6 +142,31 @@ export const architectureLecture = getLectureItem({
           title: `DRY: Don't Repeat Yourself (2)`,
           content: (
             <div>
+              <p>아래 코드에서 중복을 찾아봅시다</p>
+              <CodeSnippet
+                code={[
+                  `const load = () => {`,
+                  `  try {`,
+                  `    return JSON.parse(localStorage.getItem('2048Data') as BoardData);`,
+                  `  } catch (e) {`,
+                  `    return null;`,
+                  `  }`,
+                  `};`,
+                  ``,
+                  `const save = (data: BoardData) => {`,
+                  `  localStorage.setItem('2048Data', JSON.stringify(data));`,
+                  `};`,
+                ]}
+                language="typescript"
+              />
+              <Answer answer="'2048Data'" />
+            </div>
+          ),
+        },
+        {
+          title: `DRY: Don't Repeat Yourself (3)`,
+          content: (
+            <div>
               <p>
                 이번엔 아래 ui를 그리기 위한 아래 코드에서 중복을 찾아봅시다
               </p>
@@ -179,7 +205,7 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (3)`,
+          title: `DRY: Don't Repeat Yourself (4)`,
           content: (
             <div>
               <p>아래 코드에서 중복을 찾아봅시다</p>
@@ -202,7 +228,7 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (4)`,
+          title: `DRY: Don't Repeat Yourself (5)`,
           content: (
             <div className="flex flex-col gap-4">
               <div>주석도 중복이다</div>
@@ -219,7 +245,7 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (5)`,
+          title: `DRY: Don't Repeat Yourself (6)`,
           content: (
             <div className="flex flex-col gap-4">
               <Callout title="DRY의 정의">
@@ -234,6 +260,78 @@ export const architectureLecture = getLectureItem({
               <Callout title="중복의 정의">
                 동일한 시점에 동일한 이유로 동일한 변경이 일어나는 것
               </Callout>
+            </div>
+          ),
+        },
+        {
+          title: '함수형 프로그래밍 패러다임 (1) 개요',
+          content: (
+            <div className="flex flex-col gap-4">
+              <div>가변성을 최대한 줄이는 패러다임</div>
+              <div>
+                우리한테 좀더 와닿는 설명: <InlineCode code="let" />,{' '}
+                <InlineCode code=".push()" />, <InlineCode code=".splice()" /> ,{' '}
+                <InlineCode code="변수 =" /> 을 최대한 쓰지 않는다
+              </div>
+
+              <CodeSnippet
+                code={[
+                  `let sum = 0`,
+                  `for (let i = 0; i < array.length; i++) {`,
+                  `  sum += array[i];`,
+                  `}`,
+                ]}
+                language="javascript"
+              />
+
+              <CodeSnippet
+                code={[`const sum = array.reduce((acc, cur) => acc + cur, 0);`]}
+                language="javascript"
+              />
+            </div>
+          ),
+        },
+        {
+          title: '함수형 프로그래밍 패러다임 (2) 왜?',
+          content: (
+            <div className="flex flex-col gap-4">
+              <div>가변성만 없으면 동시성 문제는 일어나지 않는다</div>
+              <div>변수가 변하지 않는다면 읽어야 할 코드의 양이 줄어든다</div>
+
+              <div>가변성이 있는 예시</div>
+              <CodeSnippet
+                code={[
+                  `const users = [];`,
+                  `let totalAge = 0;`,
+                  ``,
+                  `for (let i = 0; i < rawData.length; i++) {`,
+                  `  const user = { ...rawData[i] };`,
+                  `  if (user.age >= 18) {`,
+                  `    user.isAdult = true;`,
+                  `    users.push(user);`,
+                  `    totalAge += user.age;`,
+                  `  }`,
+                  `}`,
+                  ``,
+                  `const averageAge = totalAge / users.length;`,
+                ]}
+                language="javascript"
+              />
+
+              <div>함수형 프로그래밍으로 해결한 예시</div>
+              <CodeSnippet
+                code={[
+                  `const users = rawData`,
+                  `  .filter(user => user.age >= 18)`,
+                  `  .map(user => ({ ...user, isAdult: true }));`,
+                  ``,
+                  `const totalAge = users.reduce((sum, user) => sum + user.age, 0);`,
+                  `const averageAge = totalAge / users.length;`,
+                ]}
+                language="javascript"
+              />
+
+              <div>가변성을 제거하여 코드의 흐름을 더 쉽게 파악할 수 있다</div>
             </div>
           ),
         },
