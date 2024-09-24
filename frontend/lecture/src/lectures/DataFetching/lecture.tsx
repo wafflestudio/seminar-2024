@@ -219,7 +219,7 @@ export const dataFetchingLecture = getLectureItem({
                   `  useEffect(() => {`,
                   `    let ignore = false;`,
                   `    fetchTodo(id).then((data) => {`,
-                  `      if (!ignore) setTodos(data));`,
+                  `      if (!ignore) setTodo(data));`,
                   `    });`,
                   `    return () => { ignore = true; };`,
                   `  }, [id]);`,
