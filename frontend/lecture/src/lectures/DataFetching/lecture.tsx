@@ -1,14 +1,83 @@
-import { BoxIcon, LaptopIcon, TableIcon } from '@radix-ui/react-icons';
+import {
+  BoxIcon,
+  LaptopIcon,
+  TableIcon,
+  ThickArrowDownIcon,
+  ThickArrowLeftIcon,
+  ThickArrowRightIcon,
+} from '@radix-ui/react-icons';
+import { useEffect, useState } from 'react';
 
 import { CodeSnippet } from '@/components/CodeSnippet';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { Slides } from '@/components/Slides';
 import { StackBadge } from '@/components/StackBadge';
+import { Skeleton } from '@/designsystem/ui/skeleton';
 import { getLectureItem } from '@/lectures';
 
 import jsonPlaceholderExample from './jsonplaceholder-example.png';
 import snuttExample from './snutt-example.png';
+
+const LiveCodingGoal = () => {
+  type TodoResponse = { id: number; title: string; completed: boolean };
+  const [id, setId] = useState(1);
+  const min = 1;
+  const max = 5;
+  const [data, setData] = useState<TodoResponse>();
+
+  useEffect(() => {
+    let ignore = false;
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then((res) => res.json() as Promise<TodoResponse>)
+      .then((d) => {
+        if (ignore) return;
+        setData(d);
+      })
+      .catch(() => {
+        alert('오류 발생');
+      });
+    return () => {
+      ignore = true;
+    };
+  }, [id]);
+
+  return (
+    <div className="flex items-center gap-4">
+      <button
+        onClick={() => {
+          if (id === min) return;
+          setId(id - 1);
+          setData(undefined);
+        }}
+      >
+        <ThickArrowLeftIcon />
+      </button>
+      <div className="flex h-20 flex-1 items-center justify-center">
+        {data === undefined ? (
+          <Skeleton className="h-full w-full" />
+        ) : (
+          <div>
+            <div className="flex gap-4">
+              <div>id: {data.id}</div>
+              <div>completed: {data.completed ? '✅' : '❌'}</div>
+            </div>
+            <div>{data.title}</div>
+          </div>
+        )}
+      </div>
+      <button
+        onClick={() => {
+          if (id === max) return;
+          setId(id + 1);
+          setData(undefined);
+        }}
+      >
+        <ThickArrowRightIcon />
+      </button>
+    </div>
+  );
+};
 
 export const dataFetchingLecture = getLectureItem({
   title: 'API 통신하기',
@@ -328,6 +397,14 @@ export const dataFetchingLecture = getLectureItem({
             <div>
               https://jsonplaceholder.typicode.com 의 todo 목록을 버튼 클릭으로
               왔다갔다 할 수 있는 코드
+              <br />
+              <br />
+              <div className="flex items-center gap-2">
+                <ThickArrowDownIcon /> 이거 만들 거예요
+              </div>
+              <article className="mt-4 border border-red-500 p-4">
+                <LiveCodingGoal />
+              </article>
             </div>
           ),
         },

@@ -168,6 +168,58 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
+          title: '왜 그렇게 호들갑이냐',
+          content: (
+            <div>
+              <h2 className="text-center text-3xl">어려우니까!</h2>
+              <div className="mt-10 flex flex-wrap gap-8">
+                <div className="flex flex-col items-center gap-4">
+                  <h2>동기</h2>
+                  <p className="leading-10">
+                    밥을 먹고,
+                    <br />
+                    세미나 녹화 영상을 보고,
+                    <br />
+                    과제를 진행하고,
+                    <br />
+                    택배 오는 걸 기다리다가 택배가 오면 택배를 받아
+                  </p>
+                  <CodeSnippet
+                    language="javascript"
+                    code={[
+                      `eat();`,
+                      `const 지식 = watchSeminar();`,
+                      `doAssignment(지식);`,
+                      `receiveParcel();`,
+                    ]}
+                  />
+                </div>
+                <div className="flex flex-col items-center gap-4">
+                  <h2>비동기</h2>
+                  <p className="leading-10">
+                    밥을 먹어.
+                    <br />
+                    먹으면서 세미나 녹화 영상 본 다음 다 보면 과제를 진행해.
+                    <br />
+                    그리고 택배가 오면 하던 일을 멈추고 수령해
+                  </p>
+                  <CodeSnippet
+                    language="javascript"
+                    code={[
+                      `await Promise.all([`,
+                      `    eat(),`,
+                      `    watchSeminar()`,
+                      `      .then((지식) => doAssignment(지식)),`,
+                      `    receiveParcel(),`,
+                      `])`,
+                    ]}
+                  />
+                </div>
+              </div>
+            </div>
+          ),
+        },
+        {
           title: '보통 비동기를 어떻게 구현하냐',
           content: (
             <div className="flex flex-col items-center gap-4">
@@ -206,6 +258,7 @@ export const asyncLecture = getLectureItem({
               <p>
                 개발자가 process 나 thread 를 신경쓰지 않고 비동기를 구현합니다
               </p>
+              <p>오히려 그렇기 때문에 처음에는 더 어렵게 느껴지기도 합니다</p>
               <CodeSnippet
                 language="javascript"
                 code={[
@@ -257,6 +310,18 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
+          title: '문법에 대한 이야기',
+          content: (
+            <div className="leading-10">
+              우리가 JavaScript를 만들었다고 생각해 봅시다.
+              <br />
+              Thread도 Process도 없습니다.
+              <br />
+              어떤 문법으로 비동기 코드를 작성하게 해야 할까요?
+            </div>
+          ),
+        },
+        {
           title: '가장 간단한 예시: setTimeout',
           content: (
             <AssetDescriptionLayout
@@ -292,7 +357,7 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
-          title: '콜백 패턴?',
+          title: '잠깐: 콜백 패턴?',
           content: (
             <AssetDescriptionLayout
               asset={
@@ -325,6 +390,9 @@ export const asyncLecture = getLectureItem({
                       `});`,
                     ]}
                   />
+                  <div className="mt-8">
+                    <InlineCode code="useCallback" />의 콜백도 이 콜백
+                  </div>
                 </div>
               }
               description={[
@@ -332,6 +400,26 @@ export const asyncLecture = getLectureItem({
                 '넘기는 함수를 콜백이라고 부른다',
               ]}
             />
+          ),
+        },
+        {
+          title: '아무튼',
+          content: (
+            <div>
+              <div>
+                이렇게 콜백 패턴을 이용하면 비동기 코드를 작성하는 문법을 제공할
+                수 있다
+              </div>
+              <br />
+              <br />
+              <div>
+                하지만 콜백 패턴은 여러 문제들이 있어서 JavaScript를 사용하는
+                개발자들이 힘들어하던데...
+              </div>
+              <div className="mt-4 text-right text-base">
+                우리 계속 JavaScript 만든 사람한테 빙의돼있는 상태입니다
+              </div>
+            </div>
           ),
         },
         {
@@ -359,7 +447,7 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
-          title: '콜백 패턴의 단점 (2) 에러 처리',
+          title: '콜백 패턴의 단점 (2) 콜백지옥 + 명확하지 않은 에러 처리',
           content: (
             <AssetDescriptionLayout
               asset={
@@ -415,7 +503,7 @@ export const asyncLecture = getLectureItem({
                 />
               }
               description={[
-                '콜백의 실행 권한은 개발자가 아닌 호출자에게 있다',
+                '콜백의 실행 권한은 호출자에게 있다',
                 '카드 번호 입력 라이브러리를 만든 사람이 버그를 만들었다면 어떻게 될까?',
                 '유저는 결제를 한 번 했는데 돈이 5번 빠져나간다면?',
                 '억지스럽다고 느껴질 수 있지만 충분히 가능한 시나리오',
@@ -424,7 +512,7 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
-          title: 'Promise',
+          title: 'Promise: 비동기 처리를 해결하기 위한 특수한 객체',
           content: (
             <AssetDescriptionLayout
               asset={
@@ -448,7 +536,7 @@ export const asyncLecture = getLectureItem({
                   <InlineCode code=".then()" />, <InlineCode code=".catch()" />,{' '}
                   <InlineCode code=".finally()" /> 를 사용해서 콜백 지옥을 해결
                 </>,
-                '콜백의 실행 권한이 개발자도 호출자도 아닌 브라우저에게 있으므로 신뢰할 수 있음',
+                '콜백의 실행 권한이 호출자가 아닌 브라우저에게 있으므로 신뢰할 수 있음',
                 '',
                 'Pending, Fulfilled, Rejected 세 가지 상태를 가지는 특수한 객체',
                 '처음에는 Pending',
@@ -484,7 +572,7 @@ export const asyncLecture = getLectureItem({
               </Button>
               <div className="mt-4">
                 <InlineCode code="fetch()" /> 는 http 요청을 한 다음 요청 결과를
-                담<strong>을</strong>Promise 를 반환하는 함수
+                담<strong>을</strong> Promise 를 반환하는 함수
               </div>
 
               <p className="mt-4">
@@ -493,6 +581,66 @@ export const asyncLecture = getLectureItem({
               </p>
 
               <img src={fetchPromise} />
+            </div>
+          ),
+        },
+        {
+          title: 'Promise 예시 코드: 아니 이거 왜안돼',
+          content: (
+            <div>
+              <CodeSnippet
+                language="javascript"
+                code={[
+                  `const response = fetch('https://jsonplaceholder.typicode.com/todos/1')`,
+                  ``,
+                  `// 여기 (promise 와 동일한 실행컨텍스트) 에서는`,
+                  `// 무슨 짓을 해도 response를 벗긴 미래값에 접근할 수 없다`,
+                  `// 접근하기 위해서는 반드시 아래와 같이`,
+                  ``,
+                  `response.then((미래값) => {`,
+                  `  // 이 안에서만 접근 가능하다`,
+                  `});`,
+                ]}
+              />
+            </div>
+          ),
+        },
+        {
+          title: '몇 가지 퀴즈와 예제들',
+          content: (
+            <div>
+              <p>출력 결과를 예상해봅시다</p>
+              <CodeSnippet
+                code={[
+                  `setTimeout(() => console.log(1), 0);`,
+                  `console.log(2);`,
+                  `setTimeout(() => console.log(3), 1000);`,
+                  `console.log(4);`,
+                  `setTimeout(() => console.log(5), 2000);`,
+                  `console.log(6);`,
+                  `setTimeout(() => console.log(7), 3000);`,
+                ]}
+                language="javascript"
+              />
+              <CodeSnippet
+                code={[
+                  `fetch('https://jsonplaceholder.typicode.com/todos/1')`,
+                  `  .then(() => console.log(1));`,
+                  ``,
+                  `console.log(2);`,
+                ]}
+                language="javascript"
+              />
+              <CodeSnippet
+                code={[
+                  `fetch('https://jsonplaceholder.typicode.com/todos')`,
+                  `  .then(() => console.log(1));`,
+                  ``,
+                  `fetch('https://jsonplaceholder.typicode.com/todos/1')`,
+                  `  .then(() => console.log(2));`,
+                ]}
+                language="javascript"
+              />
             </div>
           ),
         },
@@ -545,6 +693,23 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
+          title:
+            '어? 그러면 async/await 을 쓰면 동일 컨텍스트에서 미래값에 접근할 수 있나요?',
+          content: (
+            <div className="flex flex-col gap-8">
+              <div>앞서 말씀드렸듯 async 함수에서만 쓸 수 있음</div>
+              <div>
+                그래서 .then() 으로 안되는걸 하려고 하셨다면 await 써도 안됩니다
+              </div>
+              <div>
+                지금 당장은 안 와닿는 설명일텐데, Promise에 익숙하지 않으시다면
+                미래값에 접근하려고 await 이리저리 붙였다 뗐다 하는데 안돼서
+                머리 싸매는 삽질을 하시게 될 거예요
+              </div>
+            </div>
+          ),
+        },
+        {
           title: '우리는',
           content: (
             <div className="flex flex-col gap-4">
@@ -557,9 +722,6 @@ export const asyncLecture = getLectureItem({
               <p>
                 단, <InlineCode code="setTimeout" /> 같은 옛날 기술은 콜백
                 패턴으로 써야 할 수도 있음
-              </p>
-              <p>
-                Promise 쓸 땐 대부분의 경우 async/await 문법을 사용하게 됩니다
               </p>
               <CodeSnippet
                 language="javascript"
@@ -580,38 +742,34 @@ export const asyncLecture = getLectureItem({
           ),
         },
         {
-          title: '몇 가지 퀴즈와 예제들',
+          title: 'async/await 퀴즈',
           content: (
             <div>
               <p>출력 결과를 예상해봅시다</p>
               <CodeSnippet
                 code={[
-                  `setTimeout(() => console.log(1), 0);`,
-                  `console.log(2);`,
-                  `setTimeout(() => console.log(3), 1000);`,
-                  `console.log(4);`,
-                  `setTimeout(() => console.log(5), 2000);`,
-                  `console.log(6);`,
-                  `setTimeout(() => console.log(7), 3000);`,
-                ]}
-                language="javascript"
-              />
-              <CodeSnippet
-                code={[
-                  `fetch('https://jsonplaceholder.typicode.com/todos/1')`,
-                  `  .then(() => console.log(1));`,
+                  `const foo = async () => {`,
+                  `  const todosResponse = await fetch('https://jsonplaceholder.typicode.com/todos')`,
+                  `  const todos = await todosResponse.json()`,
+                  `  console.log(1, todos.length);`,
                   ``,
-                  `console.log(2);`,
-                ]}
-                language="javascript"
-              />
-              <CodeSnippet
-                code={[
-                  `fetch('https://jsonplaceholder.typicode.com/todos')`,
-                  `  .then(() => console.log(1));`,
+                  `  const todoResponse = await fetch('https://jsonplaceholder.typicode.com/todos/1')`,
+                  `  const todo = await todoResponse.json()`,
+                  `  console.log(2, todo.title);`,
+                  `};`,
                   ``,
-                  `fetch('https://jsonplaceholder.typicode.com/todos/1')`,
-                  `  .then(() => console.log(2));`,
+                  `const boo = async () => {`,
+                  `  const todoResponse = await fetch('https://jsonplaceholder.typicode.com/todos/1')`,
+                  `  const todo = await todoResponse.json()`,
+                  `  console.log(3, todo.title);`,
+                  ``,
+                  `  const todosResponse = await fetch('https://jsonplaceholder.typicode.com/todos')`,
+                  `  const todos = await todosResponse.json()`,
+                  `  console.log(4, todos.length);`,
+                  `};`,
+                  ``,
+                  `foo();`,
+                  `boo();`,
                 ]}
                 language="javascript"
               />
