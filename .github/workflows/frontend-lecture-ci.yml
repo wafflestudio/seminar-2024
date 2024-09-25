@@ -18,13 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
       - name: Install dependencies
         run: yarn install
       - name: Run Lint
-        run: yarn lint
-      - name: Run Format
-        run: yarn format
-      - name: Check Types
-        run: yarn check-types
-      - name: Knip
-        run: yarn knip
+        run: yarn check-all

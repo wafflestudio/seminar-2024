@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 
 import { Callout } from '@/components/Callout';
 import { CodeSnippet } from '@/components/CodeSnippet';
