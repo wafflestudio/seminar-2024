@@ -20,7 +20,7 @@ export const asyncLecture = getLectureItem({
     <Slides
       slides={[
         {
-          title: '오늘 목표',
+          title: '목표',
           content: (
             <div>
               <ul className="flex list-disc flex-col gap-4">
