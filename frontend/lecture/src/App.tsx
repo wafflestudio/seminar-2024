@@ -3,7 +3,13 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from '@radix-ui/react-icons';
-import { Suspense, useCallback, useEffect, useState } from 'react';
+import {
+  type PropsWithChildren,
+  Suspense,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -51,12 +57,12 @@ const Sidebar = () => {
     <div className="relative flex">
       <div
         className={cn(
-          'flex flex-col overflow-hidden py-4 bg-blend-darken',
+          'flex flex-col overflow-hidden py-8 bg-blend-darken',
           isOpen ? 'w-52' : 'w-0',
         )}
       >
         <Link to="/">
-          <h1 className="text-center text-3xl font-bold">Lecture</h1>
+          <h1 className="text-center text-3xl font-bold">Frontend</h1>
         </Link>
         <Tabs
           className="mx-4 mt-8"
@@ -74,19 +80,11 @@ const Sidebar = () => {
           <ul className="mt-4 flex flex-col gap-4">
             {pages.flatMap((page) =>
               tab === 'assignment' && page.type === 'assignment' ? (
-                <li
-                  key={page.path}
-                  className={
-                    Date.now() > page.due.getTime() ? 'opacity-50' : undefined
-                  }
-                >
-                  <Link
-                    to={page.path}
-                    className={`flex flex-col gap-1 rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800 ${
-                      currentPath === page.path
-                        ? 'bg-blue-100 font-semibold dark:bg-blue-900'
-                        : ''
-                    }`}
+                <li key={page.path}>
+                  <PageLink
+                    path={page.path}
+                    isExpired={Date.now() > page.due.getTime()}
+                    currentPath={currentPath}
                   >
                     <h3 className="text-base">{page.title}</h3>
                     <p className="flex items-center gap-2 text-xs text-slate-500">
@@ -96,22 +94,14 @@ const Sidebar = () => {
                           `${MM}월 ${DD}일 ${HH}:${mm}:${ss}까지`,
                       )}
                     </p>
-                  </Link>
+                  </PageLink>
                 </li>
               ) : tab === 'lecture' && page.type === 'lecture' ? (
-                <li
-                  key={page.path}
-                  className={
-                    Date.now() > page.date.getTime() ? 'opacity-50' : undefined
-                  }
-                >
-                  <Link
-                    to={page.path}
-                    className={`flex flex-col gap-1 rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800 ${
-                      currentPath === page.path
-                        ? 'bg-blue-100 font-semibold dark:bg-blue-900'
-                        : ''
-                    }`}
+                <li key={page.path}>
+                  <PageLink
+                    path={page.path}
+                    isExpired={Date.now() > page.date.getTime()}
+                    currentPath={currentPath}
                   >
                     <h3>{page.title}</h3>
                     <p className="text-xs text-slate-400">{page.description}</p>
@@ -119,7 +109,7 @@ const Sidebar = () => {
                       <CalendarIcon />{' '}
                       {formatDate(page.date, ({ MM, DD }) => `${MM}월 ${DD}일`)}
                     </p>
-                  </Link>
+                  </PageLink>
                 </li>
               ) : (
                 []
@@ -148,6 +138,37 @@ const Sidebar = () => {
         </TooltipProvider>
       </div>
     </div>
+  );
+};
+
+const PageLink = ({
+  children,
+  path,
+  isExpired,
+  currentPath,
+}: PropsWithChildren<{
+  path: string;
+  isExpired: boolean;
+  currentPath: string;
+}>) => {
+  const isCurrent = currentPath === path;
+
+  return (
+    <Link
+      to={path}
+      ref={(e) => {
+        if (isCurrent && e !== null) {
+          e.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }}
+      className={cn(
+        `flex flex-col gap-1 rounded-sm px-4 py-2 transition-colors hover:bg-slate-200 dark:hover:bg-slate-800`,
+        isCurrent && 'bg-blue-100 font-semibold dark:bg-blue-900',
+        isExpired && 'opacity-50',
+      )}
+    >
+      {children}
+    </Link>
   );
 };
 

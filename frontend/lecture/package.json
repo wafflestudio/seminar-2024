@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "check-types": "tsc",
-    "lint": "eslint .",
-    "format": "prettier . --check",
-    "check-all": "yarn check-types && yarn lint && yarn format && yarn knip"
+    "types:check": "tsc",
+    "lint:check": "eslint .",
+    "format:check": "prettier . --check",
+    "unused:check": "knip",
+    "check-all": "yarn types:check && yarn lint:check && yarn format:check && yarn unused:check"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.1",

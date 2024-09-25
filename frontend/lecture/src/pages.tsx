@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 import { getComoAssignment } from '@/assignments/Como';
 import { dataFetchingPracticeAssignment } from '@/assignments/DataFetchingPractice';
