@@ -7,7 +7,8 @@ import { Slides } from '@/components/Slides';
 import { StackBadge } from '@/components/StackBadge';
 import { getLectureItem } from '@/lectures';
 
-import cssIsAwesome from './cssisawesome.gif';
+import cssIsAwesomeGif from './cssisawesome.gif';
+import cssIsAwesomeWebp from './cssisawesome.webp';
 
 export const stylingLecture = getLectureItem({
   title: '스타일링',
@@ -35,6 +36,12 @@ export const stylingLecture = getLectureItem({
                 <li>반응형에 대한 이해</li>
                 <li>접근성에 대한 이해</li>
               </ul>
+              <div className="mb-4 text-2xl font-bold">
+                다행히 우리가 공부하지 않아도 되는 것:
+              </div>
+              <ul className="mb-6 ml-6 list-disc space-y-2">
+                <li>예쁘게 디자인하기</li>
+              </ul>
               <div className="rounded-lg p-4 text-xl font-semibold">
                 이번 세미나에서 다룰 것: 시안 보고 구현 잘 하는 법
               </div>
@@ -49,40 +56,58 @@ export const stylingLecture = getLectureItem({
                 <StackBadge stack="CSS" /> (Cascading Style Sheets)
               </div>
               <div>브라우저 DOM 요소들에 스타일을 먹이는 언어</div>
-              <img src={cssIsAwesome} />
+              <div>
+                &apos;프론트 한 번 해볼까?&apos; 하는 많은 백엔드 개발자들을
+                좌절시키는 언어
+              </div>
+              <div className="my-6 flex flex-wrap gap-4">
+                <img src={cssIsAwesomeGif} className="object-contain" />
+                <img
+                  src={cssIsAwesomeWebp}
+                  width={500}
+                  className="object-contain"
+                />
+              </div>
               <div>지금까지 과제 진행하시면서, css 할 만 하셨나요?</div>
             </div>
           ),
         },
         {
-          title: 'CSS 덜 힘들게 하는 법',
+          title: 'CSS는 왜 힘들고 어려울까?',
           content: (
-            <div>
-              <div>좋은 속성들을 쓰기</div>
+            <div className="flex flex-col gap-8">
+              <div>
+                세미나 1에서 말씀드렸듯, css가 탄생할 당시 웹은 문서를 보는
+                도구였습니다
+              </div>
+              <div>
+                문서를 보는 도구에 적합한 속성들이나 선택자 설계를
+                어플리케이션에 적용하려니 어려울 수밖에
+              </div>
+              <div>
+                그래서 css를 쉽게 하기 위한 많은 도구들이 있는데, 그래서 더
+                어렵습니다. 뭘 써야 돼?
+              </div>
+              <div>+) 사파리 같은 트롤 브라우저</div>
+            </div>
+          ),
+        },
+        {
+          title: 'CSS 덜 힘들게 하는 법 두 가지',
+          content: (
+            <div className="flex flex-col gap-8 text-4xl">
+              <div>속성들 잘 알고 쓰기</div>
               <div>생산성 높이기</div>
             </div>
           ),
         },
         {
-          title: 'CSS 속성 - flex',
+          title: '특히 정말 중요한 속성: flex',
           content: (
             <div>
-              딴건 몰라도 flex는 진짜 중요합니다. 레이아웃 잡는 건 거의 flex로
-              다 됩니다
-              <br />
-              <ExternalLink href="https://studiomeal.com/archives/197" />이
-              블로그로 대체합니다
-            </div>
-          ),
-        },
-        {
-          title: 'CSS 속성 - position',
-          content: (
-            <div>
-              레이아웃상 있어야 할 위치를 무시하고 위치를 찍고 싶을 수 있습니다.
-              이럴 때 position absolute 같은 걸 사용합니다.
-              <br />
-              하지만 남용하면 안 됩니다. 꼭 필요할 때만 사용
+              세미나에서 설명하기는 시간 아깝기도 하고 진짜 좋은 블로그가 있어서
+              <ExternalLink href="https://studiomeal.com/archives/197" /> 이걸로
+              대체합니다. 각자 공부해주세요!
             </div>
           ),
         },
@@ -90,21 +115,13 @@ export const stylingLecture = getLectureItem({
           title: 'CSS 생산성',
           content: (
             <div className="flex flex-col gap-4 leading-10">
-              <p>
-                웹은 처음에 문서를 보는 도구로 만들어졌고, 그에 따라 css 등이
-                발전했었다
-              </p>
-              <p>
-                그러니까 CSS가 처음 만들어지고 설계될 당시에는
-                <br />
-                이렇게 프레임워크 기반으로 개발하고 컴포넌트 단위로 쪼개서
-                개발하고 복잡한 디자인을 가진 걸 웹으로 만들지 몰랐다는 것
-              </p>
+              속성을 모두 다 빠삭하게 아는 사람이어도, css는 근본적으로 어렵고
+              더럽다
             </div>
           ),
         },
         {
-          title: 'CSS 생산성 - Plain CSS',
+          title: 'Plain CSS',
           content: (
             <div>
               <CodeSnippet
@@ -119,19 +136,26 @@ export const stylingLecture = getLectureItem({
                 code={[`.logo {`, `  color: red;`, `  margin: 2px 4px;`, `}`]}
                 language="css"
               />
+              <p className="my-6 text-center">가장 기본적인 형태</p>
               <p className="flex items-center gap-2">
-                className 과 css 사이에 연결점이 없음 <ArrowRightIcon />{' '}
-                유지보수가 어려움
+                🤔 className 과 css 사이에 연결점이 없음 <ArrowRightIcon />{' '}
+                유지보수가 어려움 (안 쓰는 css 찾기 등)
               </p>
               <p className="flex items-center gap-2">
-                className 이 전역적으로 적용됨 <ArrowRightIcon /> 충돌 가능성.
-                다른 파일에서 동일한 className 을 사용해버리면?
+                🤔 className 이 전역적으로 적용됨 <ArrowRightIcon /> 충돌
+                가능성. 다른 파일에서 동일한 className 을 사용해버리면?
+              </p>
+              <p className="flex items-center gap-2">
+                🤔 파일 두 개를 개발해야 됨. 귀찮음
+              </p>
+              <p className="flex items-center gap-2">
+                🤔 파일 두 개를 개발해야 됨. 귀찮음
               </p>
             </div>
           ),
         },
         {
-          title: 'CSS 생산성 - Plain CSS + BEM (2010년)',
+          title: 'BEM (2010년)',
           content: (
             <div>
               <CodeSnippet
@@ -153,16 +177,17 @@ export const stylingLecture = getLectureItem({
               />
               <p className="flex items-center gap-2">
                 BEM 방식으로 className을 작성 <ArrowRightIcon /> (아마도) 이름이
-                겹치지는 않을 것
+                안 겹치지 않을까?
               </p>
               <p className="flex items-center gap-2">
-                하지만 여전히 연결점이 없으므로 유지보수가 어려움
+                하지만 BEM을 싫어하는 사람들도 있고, 별로 많은 문제를 해결해주지
+                않았다
               </p>
             </div>
           ),
         },
         {
-          title: 'CSS 생산성 - CSS Modules (2015)',
+          title: 'CSS Modules (2015)',
           content: (
             <div>
               <CodeSnippet
@@ -178,7 +203,8 @@ export const stylingLecture = getLectureItem({
                 language="css"
               />
               <p className="flex items-center gap-2">
-                css 파일을 모듈화하여 사용 <ArrowRightIcon /> 연결점이 생김
+                css 파일을 모듈화하여 사용 <ArrowRightIcon /> 연결점이 생김.
+                자동완성 등
               </p>
               <p className="flex items-center gap-2">
                 className이 <InlineCode code="logo_x56a8x" /> 이런 식으로
@@ -188,12 +214,17 @@ export const stylingLecture = getLectureItem({
           ),
         },
         {
+          title: 'CSS Modules 라이브코딩',
+          content: <div>어떻게 들어가는지 한 번 봅시다</div>,
+        },
+        {
           title: 'CSS 생산성 - CSS in JS (2014~)',
           content: (
-            <div>
+            <div className="flex flex-col gap-8">
               <div>
                 <StackBadge stack="styled-components" />,{' '}
-                <StackBadge stack="emotion" /> 등 라이브러리를 사용
+                <StackBadge stack="emotion" /> 등 라이브러리의 도움을 받아야
+                한다
               </div>
               <CodeSnippet
                 code={[
@@ -210,38 +241,48 @@ export const stylingLecture = getLectureItem({
                   `  </Wrapper>`,
                   `)`,
                 ]}
-                language="jsx"
+                language="tsx"
               />
               <div>
                 JavaScript 파일 안에 css 정보를 같이 두기 때문에, 연결점이
                 있어서 유지보수가 쉬움
               </div>
               <div>클래스명도 자동으로 해싱됨</div>
+              <div>다만 성능 문제가 조금..</div>
             </div>
           ),
         },
         {
-          title: 'CSS 생산성 - Tailwind (2017~)',
+          title: 'CSS in JS 라이브코딩',
+          content: <div>어떻게 돌아가는지 한 번 봅시다</div>,
+        },
+        {
+          title: 'CSS 생산성 - Atomic CSS (대표주자 Tailwind: 2017~)',
           content: (
-            <div>
+            <div className="flex flex-col gap-8">
               <CodeSnippet
                 code={[
                   `return <div className="text-red-500 my-0.5 mx-1">Logo</div>`,
                 ]}
                 language="jsx"
               />
-              <div>아예 패러다임을 전환하여 utility-first 로 개발</div>
+              <div>아예 패러다임을 전환</div>
+              <div>선택자를 생략</div>
               <div>
                 자주 사용하는 스타일들에 해당하는 유틸성 className을 미리
-                만들어둔다
+                만들어두고, className을 조립해서 사용
               </div>
             </div>
           ),
         },
         {
+          title: 'TailwindCSS 라이브코딩',
+          content: <div>어떻게 돌아가는지 한 번 봅시다</div>,
+        },
+        {
           title: 'CSS 생산성 - 그래서 어떡하라고?',
           content: (
-            <div className="text-center">
+            <div className="flex flex-col gap-6 text-center">
               <div>
                 요즘은 <InlineCode code="CSS Modules" />,{' '}
                 <InlineCode code="CSS-in-JS" />, <InlineCode code="tailwind" />{' '}
@@ -270,8 +311,9 @@ export const stylingLecture = getLectureItem({
               <div>미리 만들어져있는 이쁜 시스템들이 있습니다</div>
               <div>
                 디자이너가 디자인해주는 상황이면 필요없지만, 어드민을 구축하거나
-                직접 디자인을 해야 할 경우 아주 편하게 사용 가능
+                직접 디자인을 해야 할 경우 아주 편하게 사용 가능합니다
               </div>
+              <div>하나씩 문서 들어가서 볼까요?</div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-lg border p-4">
                   <img
@@ -330,9 +372,9 @@ export const stylingLecture = getLectureItem({
                 요즘은 <StackBadge stack="Figma" />가 대세
               </div>
               <div>
-                위에서 언급한 기술들 중 제일 기본인{' '}
-                <StackBadge stack="CSS Modules" /> 를 이용해서, SNUTT 모바일
-                로그인화면 라이브코딩 하겠습니다
+                위에서 언급한 기술들 중 Plain CSS는 거르고, 제일 근본있다고 할
+                수 있는 <StackBadge stack="CSS Modules" /> 를 이용해서 SNUTT
+                모바일 로그인화면 라이브코딩 하겠습니다
               </div>
               <ExternalLink
                 label="SNUTT 모바일 피그마"
