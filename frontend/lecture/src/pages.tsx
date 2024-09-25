@@ -22,6 +22,7 @@ import { reactApisLecture } from '@/lectures/ReactApis/lecture';
 import { reactBasicLecture } from '@/lectures/ReactBasic/lecture';
 import { stateManagementLecture } from '@/lectures/StateManagement';
 import { stylingLecture } from '@/lectures/Styling';
+import { testingLecture } from '@/lectures/Testing';
 import { typescriptLecture } from '@/lectures/TypeScript';
 import { webBasicLecture } from '@/lectures/WebBasic/lecture';
 import { wrapupLecture } from '@/lectures/WrapUp';
@@ -60,6 +61,7 @@ export const pages: (
   { path: '/state-management', ...stateManagementLecture },
   { path: '/performance', ...performanceLecture },
   { path: '/infrastructure', ...infrastructureLecture },
+  { path: '/testing', ...testingLecture },
   { path: '/ecosystem', ...ecosystemLecture },
   { path: '/wrapup', ...wrapupLecture },
   {
