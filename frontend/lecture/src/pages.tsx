@@ -5,8 +5,8 @@ import { dataFetchingPracticeAssignment } from '@/assignments/DataFetchingPracti
 import { environmentSetupAssignment } from '@/assignments/EnvironmentSetup';
 import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
+import { snuttCloneCoding1Assignment } from '@/assignments/SnuttCloneCoding1';
 import { tutorialAssignment } from '@/assignments/Tutorial';
-import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { StackBadge } from '@/components/StackBadge';
 import { architectureLecture } from '@/lectures/Architecture';
@@ -100,30 +100,7 @@ export const pages: (
     ),
     title: '개발 블로그 작성 (1)',
   },
-  {
-    path: '/project-1',
-    type: 'assignment',
-    due: new Date('2024-10-16 23:59:59'),
-    element: (
-      <div>
-        조별로{' '}
-        <ExternalLink
-          href="https://github.com/orgs/wafflestudio22-5"
-          label="wafflestudio22-5 org"
-        />{' '}
-        에 repository 를 만들고 초대해 드립니다
-        <br />
-        전체적인 ui 레이아웃, 로그인, 로그아웃, 로그인 시 내 닉네임 조회 구현
-        (나머지 데이터는 하드코딩)
-        <br />
-        <InlineCode code="react-router-dom" /> 라이브러리를 설치해서 사용하시면
-        됩니다.
-        <StackBadge stack="React Router" /> 사용법은 자습 (새로운 기술 적용하기
-        연습)
-      </div>
-    ),
-    title: 'SNUTT 클론코딩 (1)',
-  },
+  { path: '/project-1', ...snuttCloneCoding1Assignment },
   {
     path: '/como-4',
     ...getComoAssignment({ seminar: 4, due: new Date('2024-11-05 23:59:59') }),
@@ -135,7 +112,13 @@ export const pages: (
     element: (
       <div>
         시간표 렌더링, 강의 검색 (이름으로만, 필터 X), 시간표에 검색한 강의
-        추가/제거 구현
+        추가/제거 구현{' '}
+        <div>
+          <InlineCode code="react-router-dom" /> 라이브러리를 설치해서
+          사용하시면 됩니다.
+          <StackBadge stack="React Router" /> 사용법은 자습 (새로운 기술
+          적용하기 연습)
+        </div>
       </div>
     ),
     title: 'SNUTT 클론코딩 (2)',
