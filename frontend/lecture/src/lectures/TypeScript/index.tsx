@@ -401,12 +401,12 @@ export const typescriptLecture = getLectureItem({
                   `type C = (number | boolean) & unknown; // number | boolean`,
                   `type D = any | boolean;                // any`,
                   `type E = any & boolean;                // any`,
+                  `type F = string & boolean;             // never`,
                 ]}
               />
             </div>
           ),
         },
-
         {
           title: '타입 시스템 이해하기 (5) 퀴즈',
           content: (
@@ -539,10 +539,10 @@ export const typescriptLecture = getLectureItem({
                   <CodeSnippet
                     code={[
                       `// ❌ 이렇게 쓰지 말고`,
-                      `const onChangeTab = (newTab: string) => {};`,
+                      `const check2048Status = (board: Board): string => {};`,
                       ``,
                       `// ✅ 이렇게`,
-                      `const onChangeTab = (newTab: '강의' | '과제') => {};`,
+                      `const check2048Status = (board: Board): 'win' | 'lose' | 'playing' => {};`,
                     ]}
                     language="typescript"
                   />
