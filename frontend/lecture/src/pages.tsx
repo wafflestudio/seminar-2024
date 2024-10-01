@@ -90,12 +90,12 @@ export const pages: (
     type: 'assignment',
     due: new Date('2024-10-16 23:59:59'),
     element: (
-      <div>
-        <br />
-        velog, medium, tistory 등 자신이 선호하는 플랫폼 하나 골라서, 지금까지
-        배운 내용들 바탕으로 블로그 한 편 작성
-        <br />
-        TIL / 배운 내용 정리 / 와플 루키 후기 등등
+      <div className="flex h-full flex-col items-center justify-center gap-8 p-8">
+        <span>
+          velog, medium, tistory 등 자신이 선호하는 플랫폼 하나 골라서, 지금까지
+          배운 내용들 바탕으로 블로그 한 편 작성
+        </span>
+        <span>TIL / 배운 내용 정리 / 와플 루키 후기 등등</span>
       </div>
     ),
     title: '개발 블로그 작성 (1)',
