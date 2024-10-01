@@ -78,7 +78,7 @@
 | 이우열 | wooyeol0519@snu.ac.kr |         |         |         |
 | 김다인 | didak0423@gmail.com |         |         |         |
 | 김진서 | jsjamie05@gmail.com |         |         |         |
-| 오정윤 | jungyun_01@snu.ac.kr |         |         |         |
+| 오정윤 | jungyun_01@snu.ac.kr |  android  |  spring  |  iOS  |
 | 서준빈 | sjb8032@gmail.com |         |         |         |
 | 김도연 | pega501@snu.ac.kr |         |         |         |
 | 심형오 | amma0209@naver.com |         |         |         |
