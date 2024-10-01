@@ -37,7 +37,7 @@ export const stylingLecture = getLectureItem({
                 <li>접근성에 대한 이해</li>
               </ul>
               <div className="mb-4 text-2xl font-bold">
-                다행히 우리가 공부하지 않아도 되는 것:
+                다행히 우리가 꼭 공부하지는 않아도 되는 것:
               </div>
               <ul className="mb-6 ml-6 list-disc space-y-2">
                 <li>예쁘게 디자인하기</li>
@@ -57,8 +57,8 @@ export const stylingLecture = getLectureItem({
               </div>
               <div>브라우저 DOM 요소들에 스타일을 먹이는 언어</div>
               <div>
-                &apos;프론트 한 번 해볼까?&apos; 하는 많은 백엔드 개발자들을
-                좌절시키는 언어
+                &apos;프론트 한 번 해볼까?&apos; 하는 많은 개발자들을 좌절시키는
+                언어
               </div>
               <div className="my-6 flex flex-wrap gap-4">
                 <img src={cssIsAwesomeGif} className="object-contain" />
@@ -69,6 +69,7 @@ export const stylingLecture = getLectureItem({
                 />
               </div>
               <div>지금까지 과제 진행하시면서, css 할 만 하셨나요?</div>
+              <div>쉬우셨다면 규모가 너무 작아서일 수 있습니다</div>
             </div>
           ),
         },
@@ -86,7 +87,7 @@ export const stylingLecture = getLectureItem({
               </div>
               <div>
                 그래서 css를 쉽게 하기 위한 많은 도구들이 있는데, 그래서 더
-                어렵습니다. 뭘 써야 돼?
+                헷갈립니다. 뭘 써야 돼?
               </div>
               <div>+) 사파리 같은 트롤 브라우저</div>
             </div>
@@ -105,9 +106,18 @@ export const stylingLecture = getLectureItem({
           title: '특히 정말 중요한 속성: flex',
           content: (
             <div>
-              세미나에서 설명하기는 시간 아깝기도 하고 진짜 좋은 블로그가 있어서
+              세미나에서 설명하기는 시간도 걸리고 저보다 훨씬 설명 잘 하는 좋은
+              블로그가 있어서
               <ExternalLink href="https://studiomeal.com/archives/197" /> 이걸로
               대체합니다. 각자 공부해주세요!
+            </div>
+          ),
+        },
+        {
+          title: '나머지는 개발 하면서 공부해주시면 됩니다',
+          content: (
+            <div>
+              <InlineCode code="float" /> 같은 진짜 이상한거만 안 쓰면 됩니다
             </div>
           ),
         },
@@ -136,20 +146,21 @@ export const stylingLecture = getLectureItem({
                 code={[`.logo {`, `  color: red;`, `  margin: 2px 4px;`, `}`]}
                 language="css"
               />
-              <p className="my-6 text-center">가장 기본적인 형태</p>
+              <p className="my-6 text-center">
+                세미나에서 유일하게 알려드렸던 가장 기본적인 형태
+              </p>
               <p className="flex items-center gap-2">
                 🤔 className 과 css 사이에 연결점이 없음 <ArrowRightIcon />{' '}
-                유지보수가 어려움 (안 쓰는 css 찾기 등)
+                유지보수가 어려움 (안 쓰는 css 찾기 등. 오타나서 스타일 적용 안
+                되고 있던 적 없으신가요?)
               </p>
               <p className="flex items-center gap-2">
                 🤔 className 이 전역적으로 적용됨 <ArrowRightIcon /> 충돌
                 가능성. 다른 파일에서 동일한 className 을 사용해버리면?
               </p>
               <p className="flex items-center gap-2">
-                🤔 파일 두 개를 개발해야 됨. 귀찮음
-              </p>
-              <p className="flex items-center gap-2">
-                🤔 파일 두 개를 개발해야 됨. 귀찮음
+                🤔 <InlineCode code=".tsx" />, <InlineCode code=".css" /> 이렇게
+                파일 두 개를 개발해야 됨. 귀찮음
               </p>
             </div>
           ),
@@ -157,7 +168,7 @@ export const stylingLecture = getLectureItem({
         {
           title: 'BEM (2010년)',
           content: (
-            <div>
+            <div className="flex flex-col gap-8">
               <CodeSnippet
                 code={[
                   `import './App.css'`,
@@ -175,9 +186,13 @@ export const stylingLecture = getLectureItem({
                 ]}
                 language="css"
               />
+              <p>특수한 기능은 아니고 class 이름을 잘 짓는 방법론</p>
               <p className="flex items-center gap-2">
                 BEM 방식으로 className을 작성 <ArrowRightIcon /> (아마도) 이름이
                 안 겹치지 않을까?
+              </p>
+              <p className="flex items-center gap-2">
+                실제로 BEM만 엄청 잘 써도 많은 문제가 해결된다고 합니다만..
               </p>
               <p className="flex items-center gap-2">
                 하지만 BEM을 싫어하는 사람들도 있고, 별로 많은 문제를 해결해주지
@@ -189,7 +204,7 @@ export const stylingLecture = getLectureItem({
         {
           title: 'CSS Modules (2015)',
           content: (
-            <div>
+            <div className="flex flex-col gap-8">
               <CodeSnippet
                 code={[
                   `import styles from './App.module.css'`,
@@ -203,19 +218,20 @@ export const stylingLecture = getLectureItem({
                 language="css"
               />
               <p className="flex items-center gap-2">
-                css 파일을 모듈화하여 사용 <ArrowRightIcon /> 연결점이 생김.
-                자동완성 등
+                className이 <InlineCode code="logo_x56a8x" /> 이런 식으로
+                자동으로 해싱되어서 다른 파일과 겹칠 걱정은 안 해도 됨
               </p>
               <p className="flex items-center gap-2">
-                className이 <InlineCode code="logo_x56a8x" /> 이런 식으로
-                자동으로 해싱되어서 다른 파일과 겹칠 일이 없음
+                이외에도 기능이 몇 개 더 지원되긴 한다
               </p>
             </div>
           ),
         },
         {
           title: 'CSS Modules 라이브코딩',
-          content: <div>어떻게 들어가는지 한 번 봅시다</div>,
+          content: (
+            <div>그냥 CSS랑 비교하면서, 어떻게 들어가는지 한 번 봅시다</div>
+          ),
         },
         {
           title: 'CSS 생산성 - CSS in JS (2014~)',
@@ -244,11 +260,11 @@ export const stylingLecture = getLectureItem({
                 language="tsx"
               />
               <div>
-                JavaScript 파일 안에 css 정보를 같이 두기 때문에, 연결점이
-                있어서 유지보수가 쉬움
+                JavaScript 파일 안에 css 정보를 같이 두기 때문에 생산성이 높고
+                유지보수가 쉬움 (오타날 일 절대 없음)
               </div>
-              <div>클래스명도 자동으로 해싱됨</div>
-              <div>다만 성능 문제가 조금..</div>
+              <div>클래스 겹칠 걱정도 없음</div>
+              <div>다만 성능이나 프레임워크 호환성 문제가 조금 있다</div>
             </div>
           ),
         },
@@ -262,22 +278,30 @@ export const stylingLecture = getLectureItem({
             <div className="flex flex-col gap-8">
               <CodeSnippet
                 code={[
-                  `return <div className="text-red-500 my-0.5 mx-1">Logo</div>`,
+                  `return <div className="w-10 m-2 p-4 bg-red text-blue">Logo</div>`,
                 ]}
                 language="jsx"
               />
               <div>아예 패러다임을 전환</div>
-              <div>선택자를 생략</div>
+              <div>선택자를 생략한다. 애초에 선택자가 왜 필요해?</div>
               <div>
                 자주 사용하는 스타일들에 해당하는 유틸성 className을 미리
-                만들어두고, className을 조립해서 사용
+                만들어두고, 쓰는 쪽에서는 className을 조립해서 사용
               </div>
             </div>
           ),
         },
         {
           title: 'TailwindCSS 라이브코딩',
-          content: <div>어떻게 돌아가는지 한 번 봅시다</div>,
+          content: (
+            <div className="flex flex-col gap-4">
+              <span>어떻게 돌아가는지 한 번 봅시다</span>
+              <ExternalLink
+                href="https://tailwindcss.com/docs/width"
+                label="공식문서"
+              />
+            </div>
+          ),
         },
         {
           title: 'CSS 생산성 - 그래서 어떡하라고?',
@@ -285,14 +309,18 @@ export const stylingLecture = getLectureItem({
             <div className="flex flex-col gap-6 text-center">
               <div>
                 요즘은 <InlineCode code="CSS Modules" />,{' '}
-                <InlineCode code="CSS-in-JS" />, <InlineCode code="tailwind" />{' '}
-                세 개가 가장 많이 사용되며, 어느 한 쪽이 최고라고 말할 수 없음
+                <InlineCode code="CSS-in-JS" />,{' '}
+                <InlineCode code="tailwindcss" /> 세 개가 가장 많이 사용되며,
+                어느 한 쪽이 최고라고 말할 수 없음
                 <br />
                 <b className="mt-2 text-base">
                   개발에서 도구는 종교와도 같은 것
                 </b>
               </div>
               <div className="mt-5">취향에 맞는 걸 잘 찾아서 사용하자!</div>
+              <div className="mt-5">
+                세미나 과제에서 모든 종류를 다 써 보는 것도 좋은 방법입니다
+              </div>
               <div className="mt-5">
                 저는 <StackBadge stack="Tailwind CSS" /> 를 가장 선호합니다
                 <br />

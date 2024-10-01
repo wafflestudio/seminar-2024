@@ -81,7 +81,7 @@ export const typescriptLecture = getLectureItem({
               />
               <p>위 코드는 타입 에러가 발생하지만, 실행은 잘 된다</p>
               <Separator className="my-8" />
-              <p>TypeScript를 실행하면, JavaScript로 변환한 다음 실행됩니다</p>
+              <p>기본적으로 TypeScript는 JavaScript로 변환한 다음 실행됩니다</p>
               <CodeSnippet
                 code={[
                   `const add = (a, b) => a + b;`,
@@ -91,10 +91,6 @@ export const typescriptLecture = getLectureItem({
                 language="javascript"
               />
               <p>즉 결국 실행되는 코드는 이거. 안 될 이유가 없다</p>
-              <p>
-                그러니까 타입이란 건 어떻게 보면 좀더 발전된 형태의 주석이라고
-                볼 수도 있음
-              </p>
               <Separator className="my-8" />
               <p>
                 그리고 다시 말해, 타입에 무슨 짓을 해도 로직이 깨질 일은 없다는
@@ -109,6 +105,10 @@ export const typescriptLecture = getLectureItem({
                 language="typescript"
               />
               <p>위 코드는 타입이 택도 없지만, 실행은 잘 된다</p>
+              <p>
+                그러니까 타입이란 건 어떻게 보면 좀더 발전된 형태의 주석이라고
+                볼 수도 있음
+              </p>
             </div>
           ),
         },
@@ -130,6 +130,7 @@ export const typescriptLecture = getLectureItem({
                 <InlineCode code="cmd + i" />, 윈도우의 경우{' '}
                 <InlineCode code="ctrl + i" /> 를 누르면 자동완성이 나타납니다
               </Callout>
+              <p>혹시 이게 안 된다면 심각한 문제가 있는 상태입니다</p>
             </div>
           ),
         },
@@ -150,12 +151,11 @@ export const typescriptLecture = getLectureItem({
               />
               <CodeSnippet
                 code={[
-                  `// count 는 자동으로 number 로 추론됨`,
-                  `// setCount 도 자동으로 number 에 대한 setState로 추론됨`,
-                  `const [count, setCount] = useState(0);`,
+                  `const size: number = 4; // ❌ 이거 말고`,
+                  `const size = 4;         // ✅ 이렇게`,
                   ``,
-                  `// 그러니까 이럴 필요가 없습니다`,
-                  `const [count, setCount] = useState<number>(0);`,
+                  `const [count, setCount] = useState<number>(0); // ❌ 이거 말고`,
+                  `const [count, setCount] = useState(0);         // ✅ 이렇게`,
                 ]}
                 language="typescript"
               />
@@ -164,7 +164,8 @@ export const typescriptLecture = getLectureItem({
                   `const fetchTodo: (): Promise<TodoResponse> => {...};`,
                   ``,
                   `// response 는 자동으로 TodoResponse 타입으로 추론됩니다`,
-                  `fetchTodo.then((response) => {`,
+                  `fetchTodo.then((response: TodoResponse) => {}) // ❌ 이거 말고`,
+                  `fetchTodo.then((response) => {})               // ✅ 이렇게`,
                 ]}
                 language="typescript"
               />
@@ -176,11 +177,13 @@ export const typescriptLecture = getLectureItem({
           ),
         },
         {
-          title: '자동추론 (2) 함수형으로 짜자: 배열',
+          title: '자동추론 (2) 배열 함수들을 잘 활용하자',
           content: (
             <div className="flex flex-col items-center gap-4">
-              <div>프론트는 특성상 배열 다룰 일이 매우 많은데,</div>
-              <p>for문 대신 array 함수들을 사용합시다</p>
+              <div>웹개발은 특성상 배열 다룰 일이 매우 많은데,</div>
+              <p>
+                for문 대신 array 함수들을 사용하면 자동추론이 훨씬 잘 됩니다
+              </p>
               <div className="flex items-center gap-4">
                 <CodeSnippet
                   code={[
@@ -212,11 +215,7 @@ export const typescriptLecture = getLectureItem({
               </div>
               <div>
                 <InlineCode code="push" />, <InlineCode code="splice" />,{' '}
-                <InlineCode code="pop" /> 같은 이상한 거 쓰지 맙시다
-              </div>
-              <div>
-                함수형 패러다임 자체는 타입 추론 말고도 많은 장점이 있습니다.
-                다음 시간에 더 자세히 다룰 예정
+                <InlineCode code="pop" /> 은 대부분의 상황에서 별로입니다
               </div>
             </div>
           ),
@@ -226,7 +225,7 @@ export const typescriptLecture = getLectureItem({
           content: (
             <div className="flex flex-col items-center gap-4">
               <div>프론트는 특성상 객체 다룰 일도 매우 많은데,</div>
-              <p>객체도 함수형으로 짜면 자동추론이 더 잘 됩니다</p>
+              <p>객체를 수정하면 자동추론이 잘 안 됩니다</p>
               <div className="flex items-center gap-4">
                 <CodeSnippet
                   code={[
@@ -247,11 +246,7 @@ export const typescriptLecture = getLectureItem({
                 />
               </div>
               <div>
-                항상 객체를 직접 수정하지 말고, 수정된 객체를 새로 만듭시다
-              </div>
-              <div>
-                함수형 패러다임 자체는 타입 추론 말고도 많은 장점이 있습니다.
-                다음 시간에 더 자세히 다룰 예정
+                불변성을 지키는 건 타입 추론 말고도 많은 장점이 있습니다
               </div>
             </div>
           ),
@@ -266,30 +261,79 @@ export const typescriptLecture = getLectureItem({
               <p>
                 <InlineCode code="string" />은 모든 문자열의 집합
               </p>
+              <CodeSnippet
+                code={[
+                  `function foo(name: string) {}`,
+                  `foo('John'); // ✅`,
+                  `foo(123);    // ❌`,
+                ]}
+                language="typescript"
+              />
               <p>
                 <InlineCode code="boolean" />은 모든 불리언 값의 집합
               </p>
+              <CodeSnippet
+                code={[
+                  `function foo(isStudent: boolean) {}`,
+                  `foo(true);  // ✅`,
+                  `foo(false); // ✅`,
+                  `foo('yes'); // ❌`,
+                ]}
+                language="typescript"
+              />
               <p>
                 <InlineCode code="string | number" />은 문자열 집합과 숫자
                 집합의 합집합
               </p>
-              <p className="-mt-3 text-right text-xl">
-                <InlineCode code="|" />는 합집합 기호
-              </p>
+              <CodeSnippet
+                code={[
+                  `// | 는 합집합 기호`,
+                  `function bar(nameOrAge: string | number) {}`,
+                  `bar('John'); // ✅`,
+                  `bar(25);     // ✅`,
+                  `bar(true);   // ❌`,
+                ]}
+                language="typescript"
+              />
               <p>
                 <InlineCode code="string & number" />은 문자열 집합과 숫자
                 집합의 교집합, 즉 공집합
               </p>
-              <p className="-mt-3 text-right text-xl">
-                <InlineCode code="|" />는 교집합 기호
-              </p>
-
+              <CodeSnippet
+                code={[
+                  `// & 는 교집합 기호`,
+                  `function baz(nameAndAge: string & number) {} // ❌ 아무것도 못 넣음`,
+                  `baz('John'); // ❌`,
+                  `baz(25);     // ❌`,
+                ]}
+                language="typescript"
+              />
               <p>
                 <InlineCode code="0" />은 숫자 0만 원소로 있는 집합
               </p>
+
+              <CodeSnippet
+                code={[
+                  `function qux(zero: 0) {}`,
+                  `qux(0);  // ✅`,
+                  `qux(1);  // ❌`,
+                  `qux('0'); // ❌`,
+                ]}
+                language="typescript"
+              />
+
               <p>
                 <InlineCode code="0 | 1" />은 0과 1로 이루어진 집합
               </p>
+              <CodeSnippet
+                code={[
+                  `function quux(zeroOrOne: 0 | 1) {}`,
+                  `quux(0);  // ✅`,
+                  `quux(1);  // ✅`,
+                  `quux(2);  // ❌`,
+                ]}
+                language="typescript"
+              />
             </div>
           ),
         },
@@ -299,6 +343,10 @@ export const typescriptLecture = getLectureItem({
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2">
                 할당 가능하다 == 부분집합이다
+              </div>
+              <div className="flex items-center gap-2">
+                아래의 <strong>쉬운</strong> 예제들을 좀더 <strong>깊게</strong>{' '}
+                이해해보자
               </div>
               <CodeSnippet
                 code={[
@@ -327,6 +375,9 @@ export const typescriptLecture = getLectureItem({
           title: '타입 시스템 이해하기 (3) 객체 타입',
           content: (
             <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                비슷한 형태로 이해하면 됩니다
+              </div>
               <CodeSnippet
                 code={[
                   `// grade 라는 key의 값 타입이 number인 모든 객체의 집합`,
@@ -342,6 +393,18 @@ export const typescriptLecture = getLectureItem({
                 ]}
                 language="typescript"
               />
+              <div className="flex items-center gap-2">살짝 어려운 퀴즈</div>
+              <CodeSnippet
+                code={[
+                  `type Student = { name: string, grade: number };`,
+                  `type Teacher = { name: string, subject: number };`,
+                  `type WhatIsThis = Student & Teacher;`,
+                  ``,
+                  `const a = { name: '우현민', grade: 1, subject: 2 };`,
+                  `const b: WhatIsThis = a;`,
+                ]}
+                language="typescript"
+              />
             </div>
           ),
         },
@@ -349,6 +412,9 @@ export const typescriptLecture = getLectureItem({
           title: '타입 시스템 이해하기 (4) 함수 타입',
           content: (
             <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                비슷한 형태로 이해하면 됩니다
+              </div>
               <CodeSnippet
                 code={[
                   `// 첫 번째 파라미터는 { grade: number } 타입이고 두 번째 파라미터는 string 타입을 받아서 string을 반환할 수 있는 모든 함수의 집합`,
@@ -368,6 +434,10 @@ export const typescriptLecture = getLectureItem({
                 ]}
                 language="typescript"
               />
+              <p>
+                근데 함수 타입은 깊게 파면 타입스크립트 자체 버그가 좀 있어서 .
+                . . 퀴즈는 넘어가겠습니다
+              </p>
             </div>
           ),
         },
@@ -450,7 +520,7 @@ export const typescriptLecture = getLectureItem({
           title: '제네릭',
           content: (
             <div className="leading-10">
-              <p>다른 언어들에서의 제네릭이랑 다르지 않습니다</p>
+              <p>다른 언어들에서의 제네릭이랑 다르지 않습니다. 넘어갈게요</p>
 
               <CodeSnippet
                 code={[
@@ -479,7 +549,7 @@ export const typescriptLecture = getLectureItem({
                 이거까지 알면 진짜 타입스크립트 문법은 다 뗐다 라고 할 수 있는
                 멋지고 어려운 기능
               </p>
-              <div>예시 코드만 하나 보여드리고 넘어갈게요</div>
+              <div>얘도 예시 하나만 보여드리고 넘어갈게요</div>
               <CodeSnippet
                 code={[`type Awaited<T> = T extends Promise<infer U> ? U : T;`]}
                 language="typescript"
@@ -491,6 +561,7 @@ export const typescriptLecture = getLectureItem({
           title: '타입 좁히기',
           content: (
             <div className="leading-10">
+              <strong>매우매우매우 중요한 기능</strong>
               <p>
                 TypeScript는 충분히 똑똑해서, JavaScript 로직을 보고 타입을 좁혀
                 준다
@@ -507,7 +578,9 @@ export const typescriptLecture = getLectureItem({
                 ]}
                 language="tsx"
               />
-              <p>if문 말고 삼항연산자, switch문, typeof 연산자 등도 마찬가지</p>
+              <p>
+                if문 말고 삼항연산자, switch문, filter, typeof 등도 마찬가지
+              </p>
               <Separator className="my-6" />
               <CodeSnippet
                 code={[
@@ -526,11 +599,21 @@ export const typescriptLecture = getLectureItem({
                 ]}
                 language="tsx"
               />
+              <CodeSnippet
+                code={[
+                  `const row: (number | null)[] = [2, 2, null, null];`,
+                  ``,
+                  `// 이건 최근에 지원되기 시작했습니다 (5.5버전부터)`,
+                  `// 타입스크립트 옛날버전쓰면 (number | null)[] 로 잡힐 수도`,
+                  `const filtered = row.filter((item) => item !== null); // number[]`,
+                ]}
+                language="tsx"
+              />
             </div>
           ),
         },
         {
-          title: '타입스크립트 잘 쓰기',
+          title: '타입스크립트 잘 쓰는 Tip',
           content: (
             <div className="leading-10">
               <ol className="list-decimal">
@@ -547,17 +630,22 @@ export const typescriptLecture = getLectureItem({
                     language="typescript"
                   />
                 </li>
-                <li>자동추론 활용하기</li>
-                <li>자동완성 활용하기</li>
+                <li>자동추론을 잘 활용하기 위해 타입 정보 적게 쓰기</li>
+                <li>자동완성을 잘 활용하기 위해 타입 정보 많이 쓰기</li>
               </ol>
+              <b className="mt-10 text-xl font-normal">
+                2번 3번은 서로 상반된 이야기인데, 맞습니다. 써보시면서 어느
+                상황에는 뭐가 더 중요한지 찾아보시면 됩니다
+              </b>
             </div>
           ),
         },
         {
           title: '의외로 타입스크립트가 할 수 있는 것들',
           content: (
-            <div className="leading-10">
+            <div className="flex flex-col gap-8 leading-10">
               <img src={advance} />
+              <p>실제로 쓰고 있는 코드</p>
               <p>
                 사실 타입스크립트는 스펙상 튜링 완전한 언어이기에, (이론상)
                 만들고 싶은 타입을 모두 만들 수 있습니다
