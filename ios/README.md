@@ -29,7 +29,7 @@
     <td>301-101</td>
     <td><A href="https://github.com/wafflestudio/seminar-2024/blob/main/ios/seminar1/seminar1.pdf"> seminar1.pdf </td>
     <td><A href="https://github.com/wafflestudio/seminar-2024-ios-assignment/tree/main/assignment1"> 과제1 </A></td>
-    <td></td>
+    <td><A href="https://youtu.be/EHViIvslM9Q"> 세미나1 </A></td>
   </tr>
   </table>
 
