@@ -86,7 +86,7 @@
 | 임형석 | anvil1028@snu.ac.kr |         |         |         |
 | 이재현 | jhlee2483@gmail.com |         |         |         |
 | 구자운 | k45238376@gmail.com |         |         |         |
-| 전종원 | cjw107@snu.ac.kr |         |         |         |
+| 전종원 | cjw107@snu.ac.kr | fastapi |         |         |
 | 허용재 | quad.heo@snu.ac.kr |         |         |         |
 | 류수영 | ryuswimming@snu.ac.kr |         |         |         |
 | 인소윤 | snu1127@snu.ac.kr |         |         |         |
