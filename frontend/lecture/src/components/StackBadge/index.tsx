@@ -32,7 +32,9 @@ export const StackBadge = ({
     | 'Turborepo'
     | 'Create React App'
     | 'GitHub Copilot'
-    | 'React Router';
+    | 'React Router'
+    | 'Axios'
+    | 'Svelte';
 }) => {
   const image = {
     Zustand:
@@ -85,6 +87,9 @@ export const StackBadge = ({
       'https://seeklogo.com/images/G/github-copilot-logo-C25AFBDF08-seeklogo.com.png',
     'React Router':
       'https://static-00.iconduck.com/assets.00/react-router-icon-2048x1116-jfeevj0l.png',
+    Axios: 'https://axios-http.com/assets/favicon.ico',
+    Svelte:
+      'https://seeklogo.com/images/S/svelte-logo-E3497608CB-seeklogo.com.png',
   }[stack];
 
   return (
