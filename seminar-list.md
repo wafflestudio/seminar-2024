@@ -105,7 +105,7 @@
 | 서종환 | mujigae1020@gmail.com |         |         |         |
 | 조유진 | uzinfamily@naver.com |         |         |         |
 | 이상우 | dltkddn233@snu.ac.kr |         |         |         |
-| 킨웨이 | khinwaiyan@snu.ac.kr |         |         |         |
+| 킨웨이 | khinwaiyan@snu.ac.kr |   frontend   |  fastapi   |   spring   |
 | 조인우 | hanoinwoo@snu.ac.kr |         |         |         |
 | 임혁준 | dlagurwns03@gmail.com |         |         |         |
 | 김범준 | johnbie0627@gmail.com |         |         |         |
