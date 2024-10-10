@@ -95,7 +95,7 @@
 | 박예현 | pyh0275@snu.ac.kr |         |         |         |
 | 김도현 | kdh8156@snu.ac.kr |         |         |         |
 | 김인서 | insuhkim@naver.com |         |         |         |
-| 양진혁 | icecandle@snu.ac.kr |         |         |         |
+| 양진혁 | icecandle@snu.ac.kr | frontend | spring | iOS |
 | 최장혁 | goranikin@snu.ac.kr |         |         |         |
 | 이윤철 | yiyc02@naver.com |         |         |         |
 | 박종경 | jongkyung2005@gmail.com |         |         |         |
