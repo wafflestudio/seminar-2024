@@ -117,7 +117,7 @@
 | 정희우 | huiwooj@snu.ac.kr |         |         |         |
 | 주정연 | jjy051221@gmail.com |         |         |         |
 | 임수호 | dalitravan@gmail.com |         |         |         |
-| 안우진 | awj1204@snu.ac.kr |         |         |         |
+| 안우진 | awj1204@snu.ac.kr |frontend|android|ios|
 | 김무진 | vladimir@snu.ac.kr |         |         |         |
 | 이찬회 | dlcksghl159@gmail.com |         |         |         |
 | 박규동 | gyudong0909@snu.ac.kr |         |         |         |
