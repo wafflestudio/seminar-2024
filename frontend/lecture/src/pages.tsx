@@ -7,8 +7,6 @@ import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { snuttCloneCoding1Assignment } from '@/assignments/SnuttCloneCoding1';
 import { tutorialAssignment } from '@/assignments/Tutorial';
-import { InlineCode } from '@/components/InlineCode';
-import { StackBadge } from '@/components/StackBadge';
 import { architectureLecture } from '@/lectures/Architecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
@@ -27,6 +25,8 @@ import { typescriptLecture } from '@/lectures/TypeScript';
 import { webBasicLecture } from '@/lectures/WebBasic/lecture';
 import { wrapupLecture } from '@/lectures/WrapUp';
 import { Home } from '@/pages/home';
+
+import { snuttCloneCoding2Assignment } from './assignments/SnuttCloneCoding2';
 
 export const pages: (
   | { type: 'index'; path: string; element: ReactNode }
@@ -105,24 +105,7 @@ export const pages: (
     path: '/como-4',
     ...getComoAssignment({ seminar: 4, due: new Date('2024-11-05 23:59:59') }),
   },
-  {
-    path: '/project-2',
-    type: 'assignment',
-    due: new Date('2024-11-10 23:59:59'),
-    element: (
-      <div>
-        시간표 렌더링, 강의 검색 (이름으로만, 필터 X), 시간표에 검색한 강의
-        추가/제거 구현{' '}
-        <div>
-          <InlineCode code="react-router-dom" /> 라이브러리를 설치해서
-          사용하시면 됩니다.
-          <StackBadge stack="React Router" /> 사용법은 자습 (새로운 기술
-          적용하기 연습)
-        </div>
-      </div>
-    ),
-    title: 'SNUTT 클론코딩 (2)',
-  },
+  { path: '/project-2', ...snuttCloneCoding2Assignment },
   {
     path: '/como-5',
     ...getComoAssignment({ seminar: 5, due: new Date('2024-11-19 23:59:59') }),
