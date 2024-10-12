@@ -59,7 +59,7 @@ export const architectureLecture = getLectureItem({
                 </span>
               </div>
               <div>
-                이 경우 개발자는 더 많은 시간을 기존 코드 이해하고 욕하는 데에
+                이 경우 개발자는 더 많은 시간과 노력을 기존 코드를 이해하는 데에
                 소모해야 하며, 회사는 제품을 출시하는 데에 더 오랜 시간과 많은
                 돈을 들여야 합니다.
               </div>
@@ -102,10 +102,13 @@ export const architectureLecture = getLectureItem({
           content: (
             <div className="flex flex-col gap-4">
               <div>어떻게 보면 개발 공부의 본질이라고도 생각합니다</div>
+              <br />
               <div>
-                만들어내는 역량은 누구나 두달만 하면 배우지만, 잘 만드는 건 많은
-                노력과 정성이 필요
+                만들어내는 역량은 누구나 조금만 하면 배우지만, 잘 만드는 건 끝이
+                없으며 많은 노력과 정성이 필요
               </div>
+              <br />
+              <div>학문으로서 소프트웨어는 매우 느리게 발전하는 분야</div>
             </div>
           ),
         },
@@ -115,15 +118,17 @@ export const architectureLecture = getLectureItem({
             <div className="flex flex-col gap-4 text-3xl">
               <div>잘 만드는 법</div>
               <ol className="my-8 flex flex-col gap-4">
-                <li>1. 잘못 만든다</li>
-                <li>2. 고통받는다</li>
-                <li>3. 고민하고 개선한다</li>
-                <li>4. 책 등을 통해서 한번씩 인사이트와 지식을 얻어간다</li>
+                <li>1. 잘못 만들어서 고통받는다</li>
+                <li className="font-extrabold">2. 고민하고 개선한다</li>
+                <li>3. 책 등을 통해서 한번씩 인사이트와 지식을 얻어간다</li>
               </ol>
 
-              <Callout title="그러려면">
-                잘못되어가는 신호에 집중해야 한다
-              </Callout>
+              <div className="text-xl">
+                사실 그래서, 이 챕터는 계속 개발을 하다 보면 자연스럽게 성장할
+                수 있는 영역
+              </div>
+
+              <Callout title="포기하거나 건성으로 치우지 말고, 잘못되어가는 신호에 집중해야 한다" />
             </div>
           ),
         },
@@ -131,18 +136,25 @@ export const architectureLecture = getLectureItem({
           title: '여기까지가 이번 챕터에서 하고 싶은 이야기 전부입니다',
           content: (
             <div className="flex flex-col gap-6">
+              <Callout title="다시 강조: 잘못되어가는 신호에 집중해야 한다" />
               <div>하지만 이러고 끝나면 너무 추상적이고 찝찝하니</div>
               <div>
-                앞의 4번에서 얘기한 &quot;인사이트와 지식&quot;을 몇 개만
+                앞의 3번에서 얘기한 &quot;인사이트와 지식&quot;을 몇 개만
                 살펴봅시다
               </div>
-              <div>
-                하지만 중요한 것: 이런 원칙들은 모두 누군가가 &quot;내가 이렇게
-                하니까 좋더라&quot;라고 말하고 많은 사람들이 공감한 이야기일 뿐
-                <br />
-                진리는 아닙니다
+              <ol>
+                <li>네이밍</li>
+                <li>DRY 원칙</li>
+                <li>함수형 프로그래밍</li>
+                <li>관심사의 분리</li>
+                <li>폴더 구조</li>
+                <li>리팩토링</li>
+              </ol>
+              <div className="text-xl opacity-60">
+                하지만 이런 원칙들은 모두 누군가가 &quot;내가 이렇게 하니까
+                좋더라&quot;라고 말하고 많은 사람들이 공감한 이야기일 뿐, 진리는
+                아닙니다
               </div>
-              <Callout title="은총알은 없다" />
             </div>
           ),
         },

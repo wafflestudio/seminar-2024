@@ -49,6 +49,9 @@ export const stateManagementLecture = getLectureItem({
                 이를 돕기 위한 여러 도구들이 존재하며, 사실상 상태관리 도구 없이
                 어플리케이션을 만드는 건 쉽지 않다
               </p>
+              <p>
+                프론트엔드에 있다 보면 반드시 만나게 되는 주요 주제들 중 하나
+              </p>
               <p>여러분도 토이프로젝트 가시면 뭐 하나는 쓰셔야 할 거예요</p>
             </div>
           ),
@@ -292,16 +295,38 @@ export const stateManagementLecture = getLectureItem({
               </p>
               <p>
                 클라이언트 상태관리 도구는 사용하지 않거나{' '}
-                <StackBadge stack="Zustand" /> <StackBadge stack="Jotai" /> 중에
-                취향껏 쓰고, 서버 상태 관리 도구는{' '}
-                <StackBadge stack="Tanstack Query" /> 를 쓰는 게 일반적입니다.
+                <StackBadge stack="Redux" /> <StackBadge stack="Zustand" />{' '}
+                <StackBadge stack="Jotai" /> 중에 취향껏 쓰고, 서버 상태 관리
+                도구는 <StackBadge stack="Tanstack Query" /> 를 쓰는 게
+                일반적입니다.
               </p>
               <p>
-                제 취향은 <StackBadge stack="Tanstack Query" /> 하나만 쓰고
-                클라이언트 상태관리는 모두
-                <InlineCode code="useState" />로 처리하는 것인데, 프로젝트
-                성격에 따라 다르긴 합니다
+                개인적인 취향은 <StackBadge stack="Tanstack Query" /> 하나만
+                쓰고 클라이언트 상태 관리 라이브러리는 따로 사용하지 않는 것이긴
+                한데, 프로젝트 성격에 따라 다를 거라고 생각합니다
               </p>
+            </div>
+          ),
+        },
+        {
+          title: '그래서 어떻게 하면 되나요?',
+          content: (
+            <div className="flex flex-col gap-4">
+              <p className="text-center">딱히 할 건 없습니다</p>
+              <p className="text-center text-xl opacity-50">
+                오히려 억지로 쓸데없이 상태관리 도구를 추가하면 힘들어지기만
+                합니다 (오버스펙)
+              </p>
+              <p>프로젝트 진행하시다 보면 상태를 많이 많이 다루셔야 할 거고</p>
+              <p>
+                그러다 보면 앞의 <i>클린 코드</i> 챕터에서 다뤘듯 필요성을
+                느끼실 거예요
+              </p>
+              <p>그럼 그때 적당한 도구를 찾아서 추가하시면 됩니다</p>
+              <div className="text-center text-xl opacity-80">
+                추천하는 스택은 <StackBadge stack="Tanstack Query" />{' '}
+                <StackBadge stack="Zustand" />
+              </div>
             </div>
           ),
         },
