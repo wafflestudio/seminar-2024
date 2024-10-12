@@ -94,7 +94,7 @@ export const StackBadge = ({
 
   return (
     <span className="inline-flex items-center gap-2 rounded-md bg-slate-200 py-1 pl-2 pr-3 text-xl dark:bg-slate-700">
-      <img src={image} className="inline w-6 rounded" />
+      <img src={image} className="inline h-6 w-6 rounded object-contain" />
       <span>{stack}</span>
     </span>
   );
