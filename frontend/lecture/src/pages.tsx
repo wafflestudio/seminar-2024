@@ -18,6 +18,7 @@ import { otLecture } from '@/lectures/OT';
 import { performanceLecture } from '@/lectures/Performance';
 import { reactApisLecture } from '@/lectures/ReactApis/lecture';
 import { reactBasicLecture } from '@/lectures/ReactBasic/lecture';
+import { routingLecture } from '@/lectures/Routing';
 import { stateManagementLecture } from '@/lectures/StateManagement';
 import { stylingLecture } from '@/lectures/Styling';
 import { testingLecture } from '@/lectures/Testing';
@@ -59,6 +60,7 @@ export const pages: (
   { path: '/styling', ...stylingLecture },
   { path: '/architecture', ...architectureLecture },
   { path: '/state-management', ...stateManagementLecture },
+  { path: '/routing', ...routingLecture },
   { path: '/performance', ...performanceLecture },
   { path: '/infrastructure', ...infrastructureLecture },
   { path: '/testing', ...testingLecture },
