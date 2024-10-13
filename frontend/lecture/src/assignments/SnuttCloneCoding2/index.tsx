@@ -98,7 +98,7 @@ export const snuttCloneCoding2Assignment = getAssignmentItem({
                 이동해야 합니다. (즉, url도 변경되고 화면도 변경되어야 함)
               </li>
               <li>
-                <StackBadge stack="React Router" /> 라이브러리를 설치해서
+                오늘 배운 <StackBadge stack="React Router" /> 라이브러리를
                 사용하시면 됩니다.{' '}
                 <InlineCode code="yarn add react-router-dom" /> 로 설치할 수
                 있습니다.
@@ -183,6 +183,16 @@ export const snuttCloneCoding2Assignment = getAssignmentItem({
               </li>
             </ul>
           </section>
+          <section>
+            <h2>6. 새로고침 시 페이지 유지 (vercel SPA 설정하기)</h2>
+            <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
+              <li>
+                아마 /mypage 경로에서 새로고침을 하면 오류 화면이 뜰 거예요
+              </li>
+              <li>오류 화면 말고 mypage 가 정상적으로 잘 뜨게 해 주세요</li>
+              <li>Hint: vercel.json을 설정해주면 됩니다</li>
+            </ul>
+          </section>
         </CardContent>
       </Card>
       <Card>
@@ -197,10 +207,16 @@ export const snuttCloneCoding2Assignment = getAssignmentItem({
               끄셔도 됩니다.
             </li>
             <li>
-              이번 과제는 기간도 길고 양도 많습니다. 코모를 빨리 잡으신 다음{' '}
-              <StackBadge stack="React Router" /> 초기 세팅이랑 바텀 네비바
-              구현을 다같이 빨리 먼저 해치우시고, 나머지는 업무 분배를 해서
-              진행하시는 걸 추천드립니다.
+              이번 세미나부터는 실제 SNUTT swagger 를 문서로 사용합니다만, base
+              url은 저번 과제와 마찬가지로{' '}
+              <InlineCode code="https://wafflestudio-seminar-2024-snutt-redirect.vercel.app" />{' '}
+              입니다
+            </li>
+            <li>
+              이번 과제는 기간도 길고 양도 저번보다 많습니다 (세 배 정도?).
+              코모를 빨리 잡으신 다음 <StackBadge stack="React Router" /> 초기
+              세팅이랑 바텀 네비바 구현을 다같이 빨리 먼저 해치우시고, 나머지는
+              업무 분배를 미리미리 해서 진행하시는 걸 추천드립니다.
             </li>
             <li>
               중간고사 기간을 고려해서 조금 더 넉넉하게 11월 10일까지로
