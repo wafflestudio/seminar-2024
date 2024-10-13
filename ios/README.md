@@ -25,11 +25,20 @@
   <tr>
     <td>1</td>
     <td></td>
-    <td>9월 26일 목 오후 5:00</td>
+    <td>9월 24일 목 오후 5:00</td>
     <td>301-101</td>
     <td><A href="https://github.com/wafflestudio/seminar-2024/blob/main/ios/seminar1/seminar1.pdf"> seminar1.pdf </td>
     <td><A href="https://github.com/wafflestudio/seminar-2024-ios-assignment/tree/main/assignment1"> 과제1 </A></td>
     <td><A href="https://youtu.be/EHViIvslM9Q"> 세미나1 </A></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td></td>
+    <td>10월 10일 목 오후 5:00</td>
+    <td>301-101</td>
+    <td><A href="https://github.com/wafflestudio/seminar-2024/blob/main/ios/seminar2/seminar2.pdf"> seminar2.pdf </td>
+    <td><A href="https://github.com/wafflestudio/seminar-2024-ios-assignment/tree/main/assignment2"> 과제2 </A></td>
+    <td><A href="https://youtu.be/l1vL01WvJ4s"> 세미나2 </A></td>
   </tr>
   </table>
 
