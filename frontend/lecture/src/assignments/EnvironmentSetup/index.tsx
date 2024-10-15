@@ -12,6 +12,7 @@ import {
 export const environmentSetupAssignment = getAssignmentItem({
   title: '개발 환경 설정',
   due: new Date('2024-09-10 23:59:59'),
+  member: '개인',
   element: (
     <div className="flex h-full flex-col justify-center gap-4">
       <Card>

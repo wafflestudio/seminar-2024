@@ -12,6 +12,7 @@ import {
 export const tutorialAssignment = getAssignmentItem({
   title: '튜토리얼',
   due: new Date('2021-09-11 23:59:59'),
+  member: '개인',
   element: (
     <div className="flex h-full flex-col items-center justify-center gap-4">
       <Card>

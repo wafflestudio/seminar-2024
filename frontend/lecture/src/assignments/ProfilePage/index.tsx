@@ -5,6 +5,7 @@ import { InlineCode } from '@/components/InlineCode';
 export const profilePageAssignment = getAssignmentItem({
   title: '프로필 페이지 제작',
   due: new Date('2021-09-11 23:59:59'),
+  member: '개인',
   element: (
     <div className="flex h-full flex-col items-center justify-center gap-8">
       <ol className="flex list-decimal flex-col justify-center gap-4 pl-8 leading-10">

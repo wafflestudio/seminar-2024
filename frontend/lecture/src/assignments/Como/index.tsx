@@ -7,10 +7,11 @@ export const getComoAssignment = ({
 }: {
   seminar: number;
   due: Date;
-}) =>
-  getAssignmentItem({
+}) => ({
+  ...getAssignmentItem({
     title: `세미나 ${seminar} 코모`,
     due: due,
+    member: '조별',
     element: (
       <h2 className="flex h-full flex-col items-center justify-center gap-8">
         <div>
@@ -19,4 +20,5 @@ export const getComoAssignment = ({
         </div>
       </h2>
     ),
-  });
+  }),
+});
