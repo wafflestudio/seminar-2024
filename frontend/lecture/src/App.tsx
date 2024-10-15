@@ -28,6 +28,8 @@ import { pages } from '@/pages';
 import { cn } from '@/utils/designsystem';
 import { formatDate } from '@/utils/formatDate';
 
+import { Badge } from './designsystem/ui/badge';
+
 export const App = () => {
   return (
     <div className="flex h-screen max-h-screen">
@@ -77,7 +79,7 @@ const Sidebar = () => {
           </TabsList>
         </Tabs>
         <nav className="flex-1 overflow-y-scroll px-4 text-xl">
-          <ul className="mt-4 flex flex-col gap-4">
+          <ul className="mt-4 flex flex-col gap-8">
             {pages.flatMap((page) =>
               tab === 'assignment' && page.type === 'assignment' ? (
                 <li key={page.path}>
@@ -86,6 +88,16 @@ const Sidebar = () => {
                     isExpired={Date.now() > page.due.getTime()}
                     currentPath={currentPath}
                   >
+                    <Badge
+                      className="w-fit text-xs"
+                      variant={
+                        ({ 개인: 'secondary', 조별: 'default' } as const)[
+                          page.member
+                        ]
+                      }
+                    >
+                      {page.member}
+                    </Badge>
                     <h3 className="text-base">{page.title}</h3>
                     <p className="flex items-center gap-2 text-xs text-slate-500">
                       {formatDate(

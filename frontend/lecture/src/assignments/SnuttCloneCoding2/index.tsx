@@ -1,3 +1,5 @@
+import { DotsVerticalIcon, PlusIcon } from '@radix-ui/react-icons';
+
 import { getAssignmentItem } from '@/assignments';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
@@ -21,6 +23,7 @@ import {
 export const snuttCloneCoding2Assignment = getAssignmentItem({
   due: new Date('2024-11-10 23:59:59'),
   title: 'SNUTT 클론코딩 (2)',
+  member: '조별',
   element: (
     <div className="flex flex-col gap-5">
       <Card>
@@ -149,8 +152,21 @@ export const snuttCloneCoding2Assignment = getAssignmentItem({
             </ul>
           </section>
           <section>
+            <h2>5. 새로고침 시 오류페이지 안 나게 하기</h2>
+            <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
+              <li>
+                아마 <InlineCode code="/mypage" /> 경로에서 새로고침을 하면 오류
+                화면이 뜰 거예요
+              </li>
+              <li>오류 화면 말고 mypage 가 정상적으로 잘 뜨게 해 주세요</li>
+              <li>
+                Hint: <InlineCode code="vercel.json" />을 설정해주면 됩니다
+              </li>
+            </ul>
+          </section>
+          <section>
             <h2>
-              5. (조에 3명 이상일 경우) 마이페이지 - 내 계정 - 닉네임 변경
+              6. (조에 3명 이상일 경우) 마이페이지 - 내 계정 - 닉네임 변경
               기능을 구현해 주세요.
             </h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
@@ -184,13 +200,72 @@ export const snuttCloneCoding2Assignment = getAssignmentItem({
             </ul>
           </section>
           <section>
-            <h2>6. 새로고침 시 페이지 유지 (vercel SPA 설정하기)</h2>
+            <h2>
+              7. (도전과제 - Optional) 시간표 목록 drawer 구현하기 (항목당 조원
+              모두에게 grace day 1일씩 추가 부여)
+              <br />
+              <i className="text-base font-normal opacity-80">
+                과제 사이즈가 얼마나 큰 건지 감이 안 잡혀서, 기간에 비해 너무
+                쉽나? 싶어서 일단 추가해뒀습니다. 학기가 좀 널널하거나 개발을 더
+                많이 해 보고 싶으시다면 도전해 보세요!
+              </i>
+            </h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
               <li>
-                아마 /mypage 경로에서 새로고침을 하면 오류 화면이 뜰 거예요
+                7-1. 시간표 화면 왼쪽 drawer를 구현해 주세요. 진입점 클릭 시
+                drawer가 열리고, drawer 에서 내 시간표 목록이 학기로 그룹화되어
+                보여야 합니다. 이 경우{' '}
+                <InlineCode code="GET /v1/tables/recent" /> 대신{' '}
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/getBrief"
+                  label="GET /v1/tables"
+                />{' '}
+                와{' '}
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/getTimetable"
+                  label="GET /v1/tables/{timetableId}"
+                />{' '}
+                API를 사용하면 됩니다. 시간표를 클릭하여 선택할 수 있으며,
+                시간표를 선택하면 화면에 선택한 시간표가 보여야 합니다. 초기
+                진입 시 디폴트로 선택된 시간표는{' '}
+                <InlineCode code="GET /v1/tables" /> API를 통해 가져온 시간표 중
+                첫 번째 아이템이면 됩니다.
               </li>
-              <li>오류 화면 말고 mypage 가 정상적으로 잘 뜨게 해 주세요</li>
-              <li>Hint: vercel.json을 설정해주면 됩니다</li>
+              <li>
+                7-2. 시간표 추가 기능을 구현해 주세요. drawer의 상단에 보면{' '}
+                <PlusIcon className="inline" /> 버튼이 있어서, 클릭하면 시간표
+                이름과 학기를 선택할 수 있는 바텀시트가 올라옵니다. 학기 선택
+                ui는 적당히 <InlineCode code="<select>" /> 컴포넌트 같은 걸로 해
+                주세요. 시간표 생성 API는{' '}
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/addTimetable"
+                  label="POST /v1/tables"
+                />{' '}
+                이고, 가능한 학기 목록을 불러오는 API는{' '}
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/getAllCoursebooks"
+                  label="GET /v1/course_books"
+                />{' '}
+                입니다.
+              </li>
+              <li>
+                7-3. drawer의 각 시간표 오른쪽에 있는{' '}
+                <DotsVerticalIcon className="inline" /> 를 구현해 주세요. 클릭
+                시 바텀시트가 올라와야 하며, 바텀시트에는 현재 스누티티 앱의
+                기능 중 이름 변경과 시간표 삭제 버튼만 있으면 됩니다. 그리고
+                해당 두 기능을 구현해 주세요. 이름 변경 누르면 바텀시트 올라와서
+                이름 변경할 수 있으면 되고 (
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/modifyTimetable"
+                  label="PUT /v1/tables/{timetableId}"
+                />
+                ), 삭제 누르면 컨펌한 다음 삭제되면 됩니다. (
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/deleteTimetable"
+                  label="DELETE /v1/tables/{timetableId}"
+                />
+                ) 변경사항은 화면에 자동으로 반영되어야 합니다.
+              </li>
             </ul>
           </section>
         </CardContent>

@@ -28,6 +28,7 @@ import { wrapupLecture } from '@/lectures/WrapUp';
 import { Home } from '@/pages/home';
 
 import { snuttCloneCoding2Assignment } from './assignments/SnuttCloneCoding2';
+import { ExternalLink } from './components/ExternalLink';
 
 export const pages: (
   | { type: 'index'; path: string; element: ReactNode }
@@ -41,6 +42,7 @@ export const pages: (
     }
   | {
       type: 'assignment';
+      member: '개인' | '조별';
       title: string;
       path: string;
       element: ReactNode;
@@ -91,6 +93,7 @@ export const pages: (
     path: '/blog-1',
     type: 'assignment',
     due: new Date('2024-10-16 23:59:59'),
+    member: '개인',
     element: (
       <div className="flex h-full flex-col items-center justify-center gap-8 p-8">
         <span>
@@ -116,18 +119,36 @@ export const pages: (
     path: '/project-3',
     type: 'assignment',
     due: new Date('2024-11-20 23:59:59'),
+    member: '조별',
     element: (
       <div>
-        시간표 목록, 시간표 추가/제거, 학기 토글, 관심강좌 구현
+        검색으로 시간표에 강의 추가, 강의상세 (지도제외), 강의 편집 및 제거
         <br />
-        vercel 대신 S3 + Cloudfront 에 배포, 태그 푸시 기반 CD 구축 (dev/prod
-        모두)
+        도전과제: Next.js로 마이그레이션{' '}
+        <ExternalLink
+          href="https://nextjs.org/docs/app/building-your-application/upgrading/from-create-react-app"
+          label="문서"
+        />
       </div>
     ),
     title: 'SNUTT 클론코딩 (3)',
   },
   {
+    path: '/aws-deploy',
+    member: '개인',
+    type: 'assignment',
+    due: new Date('2024-11-20 23:59:59'),
+    element: (
+      <div>
+        예전에 만들었던 프로필 페이지를 AWS S3 + CloudFront로 배포하고 CI/CD
+        구축
+      </div>
+    ),
+    title: 'vercel 대신 AWS에 배포',
+  },
+  {
     path: '/blog-2',
+    member: '개인',
     type: 'assignment',
     due: new Date('2024-11-24 23:59:59'),
     element: (

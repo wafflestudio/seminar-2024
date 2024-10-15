@@ -83,6 +83,7 @@ const SmallCode = ({ code }: { code: string }) => (
 
 export const dataFetchingPracticeAssignment = getAssignmentItem({
   due: new Date('2024-10-02 23:59:59'),
+  member: '개인',
   title: '데이터 페칭 연습',
   element: (
     <div className="flex flex-col gap-5 p-10">

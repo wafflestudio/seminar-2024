@@ -13,6 +13,7 @@ import {
 export const snuttCloneCoding1Assignment = getAssignmentItem({
   title: 'SNUTT 클론코딩 (1)',
   due: new Date('2024-10-16 23:59:59'),
+  member: '조별',
   element: (
     <div className="flex flex-col gap-12">
       <Card>
