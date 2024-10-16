@@ -278,8 +278,8 @@ export const snuttCloneCoding2Assignment = getAssignmentItem({
           <ul className="flex list-disc flex-col gap-4 pl-8">
             <li>
               Branch Protection Rule 에서{' '}
-              <InlineCode code="Require a pull request before merging" />은 이제
-              끄셔도 됩니다.
+              <InlineCode code="Required number of approvals before merging" />
+              은 이제 0으로 하셔도 됩니다
             </li>
             <li>
               이번 세미나부터는 실제 SNUTT swagger 를 문서로 사용합니다만, base

@@ -586,7 +586,7 @@ export const architectureLecture = getLectureItem({
                 가령 리액트 생태계에서 제일 보편적이라고 보이는 구조는
               </div>
               <div className="mt-4 text-sm">
-                <InlineCode code="sr/c" />
+                <InlineCode code="src/" />
                 <div className="mt-2 flex flex-col items-start gap-2 pl-4">
                   <InlineCode code="api/" />
                   <InlineCode code="components/" />
