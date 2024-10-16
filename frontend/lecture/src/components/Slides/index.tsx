@@ -67,7 +67,7 @@ export const Slides = ({
           {slide.content}
         </CardContent>
       </Card>
-      <Pagination>
+      <Pagination className="overflow-x-scroll">
         <PaginationContent>
           {Array.from({ length: slides.length }, (_, i) => {
             const itemPage = i + 1;

@@ -67,10 +67,10 @@ export const architectureLecture = getLectureItem({
 
               <Separator />
 
-              <div>
+              <strong>
                 하지만 코드를 잘 짰다면 코드가 커져도 개발 생산성이 대충
                 유지됩니다
-              </div>
+              </strong>
               <div>
                 그래서 우리는 코드가 커져도 개발 생산성과 안정성이 유지되도록,{' '}
                 <strong>잘 짜야</strong> 합니다.
@@ -91,7 +91,7 @@ export const architectureLecture = getLectureItem({
                 등등
               </div>
               <div>
-                (개인 생각) 점점 개발자의 역량은 <strong>잘 만드는 것</strong> +
+                (개인 생각) 점점 개발자의 역량은 <strong>잘 만드는 것</strong> +{' '}
                 <strong>문제를 풀어내는 역량</strong>이 중요해질 것
               </div>
             </div>
@@ -119,8 +119,11 @@ export const architectureLecture = getLectureItem({
               <div>잘 만드는 법</div>
               <ol className="my-8 flex flex-col gap-4">
                 <li>1. 잘못 만들어서 고통받는다</li>
-                <li className="font-extrabold">2. 고민하고 개선한다</li>
-                <li>3. 책 등을 통해서 한번씩 인사이트와 지식을 얻어간다</li>
+                <li className="font-extrabold">2. 고민하고 개선한다 (중요)</li>
+                <li>
+                  3. 책, 컨퍼런스, 블로그 등을 통해서 한번씩 인사이트와 지식을
+                  얻어간다
+                </li>
               </ol>
 
               <div className="text-xl">
@@ -142,7 +145,7 @@ export const architectureLecture = getLectureItem({
                 앞의 3번에서 얘기한 &quot;인사이트와 지식&quot;을 몇 개만
                 살펴봅시다
               </div>
-              <ol>
+              <ol className="flex list-decimal flex-col gap-2 pl-10">
                 <li>네이밍</li>
                 <li>DRY 원칙</li>
                 <li>함수형 프로그래밍</li>
@@ -159,7 +162,7 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
-          title: '네이밍',
+          title: '네이밍 (1)',
           content: (
             <div>
               <p>가장 기본적이면서도 어려운 것</p>
@@ -169,6 +172,16 @@ export const architectureLecture = getLectureItem({
                   `// 이름을 이렇게 지으면, 몇 분 뒤에 기억할 수 있을까?`,
                   `const func = (a: number) => {`,
                   `  return a > 1;`,
+                  `};`,
+                  ``,
+                  `// 거짓말`,
+                  `const validateIsUnder10 = (age: number) => {`,
+                  `  return age > 1;`,
+                  `};`,
+                  `// 좀더 현실적인 거짓말`,
+                  `const getUserData = async (id: number) => {`,
+                  `  await axios.post('/users/' + id, { name: 'Claude Sonnet' }); // 이 줄이 나중에 추가됨`,
+                  `  return axios.get('/users/' + id);`,
                   `};`,
                   ``,
                   `// 정직한 이름이긴 한데 아무런 정보가 없다`,
@@ -188,7 +201,83 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
+          title: '네이밍 (2)',
+          content: (
+            <div>
+              <p>
+                일반적으로 좋다고 여겨지는 JavaScript/TypeScript 생태계의 네이밍
+                규칙들
+              </p>
+              <CodeSnippet
+                code={[
+                  `// 의미있는 이름 사용`,
+                  `const bool = age > 10;       // ❌`,
+                  `const isAgeValid = age > 10; // ✅`,
+                  ``,
+                  `// 함수는 동사로 시작`,
+                  `const valid = (age: number) => {}    // ❌`,
+                  `const validate = (age: number) => {} // ✅`,
+                  ``,
+                  `// 함수가 아닌 값은 명사로 시작`,
+                  `const getAge = 10 // ❌`,
+                  `const age = 10;   // ✅`,
+                  ``,
+                  `// 부정적인 단어보다는 긍정적인 단어`,
+                  `const isNotValid = validate(age).result === 'invalid'; // ❌`,
+                  `const isValid = validate(age).result === 'valid';      // ✅`,
+                  ``,
+                  `// 변수는 camelCase`,
+                  `const is_valid = validate(age).result === 'valid'; // ❌`,
+                  `const isValid = validate(age).result === 'valid';  // ✅`,
+                  `const Validate = (age: number) => {}  // ❌`,
+                  `const validate = (age: number) => {} // ✅`,
+                  ``,
+                  `// 상수는 UPPER_CASE`,
+                  `const map2048Size = 4;   // ❌`,
+                  `const MAP_2048_SIZE = 4; // ✅`,
+                  ``,
+                  `// 컴포넌트, type, interface는 PascalCase`,
+                  `type todo = { id: 1, text: 'hello' }; // ❌`,
+                  `type Todo = { id: 1, text: 'hello' }; // ✅`,
+                  ``,
+                  `// 길어도 되니까 줄임말보단 풀네임`,
+                  `const onClickBtn = () => {};    // ❌`,
+                  `const onClickButton = () => {}; // ✅`,
+                  `const studentAges = students.map((s) => s.age);             // ✅ 배열 콜백에서는 시원하게 줄여도 됨`,
+                  `const studentAges = students.map((student) => student.age); // ✅ 당연히 안 줄여도 됨`,
+                  ``,
+                  `// 헝가리안 표기법같은 이런 거 안 합니다`,
+                  `type TStudent = { name: string };    // ❌`,
+                  `type StudentType = { name: string }; // ❌`,
+                  `type Student = { name: string };     // ✅`,
+                  ``,
+                  `// 의외로 한글 변수명도 나쁘지않음`,
+                  `const isCountryLocalGovernmentPublicOrganizationFinancialInstitution = false; // 🤷 🤷 🤷`,
+                  `const 국가지방자치단체공공단체금융사여부 = false; // ✅`,
+                  ``,
+                ]}
+                language="typescript"
+              />
+            </div>
+          ),
+        },
+        {
           title: `DRY: Don't Repeat Yourself (1)`,
+          content: (
+            <div className="flex flex-col gap-4">
+              <Callout title="DRY의 정의">
+                모든 지식은 시스템 내에서 단 한 번만, 애매하지 않고, 권위 있게
+                표현되어야 한다.
+              </Callout>
+              <div>
+                반복은 까먹냐 마냐가 아니라, <strong>언제 까먹냐</strong>의
+                문제다
+              </div>
+            </div>
+          ),
+        },
+        {
+          title: `DRY: Don't Repeat Yourself (2)`,
           content: (
             <div>
               <p>아래 코드에서 반복을 찾아봅시다</p>
@@ -208,12 +297,31 @@ export const architectureLecture = getLectureItem({
                 ]}
                 language="typescript"
               />
-              <Answer answer="https://jsonplaceholder.typicode.com" />
+              <Answer answer="https://jsonplaceholder.typicode.com">
+                <CodeSnippet
+                  code={[
+                    `const baseUrl = 'https://jsonplaceholder.typicode.com';`,
+                    ``,
+                    `const fetchTodos = async () => {`,
+                    `  const response = await fetch(\`$\{baseUrl}/todos\`);`,
+                    `  const data = await response.json() as TodoResponse[];`,
+                    `  return data;`,
+                    `};`,
+                    ``,
+                    `const fetchTodo = async (id: number) => {`,
+                    `  const response = await fetch(\`$\{baseUrl}/todos/\${id}\`);`,
+                    `  const data = await response.json() as TodoResponse;`,
+                    `  return data;`,
+                    `};`,
+                  ]}
+                  language="typescript"
+                />
+              </Answer>
             </div>
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (2)`,
+          title: `DRY: Don't Repeat Yourself (3)`,
           content: (
             <div>
               <p>아래 코드에서 반복을 찾아봅시다</p>
@@ -233,12 +341,43 @@ export const architectureLecture = getLectureItem({
                 ]}
                 language="typescript"
               />
-              <Answer answer="'2048Data'" />
+              <Answer answer="'2048Data'">
+                <CodeSnippet
+                  code={[
+                    `const key = '2048Data';`,
+                    ``,
+                    `const load = () => {`,
+                    `  try {`,
+                    `    return JSON.parse(localStorage.getItem(key) as BoardData);`,
+                    `  } catch (e) {`,
+                    `    return null;`,
+                    `  }`,
+                    `};`,
+                    ``,
+                    `const save = (data: BoardData) => {`,
+                    `  localStorage.setItem(key, JSON.stringify(data));`,
+                    `};`,
+                  ]}
+                  language="typescript"
+                />
+                <p className="mt-10">퀴즈: key 변수를 뺄 땐 뭐가 더 나을까?</p>
+                <CodeSnippet
+                  code={[
+                    `// 얘들이 다 느낌이 다르다는 점에 주목`,
+                    `const key = '2048Data';`,
+                    `const KEY = '2048Data';`,
+                    `const KEY_2048_DATA = '2048Data';`,
+                    `const LOCALSTORAGE_KEY_2048_DATA = '2048Data';`,
+                    `const LOCALSTORAGE_KEY = { '2048Data': '2048Data' };`,
+                  ]}
+                  language="typescript"
+                />
+              </Answer>
             </div>
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (3)`,
+          title: `DRY: Don't Repeat Yourself (4)`,
           content: (
             <div>
               <p>
@@ -255,31 +394,33 @@ export const architectureLecture = getLectureItem({
 
               <CodeSnippet
                 code={[
-                  `const [gmailValue, setGmailValue] = useState('');`,
-                  ``,
-                  `const onSubmit = () => {`,
-                  `  registerEmail(gmailValue + '@gmail.com');`,
+                  `const EmailInput = () => {`,
+                  `  const [gmailValue, setGmailValue] = useState('');`,
+                  `  `,
+                  `  const onSubmit = () => {`,
+                  `    registerEmail(gmailValue + '@gmail.com');`,
+                  `  };`,
+                  `  `,
+                  `  return (`,
+                  `    <div>`,
+                  `      <input`,
+                  `        type="text"`,
+                  `        value={gmailValue}`,
+                  `        onChange={(e) => setGmailValue(e.target.value)}`,
+                  `      />`,
+                  `      <span>@gmail.com</span>`,
+                  `    </div>`,
+                  `  );`,
                   `};`,
-                  ``,
-                  `return (`,
-                  `  <div>`,
-                  `    <input`,
-                  `      type="text"`,
-                  `      value={gmailValue}`,
-                  `      onChange={(e) => setGmailValue(e.target.value)}`,
-                  `    />`,
-                  `    <span>@gmail.com</span>`,
-                  `  </div>`,
-                  `);`,
                 ]}
                 language="tsx"
               />
-              <Answer answer="@gmail.com" />
+              <Answer answer="@gmail.com 관련 부분" />
             </div>
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (4)`,
+          title: `DRY: Don't Repeat Yourself (5)`,
           content: (
             <div>
               <p>아래 코드에서 반복을 찾아봅시다</p>
@@ -302,10 +443,10 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (5)`,
+          title: `DRY: Don't Repeat Yourself (6)`,
           content: (
             <div className="flex flex-col gap-4">
-              <div>주석도 반복이다</div>
+              <div>주석도 반복이므로 이런 주석은 달면 안 된다</div>
               <CodeSnippet
                 code={[
                   `const validateAge = (age: number) => {`,
@@ -319,7 +460,7 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
-          title: `DRY: Don't Repeat Yourself (6)`,
+          title: `DRY: Don't Repeat Yourself (7)`,
           content: (
             <div className="flex flex-col gap-4">
               <Callout title="DRY의 정의">
@@ -350,6 +491,7 @@ export const architectureLecture = getLectureItem({
 
               <CodeSnippet
                 code={[
+                  `// ❌`,
                   `let sum = 0`,
                   `for (let i = 0; i < array.length; i++) {`,
                   `  sum += array[i];`,
@@ -359,7 +501,10 @@ export const architectureLecture = getLectureItem({
               />
 
               <CodeSnippet
-                code={[`const sum = array.reduce((acc, cur) => acc + cur, 0);`]}
+                code={[
+                  `// ✅`,
+                  `const sum = array.reduce((acc, cur) => acc + cur, 0);`,
+                ]}
                 language="javascript"
               />
             </div>
@@ -369,26 +514,28 @@ export const architectureLecture = getLectureItem({
           title: '함수형 프로그래밍 패러다임 (2) 왜?',
           content: (
             <div className="flex flex-col gap-4">
-              <div>가변성만 없으면 동시성 문제는 일어나지 않는다</div>
-              <div>변수가 변하지 않는다면 읽어야 할 코드의 양이 줄어든다</div>
+              <div>가변성만 없으면 생각보다 매우 많은 게 해결된다</div>
+              <div>
+                코드가 무엇을 하는지가 아닌 변수가 무엇인지만 읽으면 된다
+              </div>
 
               <div className="border p-4">
                 <div>가변성이 있는 예시</div>
                 <CodeSnippet
                   code={[
-                    `const users = [];`,
+                    `const adultUsers = [];`,
                     `let totalAge = 0;`,
                     ``,
                     `for (let i = 0; i < rawData.length; i++) {`,
                     `  const user = { ...rawData[i] };`,
                     `  if (user.age >= 18) {`,
                     `    user.isAdult = true;`,
-                    `    users.push(user);`,
+                    `    adultUsers.push(user);`,
                     `    totalAge += user.age;`,
                     `  }`,
                     `}`,
                     ``,
-                    `const averageAge = totalAge / users.length;`,
+                    `const averageAge = totalAge / adultUsers.length;`,
                   ]}
                   language="javascript"
                 />
@@ -398,12 +545,12 @@ export const architectureLecture = getLectureItem({
                 <div>함수형 프로그래밍으로 해결한 예시</div>
                 <CodeSnippet
                   code={[
-                    `const users = rawData`,
+                    `const adultUsers = rawData`,
                     `  .filter(user => user.age >= 18)`,
                     `  .map(user => ({ ...user, isAdult: true }));`,
                     ``,
-                    `const totalAge = users.reduce((sum, user) => sum + user.age, 0);`,
-                    `const averageAge = totalAge / users.length;`,
+                    `const totalAge = adultUsers.reduce((sum, user) => sum + user.age, 0);`,
+                    `const averageAge = totalAge / adultUsers.length;`,
                   ]}
                   language="javascript"
                 />
@@ -411,6 +558,60 @@ export const architectureLecture = getLectureItem({
 
               <div>가변성을 제거하여 코드의 흐름을 더 쉽게 파악할 수 있다</div>
               <div>지난 시간에 언급했던 타입추론의 이점도 있음</div>
+              <div>이름 짓기도 더 쉬움</div>
+            </div>
+          ),
+        },
+        {
+          title: '폴더 구조',
+          content: (
+            <div>
+              <div>
+                팀 프로젝트를 시작하면서 아마 가장 어려우셨을 것들 중 하나
+              </div>
+              <div className="mt-4">
+                <div>폴더 구조의 몇 가지 특징</div>
+                <ul className="mt-6 list-disc pl-6">
+                  <li>
+                    관련이 있을수록 가까이 두면 좋고, 관련이 없을수록 멀리 두면
+                    좋다
+                  </li>
+                  <li>
+                    해당 생태계에서 일반적으로 채택하는 구조랑 가까우면 처음 볼
+                    때 익숙해서 좋을 수 있다
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-6">
+                가령 리액트 생태계에서 제일 보편적이라고 보이는 구조는
+              </div>
+              <div className="mt-4 text-sm">
+                <InlineCode code="sr/c" />
+                <div className="mt-2 flex flex-col items-start gap-2 pl-4">
+                  <InlineCode code="api/" />
+                  <InlineCode code="components/" />
+                  <InlineCode code="hooks/" />
+                  <InlineCode code="pages/" />
+                  <InlineCode code="utils/" />
+                </div>
+              </div>
+              <div className="mt-6">
+                이긴 한데 개인적으로 좋은 구조라고 생각하진 않습니다
+              </div>
+              <div className="mt-6">
+                그리고 최근에 뜨던 아키텍처로{' '}
+                <ExternalLink
+                  href="https://feature-sliced.design/"
+                  label="FSD"
+                />{' '}
+                도 있음
+              </div>
+              <div className="mt-6">
+                하지만 폴더구조는 지금까지 알아본 모든 것들 중에 가장 힘이
+                약하고 취향을 타므로, 그냥 하고 싶은 대로 하면 됩니다
+                <br /> <br />
+                진짜 중요한 건 모듈을 어떻게 쪼개냐는 것
+              </div>
             </div>
           ),
         },
@@ -441,6 +642,9 @@ export const architectureLecture = getLectureItem({
               <h2 className="text-center">
                 어려운 질문: 모듈을 어떻게 쪼개야 잘 쪼갠 걸까?
               </h2>
+              <Callout title="클린 아키텍처 중">
+                관련이 있는 것과 없는 것 사이에 선을 그어라
+              </Callout>
               <Description
                 items={[
                   { key: '결합도', value: '모듈 간의 의존도' },
@@ -457,7 +661,7 @@ export const architectureLecture = getLectureItem({
                     key: '단일 책임 원칙',
                     value: '모든 모듈은 하나의 액터에 대해서만 책임져야 한다',
                   },
-                  { key: '...', value: '여러 있어보이는 단어들' },
+                  { key: '...', value: '' },
                 ]}
               />
             </div>
@@ -469,7 +673,7 @@ export const architectureLecture = getLectureItem({
             <div className="flex flex-col gap-4">
               <h2>
                 관심사의 분리는 좀 큰 프로젝트에서 해야 체감되기 때문에 이
-                쪼끄만한 슬라이드에서 다루기 아주 어렵다
+                쪼끄만한 슬라이드에서 다루기 아주 어렵습니다
               </h2>
 
               <div>몇 가지 추상적인 예시를 들어볼게요</div>
@@ -480,7 +684,7 @@ export const architectureLecture = getLectureItem({
                   Axios에 자체 버그가 발견돼서 fetch 로 변경해야 한다면?
                 </li>
                 <li>
-                  백엔드 Api 엔드포인트가{' '}
+                  API 엔드포인트 base url이
                   <InlineCode code="https://snutt-api-dev.wafflestudio.com" />{' '}
                   에서{' '}
                   <InlineCode code="https://snutt-dev.wafflestudio.com/api" />{' '}
@@ -490,9 +694,12 @@ export const architectureLecture = getLectureItem({
                   <StackBadge stack="React" /> 를 사용하고 있었는데,{' '}
                   <StackBadge stack="Svelte" /> 로 변경해야 한다면?
                 </li>
+                <li>디자인이 모달에서 바텀시트로 변경된다면?</li>
               </ul>
               <CodeSnippet
                 code={[
+                  `import axios from 'axios';`,
+                  ``,
                   `const TodoList = () => {`,
                   `  const [todos, setTodos] = useState<TodoResponse[]>();`,
                   ``,
@@ -668,42 +875,6 @@ export const architectureLecture = getLectureItem({
           ),
         },
         {
-          title: '폴더 구조',
-          content: (
-            <div>
-              <div>
-                팀 프로젝트를 시작하면서 아마 가장 어려우셨을 것들 중 하나
-              </div>
-              <div className="mt-4">
-                <div>폴더 구조의 몇 가지 특징</div>
-                <ul className="mt-6 list-disc pl-6">
-                  <li>
-                    관련이 있을수록 가까이 두면 좋고, 관련이 없을수록 멀리 두면
-                    좋다
-                  </li>
-                  <li>
-                    해당 생태계에서 일반적으로 채택하는 구조랑 가까우면 처음 볼
-                    때 익숙해서 좋을 수 있다
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-6">
-                가령 리액트 생태계에서 제일 보편적이라고 보이는 구조는
-              </div>
-              <div className="mt-4 text-sm">
-                <InlineCode code="sr/c" />
-                <div className="mt-2 flex flex-col items-start gap-2 pl-4">
-                  <InlineCode code="api/" />
-                  <InlineCode code="components/" />
-                  <InlineCode code="hooks/" />
-                  <InlineCode code="pages/" />
-                  <InlineCode code="utils/" />
-                </div>
-              </div>
-            </div>
-          ),
-        },
-        {
           title: '리팩토링 (1) 리팩토링이란?',
           content: (
             <div>
@@ -722,18 +893,7 @@ export const architectureLecture = getLectureItem({
                 종양이 작을 때 제거할 수도 있다. 아니면 종양이 자라고 다른
                 곳으로 전이할 때까지 놓아둘 수도 있다.
               </Callout>
-            </div>
-          ),
-        },
-        {
-          title: '시간이 부족해서 리팩토링을 못한다?',
-          content: (
-            <div>
-              <div>
-                개발하다 보면 종종 <i>시간이 없어서 대충 짰다</i> 라거나{' '}
-                <i>시간이 없어서 리팩은 못했다</i> 와 같은 이야기를 듣게 되는데
-              </div>
-              <div>현실은, 한번에 잘 짜는 게 훨씬 빠릅니다</div>
+              <div>발견했으면 빨리 할수록 시간을 절약할 수 있습니다.</div>
             </div>
           ),
         },
