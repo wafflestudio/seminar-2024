@@ -124,7 +124,7 @@ export const pages: (
       <div>
         검색으로 시간표에 강의 추가, 강의상세 (지도제외), 강의 편집 및 제거
         <br />
-        도전과제: Next.js로 마이그레이션{' '}
+        도전과제: Next.js로 마이그레이션, 최소 1개 API를 서버사이드에서 호출
         <ExternalLink
           href="https://nextjs.org/docs/app/building-your-application/upgrading/from-create-react-app"
           label="문서"
@@ -140,17 +140,44 @@ export const pages: (
     due: new Date('2024-11-20 23:59:59'),
     element: (
       <div>
-        예전에 만들었던 프로필 페이지를 AWS S3 + CloudFront로 배포하고 CI/CD
-        구축
+        예전에 만들었던 프로필 페이지를 AWS S3 + CloudFront로 배포하고 배포
+        자동화 구축, cloudfront로 배포된 url과 레포 url을 잡담방에 제출. 최소
+        1번은 GitHub Action 을 통해 배포되었어야 한다
       </div>
     ),
     title: 'vercel 대신 AWS에 배포',
   },
   {
+    path: '/refactoring-2048',
+    member: '개인',
+    type: 'assignment',
+    due: new Date('2024-11-30 23:59:59'),
+    element: (
+      <div>
+        <div>
+          두 달 동안 많이 성장했을 테니, 두 달 전에 짰던 2048 코드를 다시 봅시다
+        </div>
+        <div>
+          성장을 했다면 분명히 문제점이나 개선점이 보일 거예요 (TypeScript
+          사용법, CSS, 성능 등. 문제점이 안 보이면 어떡하지..)
+        </div>
+        <div>
+          리팩토링 PR을 1개 이상 올린 다음, 각자 머지하고, 머지한 PR의 링크를
+          올려주세요
+        </div>
+        <div>
+          무슨 문제점을 발견하여 어떻게 해결했는지 PR Description에 작성되어
+          있어야 합니다
+        </div>
+      </div>
+    ),
+    title: '개발 블로그 작성 (2)',
+  },
+  {
     path: '/blog-2',
     member: '개인',
     type: 'assignment',
-    due: new Date('2024-11-24 23:59:59'),
+    due: new Date('2024-11-30 23:59:59'),
     element: (
       <div>
         저번이랑 비슷하게 블로그 한 편 더 작성
