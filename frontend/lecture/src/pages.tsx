@@ -28,7 +28,7 @@ import { wrapupLecture } from '@/lectures/WrapUp';
 import { Home } from '@/pages/home';
 
 import { snuttCloneCoding2Assignment } from './assignments/SnuttCloneCoding2';
-import { ExternalLink } from './components/ExternalLink';
+import { snuttCloneCoding3Assignment } from './assignments/SnuttCloneCoding3';
 
 export const pages: (
   | { type: 'index'; path: string; element: ReactNode }
@@ -115,24 +115,7 @@ export const pages: (
     path: '/como-5',
     ...getComoAssignment({ seminar: 5, due: new Date('2024-11-19 23:59:59') }),
   },
-  {
-    path: '/project-3',
-    type: 'assignment',
-    due: new Date('2024-11-20 23:59:59'),
-    member: '조별',
-    element: (
-      <div>
-        검색으로 시간표에 강의 추가, 강의상세 (지도제외), 강의 편집 및 제거
-        <br />
-        도전과제: Next.js로 마이그레이션, 최소 1개 API를 서버사이드에서 호출
-        <ExternalLink
-          href="https://nextjs.org/docs/app/building-your-application/upgrading/from-create-react-app"
-          label="문서"
-        />
-      </div>
-    ),
-    title: 'SNUTT 클론코딩 (3)',
-  },
+  { path: '/project-3', ...snuttCloneCoding3Assignment },
   {
     path: '/aws-deploy',
     member: '개인',
