@@ -1,5 +1,6 @@
 import { Description } from '@/components/Description';
 import { ExampleIframe } from '@/components/ExampleIframe';
+import { ExternalLink } from '@/components/ExternalLink';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
 import { Slides } from '@/components/Slides';
 import { Badge } from '@/designsystem/ui/badge';
@@ -17,10 +18,19 @@ import { getLectureItem } from '@/lectures';
 export const otLecture = getLectureItem({
   title: 'OT',
   description: '세미나 목표, 방식, 과제, 평가',
-  date: new Date('2024-09-04'),
+  date: new Date('2024-09-04 20:30:00'),
   element: (
     <Slides
       slides={[
+        {
+          title: '강좌 소개',
+          content: (
+            <ExternalLink
+              href="https://github.com/wafflestudio/seminar-2024/tree/main/frontend"
+              label="강의계획서 같이 읽기"
+            />
+          ),
+        },
         {
           title: '자기소개',
           content: (
@@ -267,8 +277,8 @@ export const otLecture = getLectureItem({
                       curr: 'public 레포에서 조별과제',
                     },
                     {
-                      prev: '질문을 정리해서 올려야 함',
-                      curr: '모르겠을 때 더 편하게 질문',
+                      prev: '질문을 정제해서 GitHub Discussion으로',
+                      curr: '모르겠을 때 맥락없이 바로 멘션해서 질문',
                     },
                     {
                       prev: 'ppt / markdown 형태의 강의자료',
@@ -276,7 +286,7 @@ export const otLecture = getLectureItem({
                     },
                     {
                       prev: '코드 리뷰 형태의 과제 채점',
-                      curr: '(아직 고민중..)',
+                      curr: '코드 리뷰 없이 과제 채점, 대신 자율적으로 #frontend-잡담 에 리뷰 요청 가능',
                     },
                   ].map((diff, index) => (
                     <TableRow key={index}>
@@ -356,6 +366,10 @@ export const otLecture = getLectureItem({
                   세미나 목표 중 하나인 <strong>친목</strong>에 큰 도움이 될 것
                   같다
                 </li>
+                <li>
+                  저도 이렇게 해 보는 게 처음이라 잘 될지 모르겠어요 아니다
+                  싶으면 바로 접겠습니다
+                </li>
               </ul>
 
               <h2 className="mt-16 text-3xl">형태</h2>
@@ -363,10 +377,15 @@ export const otLecture = getLectureItem({
                 <li>서로 도움을 주고받는다</li>
                 <li>상대가 혹시나 트롤이어도 발목잡히지는 않는 구조</li>
                 <li>
-                  조마다 세미나장 포함한 DM방을 생성해 드립니다
+                  조마다 세미나장 포함한 비공개 채널을 생성해 드립니다
                   <p className="text-base text-slate-500">
                     각자 얼마나 기여하시는지 봐야 하고, 질문을 받아 드려야 해서
                     저는 항상 채팅방에 포함되어야 합니다
+                  </p>
+                  <p className="text-base text-slate-500">
+                    당연히 저 빼고 DM하셔도 되고 그런 건 상관 없는데, 그렇게
+                    되면 질문받아드리거나 얼마나 기여하시는지 체크하는 건 어렵단
+                    점 참고 부탁드립니다
                   </p>
                 </li>
                 <li>
@@ -442,7 +461,8 @@ export const otLecture = getLectureItem({
                   </li>
                   <li>
                     개발 {'=>'} 커밋 기록 다 남고 슬랙 기록 다 세미나장이 볼 수
-                    있고, 코드도 모두 오픈된 동네
+                    있고, 코드도 모두 오픈된 동네{' '}
+                    <b className="ml-4 text-base">안 볼 것 같지만 다 봅니다</b>
                   </li>
                   <li>
                     구글링, GPT, Copilot, 세미나장/조원에게 질문, 조원 코드 복붙
