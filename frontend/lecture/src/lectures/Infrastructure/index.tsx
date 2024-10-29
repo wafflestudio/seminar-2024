@@ -30,7 +30,7 @@ export const infrastructureLecture = getLectureItem({
               <p className="ml-6 text-base opacity-50">
                 왜냐면 와플에서는 버셀을 못써요..
               </p>
-              <p>GitHub Actions 로 CD 구축하기</p>
+              <p>GitHub Actions 로 배포 파이프라인 구축하기</p>
               <p>Next.js 는 이렇게 배포 못 한다는 거 인지하기</p>
             </div>
           ),
@@ -218,7 +218,7 @@ export const infrastructureLecture = getLectureItem({
           ),
         },
         {
-          title: 'CD 구축',
+          title: '배포 파이프라인 구축',
           content: (
             <ul className="ml-8 flex list-disc flex-col gap-5 text-xl">
               <li>코드를 업데이트했으면 사이트에도 반영이 되어야 한다</li>
@@ -235,15 +235,21 @@ export const infrastructureLecture = getLectureItem({
           content: (
             <div className="flex flex-col gap-4">
               <ExternalLink
+                href="https://github.com/features/actions"
+                label="GitHub Actions란?"
+              />
+
+              <ExternalLink
                 label=".github/workflows/ci.yml"
                 href="https://github.com/wafflestudio/seminar-2024-frontend-template/blob/main/.github/workflows/ci.yml"
               />
-              <p>비슷한 느낌으로 cd.yml을 만들면 된다</p>
+
+              <p>비슷한 느낌으로 deploy.yml을 만들면 된다</p>
             </div>
           ),
         },
         {
-          title: 'cd.yml을 어떻게 구성하지?',
+          title: 'deploy.yml을 어떻게 구성하지?',
           content: (
             <div className="flex flex-col gap-4">
               <Callout title="주의">
@@ -253,7 +259,10 @@ export const infrastructureLecture = getLectureItem({
               </Callout>
 
               <ol className="flex list-decimal flex-col gap-2 pl-6">
-                <li>태그 푸시 시 발동</li>
+                <li>
+                  태그 푸시 시 발동 (컨벤션: <InlineCode code="(dev|prod)-*" />)
+                </li>
+                <li>프로젝트를 빌드하여 정적 파일 생성</li>
                 <li>S3에 파일을 업로드</li>
                 <li>CloudFront에 캐시를 무효화</li>
               </ol>
@@ -268,7 +277,7 @@ export const infrastructureLecture = getLectureItem({
           ),
         },
         {
-          title: 'cd 구축 A to Z 라이브코딩',
+          title: 'deploy 구축 A to Z 라이브코딩',
           content: (
             <div className="flex flex-col gap-4">
               <p>실시간으로 따라해주셔도 되고 녹화 보면서 따라하셔도 됩니다</p>
