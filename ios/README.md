@@ -40,6 +40,15 @@
     <td><A href="https://github.com/wafflestudio/seminar-2024-ios-assignment/tree/main/assignment2"> 과제2 </A></td>
     <td><A href="https://youtu.be/l1vL01WvJ4s"> 세미나2 </A></td>
   </tr>
+  <tr>
+    <td>3</td>
+    <td></td>
+    <td>10월 31일 목 오후 5:00</td>
+    <td>301-203</td>
+    <td><A href="https://github.com/wafflestudio/seminar-2024/blob/main/ios/seminar3/seminar3.pdf"> seminar3.pdf </td>
+    <td></td>
+    <td></td>
+  </tr>
   </table>
 
 ## 링크
