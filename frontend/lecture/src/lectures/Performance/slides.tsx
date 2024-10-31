@@ -2,10 +2,18 @@ import { type FC } from 'react';
 
 import { Callout } from '@/components/Callout';
 import { CodeSnippet } from '@/components/CodeSnippet';
+import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { Slides } from '@/components/Slides';
+import { StackBadge } from '@/components/StackBadge';
+import { Separator } from '@/designsystem/ui/separator';
+import { Skeleton } from '@/designsystem/ui/skeleton';
 
+import bundle from './bundle.png';
+import csr from './csr.png';
+import exitrate from './exitrate.png';
 import lighthouse from './lighthouse.png';
+import ssr from './ssr.png';
 
 export const PerformanceSlides: FC = () => {
   return (
@@ -92,13 +100,17 @@ export const PerformanceSlides: FC = () => {
                 더 이상 필요하지 않은 메모리를 해제하지 않아서 메모리 사용량이
                 계속 증가하는 현상
               </Callout>
+              <Separator className="my-5" />
               <CodeSnippet
                 language="typescript"
-                code={[`const object = URL.createObjectURL(...)`]}
+                code={[
+                  `// 메모리 누수가 발생할 수 있는 코드`,
+                  `const object = URL.createObjectURL(...)`,
+                ]}
               />
               <p>
-                가아아아아끔 이런 코드를 짜야 할 때가 있는데, 얘만 free 잘 해
-                주면 됩니다
+                간혹 이런 코드를 짜야 할 때가 있는데, 얘만 free 잘 해 주면
+                됩니다
               </p>
               <Callout title="결론">웬만하면 이거도 신경쓸 필요 없다!</Callout>
             </div>
@@ -116,7 +128,23 @@ export const PerformanceSlides: FC = () => {
             </div>
           ),
         },
-        { title: '왜 로딩 속도는 문제가 될까?', content: <div>TBD</div> },
+        {
+          title: '왜 로딩 속도는 문제가 될까?',
+          content: (
+            <div>
+              <p>
+                웹의 특성상 검색해서 들어오는 경우가 많은데, 로딩 속도가
+                느릴수록 이탈률이 높아진다
+              </p>
+              <img className="mx-auto mt-5 w-96" src={exitrate} />
+              <Separator className="my-12" />
+              <p>
+                웹뷰 앱의 경우 최대한 네이티브의 느낌을 줘야 하기 때문에 전환이
+                부드럽고 빨라야 한다
+              </p>
+            </div>
+          ),
+        },
         {
           title: '로딩 속도 - lighthouse 점수',
           content: (
@@ -135,28 +163,150 @@ export const PerformanceSlides: FC = () => {
           content: (
             <div className="flex flex-col gap-4 leading-10">
               <p>
-                각 조별로, 만들었던 프로젝트의 lighthouse 점수를 확인하고
-                캡쳐해서 조별 채널에 올려주세요 (제한시간 2분)
+                각 조별로, SNUTT 프로젝트의 lighthouse 점수를 확인하고 캡쳐해서
+                조별 채널에 올려주세요 (제한시간 2분)
               </p>
             </div>
           ),
         },
-        { title: '로딩 속도 개선: 용량 줄이기', content: <div>TBD</div> },
-        { title: '로딩 속도 개선: 스켈레톤 ui', content: <div>TBD</div> },
         {
-          title: '로딩 속도 개선: SSR (1) CSR 방식에 대한 이해',
-          content: <div>TBD</div>,
+          title: '로딩 속도 개선 (1) 자바스크립트 번들 사이즈',
+          content: (
+            <div className="flex flex-col gap-5">
+              <img src={bundle} />
+              <section>
+                <h3>1. Code Splitting & Lazy Loading</h3>
+                <p className="pl-10">
+                  가령 오늘 슬라이드에는 코드 스플리팅이 적용되어 있습니다
+                </p>
+                <p className="pl-10">개발자 도구에서 바로 확인해봅시다</p>
+              </section>
+              <section>
+                <h3>2. 라이브러리 사용할 때 조심하기</h3>
+                <p className="pl-10">
+                  1번에 이어서, 아무리 조심해도 라이브러리 하나 깔면 +300KB 이런
+                  경우 많습니다
+                </p>
+                <p className="pl-10">
+                  지금까지 본 가장 심한 라이브러리:{' '}
+                  <ExternalLink
+                    href="https://www.npmjs.com/package/xlsx"
+                    label="xlsx"
+                  />
+                </p>
+              </section>
+              <section>
+                <h3>3. Tree Shaking</h3>
+                <p className="pl-10">
+                  사용하지 않는 코드를 번들에 포함하지 않기
+                </p>
+                <p className="pl-10">요즘 번들러들은 다 잘 해 줍니다</p>
+              </section>
+              <section>
+                <h3>4. Minification</h3>
+                <p className="pl-10">
+                  코드량 자체를 줄이기 (변수명을 한 글자로 줄이는 등)
+                </p>
+                <p className="pl-10">
+                  당연히 번들러가 빌드할 때 자동으로 해 주는 거지
+                </p>
+                <p className="pl-10">우리가 코드를 못 알아보게 짜면 안됩니다</p>
+              </section>
+              <section>
+                <h3>5. Compression</h3>
+                <div className="pl-10">
+                  gzip 등으로 코드를 압축해서 번들 크기 줄이기{' '}
+                  <ExternalLink href="https://web.dev/articles/codelab-text-compression?hl=ko" />
+                </div>
+              </section>
+            </div>
+          ),
         },
         {
-          title: '로딩 속도 개선: SSR (2) SSR?',
-          content: <div>TBD</div>,
+          title: '로딩 속도 개선 (2) 이미지 최적화',
+          content: (
+            <div className="flex flex-col gap-5">
+              <p>
+                번들 크다고 뭐라 했지만, 많은 이미지는 기본적으로 수백KB 이상
+              </p>
+              <ExternalLink
+                href="https://web.dev/learn/performance/image-performance?hl=ko"
+                label="web.dev 문서"
+              />
+              <ul className="mt-20 flex list-disc flex-col gap-8 pl-12">
+                <li>
+                  이미지 용량을 줄이고 CDN을 태워서 응답 속도 높이기 (webp 혹은
+                  avif 권장, <InlineCode code="picture" /> 태그 참고)
+                </li>
+                <li>
+                  <InlineCode code="srcset" /> 이나 <InlineCode code="sizes" />{' '}
+                  속성을 활용하여 뷰포트에 따라 다른 이미지 제공하기
+                </li>
+                <li>
+                  <StackBadge stack="Next.js" />를 쓴다면{' '}
+                  <InlineCode code="next/image" /> 사용하기
+                </li>
+              </ul>
+            </div>
+          ),
         },
         {
-          title: '로딩 속도 개선: SSR (3) 서버 컴포넌트',
-          content: <div>TBD</div>,
+          title: '로딩 속도 개선 (3) 스켈레톤 UI',
+          content: (
+            <div className="flex flex-col items-center gap-20">
+              <article className="flex items-center gap-12 rounded-lg border border-black p-16 shadow-xl">
+                <Skeleton className="h-20 w-20 rounded-full" />
+                <div className="flex flex-col justify-center gap-4">
+                  <div>
+                    <h3>이름</h3>
+                    <Skeleton className="h-5 w-40" />
+                  </div>
+                  <div>
+                    <h3>나이</h3>
+                    <Skeleton className="h-5 w-40" />
+                  </div>
+                </div>
+              </article>
+              <div>
+                실제로 로딩 속도를 개선해주진 않지만, 사용자 경험을 개선해주는
+                역할
+              </div>
+            </div>
+          ),
         },
         {
-          title: '로딩 속도 개선: SSR (4) 만능일까?',
+          title: '로딩 속도 개선: SSR (1) CSR과 SSR 방식에 대한 이해',
+          content: (
+            <div>
+              <Callout title="간략화된 브라우저 동작 원리">
+                <ol className="my-4 flex list-decimal flex-col gap-2 pl-6">
+                  <li>HTML을 다운로드받고</li>
+                  <li>HTML에 의해 JS를 다운로드받고</li>
+                  <li>HTML에 의해 CSS를 다운로드받고</li>
+                  <li>JS를 실행</li>
+                </ol>
+              </Callout>
+
+              <Separator className="my-8" />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p>우리가 사용중인 CSR</p>
+                  <img src={csr} className="" />
+                </div>
+                <div>
+                  <p>새로운 개념: SSR</p>
+                  <img src={ssr} className="" />
+                </div>
+              </div>
+            </div>
+          ),
+        },
+        {
+          title: '로딩 속도 개선: SSR (2) 어떻게?',
+          content: <div>Next.js</div>,
+        },
+        {
+          title: '로딩 속도 개선: SSR (3) 만능일까?',
           content: <div>비용, 서버 리소스 관리, 프레임워크에 결합</div>,
         },
       ]}
