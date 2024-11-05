@@ -23,15 +23,9 @@ export const infrastructureLecture = getLectureItem({
           title: '목표',
           content: (
             <div className="flex flex-col gap-4 leading-10">
-              <p>
-                AWS <StackBadge stack="S3" /> <StackBadge stack="CloudFront" />
-                로 배포하기
-              </p>
-              <p className="ml-6 text-base opacity-50">
-                왜냐면 와플에서는 버셀을 못써요..
-              </p>
-              <p>GitHub Actions 로 배포 파이프라인 구축하기</p>
-              <p>Next.js 는 이렇게 배포 못 한다는 거 인지하기</p>
+              vite react SPA를 AWS <StackBadge stack="S3" />{' '}
+              <StackBadge stack="CloudFront" />로 배포하는 파이프라인 이해하고
+              구축하기
             </div>
           ),
         },
@@ -49,7 +43,7 @@ export const infrastructureLecture = getLectureItem({
           content: (
             <div className="flex flex-col gap-4 leading-10">
               <p>
-                먼저 HTML을 요청하고, HTML 응답에 따라 js, css 등을 요청한다
+                먼저 HTML을 요청하고, HTML 응답에 따라 JS, CSS 등을 요청한다
               </p>
               <img src={browserBehavior} alt="browser-behavior" />
             </div>
@@ -76,7 +70,7 @@ export const infrastructureLecture = getLectureItem({
                 <InlineCode code="serve" />는 정적 파일들을 서빙해주는 웹서버
               </p>
               <Callout title="아하 💡">
-                dist 폴더를 서빙해주기만 하면 된다!
+                빌드해서 나오는 dist 폴더를 서빙해주기만 하면 된다!
               </Callout>
             </div>
           ),
@@ -95,7 +89,7 @@ export const infrastructureLecture = getLectureItem({
                   경쟁제품: <StackBadge stack="Azure" />,{' '}
                   <StackBadge stack="Google Cloud" /> 등
                 </Fragment>,
-                '와플에서 AWS를 쓰기 때문에 AWS를 공부할 겁니다',
+                '가장 널리 사용되고, 와플에서 AWS를 쓰기 때문에 AWS를 공부할 겁니다',
               ]}
             />
           ),
@@ -123,7 +117,7 @@ export const infrastructureLecture = getLectureItem({
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png" />
               }
               description={[
-                'react-router-dom 에서 라우팅을 위한 설정이 필요함',
+                'client side routing이 어려움',
                 'https를 사용하기 어려움',
                 'S3 서버는 한 지역에만 있기 때문에 컴퓨터와 물리적으로 멀어지면 느릴 수 있음',
               ]}
@@ -152,9 +146,10 @@ export const infrastructureLecture = getLectureItem({
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png" />
               }
               description={[
-                'AWS의 CDN 서비스',
+                'AWS가 제공하는 CDN 서비스',
                 'S3, EC2 등과 연동 가능',
                 'https 등 설정도 편하게 할 수 있음',
+                '배포하면 https://dip85ouj31362.cloudfront.net 이런 주소가 나옴',
               ]}
             />
           ),
@@ -166,7 +161,11 @@ export const infrastructureLecture = getLectureItem({
               asset={
                 <img src="https://static-00.iconduck.com/assets.00/aws-route53-icon-212x256-16an9num.png" />
               }
-              description={['DNS 서비스', '도메인을 연결할 수 있음']}
+              description={[
+                'DNS 서비스',
+                '내가 원하는 도메인을 연결할 수 있음',
+                '도메인 구매도 지원하지만 저렴하진 않음',
+              ]}
             />
           ),
         },
@@ -222,7 +221,9 @@ export const infrastructureLecture = getLectureItem({
           content: (
             <ul className="ml-8 flex list-disc flex-col gap-5 text-xl">
               <li>코드를 업데이트했으면 사이트에도 반영이 되어야 한다</li>
-              <li>매번 S3에 dist 폴더를 업로드하는 건 너무 비효율적</li>
+              <li>
+                매번 빌드하고 S3에 dist 폴더를 업로드하는 건 너무 비효율적
+              </li>
               <li>배포 시점을 추적하기도 힘들고, 권한 관리도 복잡해진다</li>
               <li className="text-2xl">
                 따라서 이 과정을 GitHub Actions 를 통해 자동화해두는 게 좋다!
@@ -231,7 +232,7 @@ export const infrastructureLecture = getLectureItem({
           ),
         },
         {
-          title: '우리는 지금껏 계속 GitHub Actions를 써왔습니다',
+          title: '우리는 계속 GitHub Actions를 써왔습니다',
           content: (
             <div className="flex flex-col gap-4">
               <ExternalLink
@@ -252,16 +253,7 @@ export const infrastructureLecture = getLectureItem({
           title: 'deploy.yml을 어떻게 구성하지?',
           content: (
             <div className="flex flex-col gap-4">
-              <Callout title="주의">
-                굉장히 많은 방법이 있고, 특히 깃 컨벤션과도 많은 관련이
-                있습니다. 나중에는 여러분의 프로젝트에 가장 적합한 방식을 직접
-                판단해서 적용해 주세요!
-              </Callout>
-
               <ol className="flex list-decimal flex-col gap-2 pl-6">
-                <li>
-                  태그 푸시 시 발동 (컨벤션: <InlineCode code="(dev|prod)-*" />)
-                </li>
                 <li>프로젝트를 빌드하여 정적 파일 생성</li>
                 <li>S3에 파일을 업로드</li>
                 <li>CloudFront에 캐시를 무효화</li>
@@ -271,18 +263,51 @@ export const infrastructureLecture = getLectureItem({
                 그리고 이 과정을 수행할 권한이 GitHub Actions 에게 있어야 한다
                 (IAM 발급 필요)
               </p>
-
-              <p>뭐가 굉장히 많죠?</p>
             </div>
           ),
         },
         {
-          title: 'deploy 구축 A to Z 라이브코딩',
+          title: '인프라 설계',
           content: (
             <div className="flex flex-col gap-4">
-              <p>실시간으로 따라해주셔도 되고 녹화 보면서 따라하셔도 됩니다</p>
+              <Callout title="주의">
+                굉장히 많은 방법이 있고, 깃 컨벤션과도 많은 관련이 있습니다.
+                나중에는 여러분의 프로젝트에 가장 적합한 방식을 직접 판단해서
+                적용해 주세요!
+                <br />
+                일단은 제가 좋다고 생각하는 방식으로 안내드리겠습니다
+              </Callout>
+
+              <div>
+                dev, prod 두 개의 환경을 이용. dev는 내부용 환경, prod는 실제
+                유저가 사용하는 환경
+              </div>
+              <div>
+                지금까지 해왔듯 브랜치는 main과 feature만 활용하고, squash merge
+                로 머지
+              </div>
+              <div>
+                dev 배포는 main 브랜치에 push했을 때 GitHub Actions을 트리거
+              </div>
+              <div>
+                prod 배포는 <InlineCode code="prod/24.11.05-1" /> 과 같은 형태의
+                태그가 푸시되었을 때 GitHub Actions을 트리거
+              </div>
+              <div>
+                GitHub Actions가 들고 있는 IAM에는 버킷 두 개, CloudFront 두
+                개에만 접근할 수 있는 최소 권한만 부여되어 있어야 한다
+              </div>
+              <div>
+                GitHub Actions이 트리거되면 빌드하고 S3에 업로드하고 CloudFront
+                Cache 무효화
+              </div>
             </div>
           ),
+        },
+        {
+          title:
+            '라이브는 자신없어서 일일이 캡쳐해온 인프라 구축 과정. 배포 과제 진행 시 이거 보고 따라해주시면 됩니다',
+          content: <div className="flex flex-col gap-4"></div>,
         },
       ]}
     />
