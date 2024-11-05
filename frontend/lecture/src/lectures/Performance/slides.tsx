@@ -302,12 +302,65 @@ export const PerformanceSlides: FC = () => {
           ),
         },
         {
-          title: '로딩 속도 개선: SSR (2) 어떻게?',
-          content: <div>Next.js</div>,
+          title: '로딩 속도 개선: SSR (2) 장점',
+          content: (
+            <div>
+              <div>유저에게 화면이 훨씬 빨리 보인다</div>
+              <div>SEO 측면에서도 큰 이점이 있다</div>
+            </div>
+          ),
         },
         {
-          title: '로딩 속도 개선: SSR (3) 만능일까?',
-          content: <div>비용, 서버 리소스 관리, 프레임워크에 결합</div>,
+          title: '로딩 속도 개선: SSR (3) 어떻게?',
+          content: (
+            <div className="flex flex-col gap-20">
+              <div>
+                직접 SSR을 구현하는 건 어렵고, <StackBadge stack="Next.js" />{' '}
+                같은 프레임워크들을 쓰면, 프레임워크가 권장하는 방식대로 짜면
+                자동으로 해 줍니다
+              </div>
+              <CodeSnippet
+                code={[
+                  `// 대충 이런 느낌`,
+                  ``,
+                  `type Props = { name: string }`,
+                  ``,
+                  `export default ({ name }: Props) => {`,
+                  `  return <div>{name}</div>;`,
+                  `};`,
+                  ``,
+                  `export const getServerSideProps = async () => {`,
+                  `  const res = await fetch('https://api.example.com/data');`,
+                  `  const data = await res.json();`,
+                  `  return { props: { name: data.name } };`,
+                  `};`,
+                ]}
+                language="tsx"
+              />
+              <div>
+                요즘은 또 서버컴포넌트라는 것도 있는데, 너무 자세한 이야기는
+                세미나 범위를 너무 많이 벗어나므로 패스
+              </div>
+            </div>
+          ),
+        },
+        {
+          title: '로딩 속도 개선: SSR (4) 만능일까?',
+          content: (
+            <div>
+              <div>
+                비용: 서버를 돌려야 하기 때문에 SPA보다 돈이 많이많이 듭니다
+              </div>
+              <div>
+                서버 관리: 서버가 터질 위험이나 보안 위험도 있어서 잘 관리해야
+                합니다
+              </div>
+              <div>
+                프레임워크에 결합: 코드베이스가 <StackBadge stack="Next.js" />에
+                결합될 확률이 높습니다
+              </div>
+            </div>
+          ),
         },
       ]}
     />

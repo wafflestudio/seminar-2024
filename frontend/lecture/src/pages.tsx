@@ -122,11 +122,22 @@ export const pages: (
     type: 'assignment',
     due: new Date('2024-11-20 23:59:59'),
     element: (
-      <div>
-        예전에 만들었던 프로필 페이지를 AWS S3 + CloudFront로 배포하고 배포
-        자동화 구축, cloudfront로 배포된 url과 레포 url을 잡담방에 제출. 최소
-        1번은 GitHub Action 을 통해 배포되었어야 한다
-      </div>
+      <ul className="flex flex-col justify-center gap-6">
+        <li>
+          예전에 만들었던 프로필 페이지를 AWS S3 + CloudFront로 배포하고
+          태그푸시 기반 배포 자동화 구축
+        </li>
+        <li>dev, prod 환경을 모두 구성해야 한다</li>
+        <li>최소 1번은 GitHub Action 을 통해 배포되었어야 한다</li>
+        <li>
+          dev, prod 환경 각각 cloudfront로 배포된 url, 트리거된 배포 GitHub
+          Action Workflow Run 들 중 하나의 url을 잡담방에 제출
+        </li>
+        <li>
+          AWS 계정 생성 시 키 유출 등으로 인해 과금되는 것 주의. IAM은 항상 최소
+          권한으로 설정
+        </li>
+      </ul>
     ),
     title: 'vercel 대신 AWS에 배포',
   },
@@ -136,7 +147,7 @@ export const pages: (
     type: 'assignment',
     due: new Date('2024-11-30 23:59:59'),
     element: (
-      <div>
+      <div className="flex flex-col justify-center gap-6">
         <div>
           두 달 동안 많이 성장했을 테니, 두 달 전에 짰던 2048 코드를 다시 봅시다
         </div>
@@ -154,7 +165,7 @@ export const pages: (
         </div>
       </div>
     ),
-    title: '개발 블로그 작성 (2)',
+    title: '리팩토링',
   },
   {
     path: '/blog-2',

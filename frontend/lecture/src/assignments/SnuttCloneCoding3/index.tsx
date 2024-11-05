@@ -1,3 +1,5 @@
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+
 import { getAssignmentItem } from '@/assignments';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
@@ -35,17 +37,22 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
             <h2>2. 강의 목록 화면</h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
               <li>
+                <div className="flex items-center gap-2">
+                  시간표화면 오른쪽 위 <HamburgerMenuIcon /> 을 통해 진입
+                </div>
+              </li>
+              <li>
                 <InlineCode code="/timetables/:id/lectures" />
               </li>
             </ul>
           </section>
           <section>
-            <h2>3. 커스텀 강의 추가</h2>
+            <h2>3. (조원이 3명 이상일 경우) 강의 직접 생성</h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
+              <li>바텀시트로 뜰 필요는 없고 새 페이지로. 색상도 제외</li>
               <li>
                 <InlineCode code="/timetables/:id/new" />
               </li>
-              <li>바텀시트로 뜰 필요는 없고 새 페이지로, 색상도 제외</li>
             </ul>
           </section>
           <section>
