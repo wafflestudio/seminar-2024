@@ -29,8 +29,8 @@ jobs:
 
       - name: Deploy to S3 and Invalidate Cloudfront
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.FRONTEND_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.FRONTEND_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-northeast-2
         run: |
           aws s3 sync ./dist s3://wafflestudio-seminar-2024-frontend-dev --delete
