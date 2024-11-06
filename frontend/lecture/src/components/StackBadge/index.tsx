@@ -34,7 +34,8 @@ export const StackBadge = ({
     | 'GitHub Copilot'
     | 'React Router'
     | 'Axios'
-    | 'Svelte';
+    | 'Svelte'
+    | 'GitHub Actions';
 }) => {
   const image = {
     Zustand:
@@ -90,6 +91,8 @@ export const StackBadge = ({
     Axios: 'https://axios-http.com/assets/favicon.ico',
     Svelte:
       'https://seeklogo.com/images/S/svelte-logo-E3497608CB-seeklogo.com.png',
+    'GitHub Actions':
+      'https://seeklogo.com/images/G/github-actions-logo-031704BDC6-seeklogo.com.png',
   }[stack];
 
   return (
