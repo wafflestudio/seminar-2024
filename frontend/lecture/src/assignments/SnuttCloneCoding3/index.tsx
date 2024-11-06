@@ -3,6 +3,7 @@ import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { getAssignmentItem } from '@/assignments';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
+import { StackBadge } from '@/components/StackBadge';
 import {
   Card,
   CardContent,
@@ -31,6 +32,7 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
               <li>
                 강의계획서, 강의평 버튼, 지도, 빈자리알림, 관심강좌, 편집 제외
               </li>
+              <li>정보 보이고, 삭제 가능하면 됩니다.</li>
             </ul>
           </section>
           <section>
@@ -41,6 +43,8 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
                   시간표화면 오른쪽 위 <HamburgerMenuIcon /> 을 통해 진입
                 </div>
               </li>
+              <li>지도정보는 비워주세요</li>
+              <li>아이템을 클릭하면 1번에서 만든 강의 상세 화면으로 이동</li>
               <li>
                 <InlineCode code="/timetables/:id/lectures" />
               </li>
@@ -50,15 +54,20 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
             <h2>3. (조원이 3명 이상일 경우) 강의 직접 생성</h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
               <li>바텀시트로 뜰 필요는 없고 새 페이지로. 색상도 제외</li>
+              <li>폼처리가 꽤 번거로울 만 합니다</li>
+              <li>
+                1번에서 만든 강의 상세 화면과 똑같이 생긴 ui가 많은데, 얼마나
+                공통화할지도 고민할만한 포인트
+              </li>
               <li>
                 <InlineCode code="/timetables/:id/new" />
               </li>
             </ul>
           </section>
           <section>
-            <h2>(선택) 도전과제 1</h2>
+            <h2>(선택) 도전과제 1: 다크모드</h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
-              <li>다크모드 구현 (한 페이지라도)</li>
+              <li>한 페이지라도 다크모드 구현 및 적용</li>
               <li>
                 마이페이지 - 색상 모드 로 화면모드 페이지에 진입해서 토글할 수
                 있어야 함
@@ -79,10 +88,10 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
             </ul>
           </section>
           <section>
-            <h2>(선택) 도전과제 2</h2>
+            <h2>(선택) 도전과제 2: Next.js</h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
               <li>
-                도전과제: Next.js로 마이그레이션 후 최소 1개 API를
+                <StackBadge stack="Next.js" /> 로 마이그레이션 후 최소 1개 API를
                 서버사이드에서 호출
               </li>
               <li>

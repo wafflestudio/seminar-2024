@@ -2,15 +2,21 @@ import { ThickArrowUpIcon } from '@radix-ui/react-icons';
 import { Fragment } from 'react';
 
 import { Callout } from '@/components/Callout';
+import { CodeSnippet } from '@/components/CodeSnippet';
 import { ExternalLink } from '@/components/ExternalLink';
 import { InlineCode } from '@/components/InlineCode';
 import { AssetDescriptionLayout } from '@/components/SlideLayout';
 import { Slides } from '@/components/Slides';
 import { StackBadge } from '@/components/StackBadge';
+import { Separator } from '@/designsystem/ui/separator';
 import { getLectureItem } from '@/lectures';
 
 import browserBehavior from './browser-behavior.png';
 import buildOutput from './build-output.png';
+import iam1 from './iam-1.png';
+import iam2 from './iam-2.png';
+import s31 from './s3-1.png';
+import s3OAC from './s3-oac.png';
 
 export const infrastructureLecture = getLectureItem({
   title: '프론트엔드 인프라',
@@ -269,7 +275,7 @@ export const infrastructureLecture = getLectureItem({
         {
           title: '인프라 설계',
           content: (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-10">
               <Callout title="주의">
                 굉장히 많은 방법이 있고, 깃 컨벤션과도 많은 관련이 있습니다.
                 나중에는 여러분의 프로젝트에 가장 적합한 방식을 직접 판단해서
@@ -279,35 +285,216 @@ export const infrastructureLecture = getLectureItem({
               </Callout>
 
               <div>
-                dev, prod 두 개의 환경을 이용. dev는 내부용 환경, prod는 실제
-                유저가 사용하는 환경
+                <InlineCode code="dev" />, <InlineCode code="prod" /> 두 개의
+                환경을 이용.
+                <br />
+                <InlineCode code="dev" />는 내부용 환경
+                <br />
+                <InlineCode code="prod는" /> 실제 유저가 사용하는 환경
               </div>
               <div>
-                지금까지 해왔듯 브랜치는 main과 feature만 활용하고, squash merge
-                로 머지
+                지금까지 해왔듯 브랜치는 main과 feature만 활용하고, Squash and
+                Merge 로 머지
+              </div>
+              <Separator />
+              <div>
+                <InlineCode code="dev" /> 배포는 main 수동 혹은 브랜치에
+                push했을 때 (즉 PR을 머지했을 때){' '}
+                <StackBadge stack="GitHub Actions" /> 트리거
               </div>
               <div>
-                dev 배포는 main 브랜치에 push했을 때 GitHub Actions을 트리거
+                <InlineCode code="prod" /> 배포는 수동으로
+                <StackBadge stack="GitHub Actions" /> 트리거
+              </div>
+              <Separator />
+              <div>
+                <StackBadge stack="GitHub Actions" />가 들고 있는 IAM에는 S3
+                버킷 두 개, CloudFront 배포 두 개에만 접근할 수 있는 최소 권한만
+                부여되어 있어야 한다
               </div>
               <div>
-                prod 배포는 <InlineCode code="prod/24.11.05-1" /> 과 같은 형태의
-                태그가 푸시되었을 때 GitHub Actions을 트리거
-              </div>
-              <div>
-                GitHub Actions가 들고 있는 IAM에는 버킷 두 개, CloudFront 두
-                개에만 접근할 수 있는 최소 권한만 부여되어 있어야 한다
-              </div>
-              <div>
-                GitHub Actions이 트리거되면 빌드하고 S3에 업로드하고 CloudFront
-                Cache 무효화
+                <StackBadge stack="GitHub Actions" />이 트리거되면 빌드하고{' '}
+                <StackBadge stack="S3" />에 업로드하고 CloudFront Cache 무효화
               </div>
             </div>
           ),
         },
         {
-          title:
-            '라이브는 자신없어서 일일이 캡쳐해온 인프라 구축 과정. 배포 과제 진행 시 이거 보고 따라해주시면 됩니다',
-          content: <div className="flex flex-col gap-4"></div>,
+          title: '인프라 구축 과정',
+          content: (
+            <div className="flex flex-col gap-32">
+              <section className="flex flex-col gap-4">
+                <h2>1. AWS 회원가입</h2>
+                <ExternalLink href="https://signin.aws.amazon.com/signup?request_type=register" />
+                <ol className="list-decimal pl-12">
+                  <li>이메일 인증 하고</li>
+                  <li>비밀번호 입력 하고</li>
+                  <li>연락처 정보 기입 (개인, 대한민국)</li>
+                  <li>결제 정보 기입 및 검증</li>
+                  <li>기본 지원 선택하고 가입완료</li>
+                </ol>
+              </section>
+              <section className="flex flex-col gap-4">
+                <h2>2. 세미나에서 사용할 콘솔 IAM 생성</h2>
+                <ExternalLink href="https://us-east-1.console.aws.amazon.com/iam/home?region=ap-northeast-2#/home" />
+                <ol className="list-decimal pl-12">
+                  <li>콘솔에서 검색해서 IAM 으로 진입</li>
+                  <li>(권장) 루트 계정에 MFA 추가</li>
+                  <li>
+                    사용자 - 사용자 생성
+                    <img src={iam1} />
+                  </li>
+                  <li>
+                    직접 정책 연결 - AmazonRoute53FullAccess,
+                    AmazonS3FullAccess, CloudFrontFullAccess,
+                    IAMUserChangePassword 네 개 넣어서 생성
+                  </li>
+                  <li>
+                    오른쪽 위에서 계정 ID를 확인해서 어디다가 기록해놓고
+                    로그아웃. 이제 특별한 이야기가 없다면 루트 계정은 다시
+                    사용하지 않습니다.
+                  </li>
+                  <li>방금 만든 IAM 계정으로 다시 로그인</li>
+                </ol>
+              </section>
+              <section className="flex flex-col gap-4">
+                <h2>3. dev 버킷 생성</h2>
+                <ol className="list-decimal pl-12">
+                  <li>콘솔에서 검색해서 S3 으로 진입</li>
+                  <li>
+                    버킷 이름 잘 지어서 생성. 생성 시 기본설정 그대로 두면
+                    됩니다
+                    <img src={s31} />
+                  </li>
+                  <li>콘솔에서 검색해서 CloudFront 로 진입</li>
+                  <li>Origin domain 에서 dev 버킷 선택</li>
+                  <li>원본 액세스에서 원본 액세스 제어 설정 선택</li>
+                  <li>Create new OAC 해서 하나 만들고</li>
+                  <li>뷰어 - Redirect HTTP to HTTPS</li>
+                  <li>WAF - 보안 보호 비활성화</li>
+                  <li>나머지 다 기본설정대로 두고 배포 생성</li>
+                  <li>
+                    S3 정책 업데이트해야 된다고 노란 게 뜰 텐데, 정책 복사해서
+                    S3으로 이동
+                  </li>
+                  <li>
+                    권한 탭의 정책 섹션에서 편집 누르고 붙여넣기
+                    <img src={s3OAC} />
+                  </li>
+                </ol>
+              </section>
+              <section className="flex flex-col gap-4">
+                <h2>4. 자동 배포 구축을 위한 IAM 생성</h2>
+                <ol className="list-decimal pl-12">
+                  <li>다시 루트 계정으로 로그인</li>
+                  <li>
+                    사용자 - 사용자 생성
+                    <img src={iam2} />
+                  </li>
+                  <li>
+                    직접 정책 연결 - 정책 생성 에서 아래 권한 지정 (최소 권한.
+                    버킷 이름이나 cloudfront distribution 이름은 본인 프로젝트에
+                    맞게 해 주세요)
+                    <CodeSnippet
+                      language="json"
+                      code={[
+                        `{`,
+                        `    "Version": "2012-10-17",`,
+                        `    "Statement": [`,
+                        `        {`,
+                        `            "Effect": "Allow",`,
+                        `            "Action": [`,
+                        `                "s3:PutObject",`,
+                        `                "s3:GetObject",`,
+                        `                "s3:DeleteObject",`,
+                        `                "s3:ListBucket"`,
+                        `            ],`,
+                        `            "Resource": [`,
+                        `                "arn:aws:s3:::wafflestudio-seminar-2024-frontend-dev/*",`,
+                        `                "arn:aws:s3:::wafflestudio-seminar-2024-frontend-dev"`,
+                        `            ]`,
+                        `        },`,
+                        `         {`,
+                        `            "Effect": "Allow",`,
+                        `            "Action": [`,
+                        `                "cloudfront:CreateInvalidation"`,
+                        `            ],`,
+                        `            "Resource": [`,
+                        `                "arn:aws:cloudfront::985539783780:distribution/E1TIL5DT79CZVA"`,
+                        `            ]`,
+                        `        }`,
+                        `    ]`,
+                        `}`,
+                      ]}
+                    />
+                  </li>
+                  <li>생성한 정책 연결 후 사용자 생성</li>
+                  <li>
+                    생성된 IAM으로 들어가서 보안 자격 증명 탭 - 액세스 키 만들기
+                  </li>
+                  <li>Command Line Interface(CLI)</li>
+                  <li>생성된 키 잘 기록해놓고 완료</li>
+                </ol>
+              </section>
+              <section className="flex flex-col gap-4">
+                <h2>5. GitHub Actions 생성</h2>
+                <ol className="list-decimal pl-12">
+                  <li>
+                    배포한 프로젝트로 깃헙 레포지토리로 가서, Settings - Actions
+                    - Repository secrets - New repository secret
+                  </li>
+                  <li>
+                    아까 생성한 키의 id와 secret을 각각 AWS_ACCESS_KEY_ID,
+                    AWS_SECRET_ACCESS_KEY 라는 이름으로 생성
+                  </li>
+                  <li>
+                    배포할 프로젝트로 가서, .github/workflows/deploy-dev.yml
+                    파일 생성
+                    <CodeSnippet
+                      code={[
+                        `name: deploy-dev`,
+                        ``,
+                        `on:`,
+                        `  push:`,
+                        `    branches:`,
+                        `      - main`,
+                        `  workflow_dispatch:`,
+                        ``,
+                        `jobs:`,
+                        `  deploy:`,
+                        `    name: Deploy`,
+                        `    runs-on: ubuntu-latest`,
+                        ``,
+                        `    steps:`,
+                        `      - name: Checkout`,
+                        `        uses: actions/checkout@v3`,
+                        `      - name: Setup Node`,
+                        `        uses: actions/setup-node@v3`,
+                        `        with:`,
+                        `          node-version: '20.11.1'`,
+                        ``,
+                        `      - name: Build & Export`,
+                        `        run: |`,
+                        `          yarn install`,
+                        `          yarn build`,
+                        ``,
+                        `      - name: Deploy to S3 and Invalidate Cloudfront`,
+                        `        env:`,
+                        `          AWS_ACCESS_KEY_ID: \${{ secrets.AWS_ACCESS_KEY_ID }}`,
+                        `          AWS_SECRET_ACCESS_KEY: \${{ secrets.AWS_SECRET_ACCESS_KEY }}`,
+                        `          AWS_REGION: ap-northeast-2`,
+                        `        run: |`,
+                        `          aws s3 sync ./dist s3://wafflestudio-seminar-2024-frontend-dev --delete`,
+                        `          aws cloudfront create-invalidation --distribution-id E1TIL5DT79CZVA --paths "/*"`,
+                      ]}
+                      language="yaml"
+                    />
+                  </li>
+                  <li>브랜치 분기하고 커밋하고 푸시하고 메인에 머지</li>
+                </ol>
+              </section>
+            </div>
+          ),
         },
       ]}
     />
