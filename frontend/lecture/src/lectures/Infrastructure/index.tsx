@@ -13,6 +13,7 @@ import { getLectureItem } from '@/lectures';
 
 import browserBehavior from './browser-behavior.png';
 import buildOutput from './build-output.png';
+import cloudfrontError from './cloudfront-error.png';
 import iam1 from './iam-1.png';
 import iam2 from './iam-2.png';
 import s31 from './s3-1.png';
@@ -222,6 +223,7 @@ export const infrastructureLecture = getLectureItem({
             </ul>
           ),
         },
+
         {
           title: '배포 파이프라인 구축',
           content: (
@@ -316,6 +318,37 @@ export const infrastructureLecture = getLectureItem({
                 <StackBadge stack="GitHub Actions" />이 트리거되면 빌드하고{' '}
                 <StackBadge stack="S3" />에 업로드하고 CloudFront Cache 무효화
               </div>
+            </div>
+          ),
+        },
+        {
+          title: '잠깐: IAM이란?',
+          content: (
+            <div className="flex flex-col items-start gap-10">
+              <ExternalLink
+                href="https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/introduction.html"
+                label="AWS 공식문서 - IAM이란?"
+              />
+              <div>
+                <p>AWS 해킹 후기 라고 검색하면 뭐가 많이 나오는데</p>
+                <div className="flex gap-10">
+                  <ExternalLink href="https://www.teamblind.com/kr/post/AWS-%ED%95%B4%ED%82%B9%EC%9C%BC%EB%A1%9C-3%EC%96%B5%EC%B2%AD%EA%B5%AC%EB%8B%B9%ED%95%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90%E3%84%B7%EC%9B%83%EB%8C%80%ED%8E%8C-YWUVxh3b" />
+                  <ExternalLink href="https://velog.io/@dev_zzame/AWS-%ED%95%B4%ED%82%B9-%EB%8B%B9%ED%95%98%EB%8B%A4%EC%A0%80%EB%B3%B4%EA%B3%A0-%EC%B2%9C%EB%A7%8C%EC%9B%90%EC%9D%84-%EB%82%B4%EB%9D%BC%EA%B5%AC%EC%9A%94" />
+                  <ExternalLink href="https://comdolidol-i.tistory.com/331" />
+                </div>
+              </div>
+              <div>
+                해킹해서 인스턴스를 띄워버린다거나, 돌아가고 있는 서비스를
+                날려버린다거나..
+              </div>
+              <div>
+                그래서 AWS 루트 계정은 MFA를 걸어둬야 하고, 되도록 이용하지도
+                않아야 합니다
+              </div>
+              <div>
+                대신 최소 권한을 가진 역할 계정인 IAM을 발급해서 이용합시다
+              </div>
+              <div>자세한 방법이나 권한은 마지막 슬라이드에서 다시</div>
             </div>
           ),
         },
@@ -449,7 +482,8 @@ export const infrastructureLecture = getLectureItem({
                   </li>
                   <li>
                     배포할 프로젝트로 가서, .github/workflows/deploy-dev.yml
-                    파일 생성
+                    파일 생성 (버킷 이름이랑 cloudfront distribution 이름은 본인
+                    껄로 교체)
                     <CodeSnippet
                       code={[
                         `name: deploy-dev`,
@@ -491,6 +525,18 @@ export const infrastructureLecture = getLectureItem({
                     />
                   </li>
                   <li>브랜치 분기하고 커밋하고 푸시하고 메인에 머지</li>
+                </ol>
+              </section>
+              <section className="flex flex-col gap-4">
+                <h2>6. SPA라서 해줘야 되는 거 처리</h2>
+                <ol className="list-disc pl-12">
+                  <li>
+                    CloudFront 배포 - 오류 페이지 - 사용자 정의 오류 응답 생성
+                    <img src={cloudfrontError} />
+                  </li>
+                  <li>
+                    저번 과제에서 vercel.json을 추가해줘야 하는 것과 비슷한 이유
+                  </li>
                 </ol>
               </section>
             </div>
