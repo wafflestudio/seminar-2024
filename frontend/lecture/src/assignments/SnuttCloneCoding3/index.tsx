@@ -33,6 +33,12 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
                 강의계획서, 강의평 버튼, 지도, 빈자리알림, 관심강좌, 편집 제외
               </li>
               <li>정보 보이고, 삭제 가능하면 됩니다.</li>
+              <li>
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/deleteTimetableLecture"
+                  label="강의 삭제 API"
+                />
+              </li>
             </ul>
           </section>
           <section>
@@ -48,12 +54,21 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
               <li>
                 <InlineCode code="/timetables/:id/lectures" />
               </li>
+              <li>
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/getTimetable"
+                  label="전에 썼던 Get Timetable API 그대로"
+                />
+              </li>
             </ul>
           </section>
           <section>
             <h2>3. (조원이 3명 이상일 경우) 강의 직접 생성</h2>
             <ul className="mt-4 flex list-disc flex-col gap-4 pl-6">
-              <li>바텀시트로 뜰 필요는 없고 새 페이지로. 색상도 제외</li>
+              <li>
+                바텀시트로 뜰 필요는 없고 새 페이지로. 색상이나 시간은 구현하지
+                않으셔도 됩니다 (시간은 수요일 19:00-20:30 으로 고정)
+              </li>
               <li>폼처리가 꽤 번거로울 만 합니다</li>
               <li>
                 1번에서 만든 강의 상세 화면과 똑같이 생긴 ui가 많은데, 얼마나
@@ -61,6 +76,12 @@ export const snuttCloneCoding3Assignment = getAssignmentItem({
               </li>
               <li>
                 <InlineCode code="/timetables/:id/new" />
+              </li>
+              <li>
+                <ExternalLink
+                  href="https://snutt-api-dev.wafflestudio.com/webjars/swagger-ui/index.html#/default/addCustomLecture"
+                  label="POST /timetables/:id/lecture"
+                />
               </li>
             </ul>
           </section>

@@ -122,16 +122,26 @@ export const pages: (
     type: 'assignment',
     due: new Date('2024-11-20 23:59:59'),
     element: (
-      <ul className="flex flex-col justify-center gap-6">
+      <ul className="flex min-h-dvh flex-col justify-center gap-6">
         <li>
-          예전에 만들었던 프로필 페이지를 AWS S3 + CloudFront로 배포하고
-          태그푸시 기반 배포 자동화 구축
+          예전에 만들었던 프로필 페이지를 AWS S3 + CloudFront로 배포하고 수업때
+          진행했던 대로 배포 자동화 구축 (dev는 머지할 때마다 자동으로 배포되고
+          수동으로도 배포 가능, prod는 수동으로만 가능)
         </li>
         <li>dev, prod 환경을 모두 구성해야 한다</li>
         <li>최소 1번은 GitHub Action 을 통해 배포되었어야 한다</li>
         <li>
-          dev, prod 환경 각각 cloudfront로 배포된 url, 트리거된 배포 GitHub
-          Action Workflow Run 들 중 하나의 url을 잡담방에 제출
+          아래 url들을 잡담방에 제출
+          <ul className="list-disc pl-12">
+            <li>dev 환경 cloudfront 배포 url</li>
+            <li>prod 환경 cloudfront 배포 url</li>
+            <li>
+              deploy-dev.yml 트리거된 GitHub Action Workflow Run 들 중 하나
+            </li>
+            <li>
+              deploy-prod.yml 트리거된 GitHub Action Workflow Run 들 중 하나
+            </li>
+          </ul>
         </li>
         <li>
           AWS 계정 생성 시 키 유출 등으로 인해 과금되는 것 주의. IAM은 항상 최소

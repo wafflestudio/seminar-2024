@@ -300,12 +300,12 @@ export const infrastructureLecture = getLectureItem({
               </div>
               <Separator />
               <div>
-                <InlineCode code="dev" /> 배포는 main 수동 혹은 브랜치에
+                <InlineCode code="dev" /> 배포는 수동클릭 혹은 main 브랜치에
                 push했을 때 (즉 PR을 머지했을 때){' '}
                 <StackBadge stack="GitHub Actions" /> 트리거
               </div>
               <div>
-                <InlineCode code="prod" /> 배포는 수동으로
+                <InlineCode code="prod" /> 배포는 수동클릭으로
                 <StackBadge stack="GitHub Actions" /> 트리거
               </div>
               <Separator />
