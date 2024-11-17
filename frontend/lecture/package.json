@@ -10,7 +10,8 @@
     "lint:check": "eslint .",
     "format:check": "prettier . --check",
     "unused:check": "knip",
-    "check-all": "yarn types:check && yarn lint:check && yarn format:check && yarn unused:check"
+    "test": "vitest --run",
+    "check-all": "yarn types:check && yarn lint:check && yarn format:check && yarn unused:check && yarn test"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.1",
@@ -45,7 +46,8 @@
     "prettier-plugin-tailwindcss": "0.6.6",
     "tailwindcss": "3.4.10",
     "typescript": "5.5.4",
-    "vite": "5.4.3"
+    "vite": "5.4.3",
+    "vitest": "2.1.5"
   },
   "packageManager": "yarn@4.4.0"
 }
