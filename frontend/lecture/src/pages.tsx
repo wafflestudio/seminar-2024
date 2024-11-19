@@ -6,11 +6,12 @@ import { environmentSetupAssignment } from '@/assignments/EnvironmentSetup';
 import { makeGameAssignment } from '@/assignments/MakeGame/assignment';
 import { profilePageAssignment } from '@/assignments/ProfilePage';
 import { snuttCloneCoding1Assignment } from '@/assignments/SnuttCloneCoding1';
+import { snuttCloneCoding2Assignment } from '@/assignments/SnuttCloneCoding2';
+import { snuttCloneCoding3Assignment } from '@/assignments/SnuttCloneCoding3';
 import { tutorialAssignment } from '@/assignments/Tutorial';
 import { architectureLecture } from '@/lectures/Architecture';
 import { asyncLecture } from '@/lectures/Async/lecture';
 import { dataFetchingLecture } from '@/lectures/DataFetching/lecture';
-import { ecosystemLecture } from '@/lectures/Ecosystem';
 import { environmentLecture } from '@/lectures/Environment';
 import { infrastructureLecture } from '@/lectures/Infrastructure';
 import { initializeProjectLecture } from '@/lectures/InitializeProject';
@@ -27,8 +28,9 @@ import { webBasicLecture } from '@/lectures/WebBasic/lecture';
 import { wrapupLecture } from '@/lectures/WrapUp';
 import { Home } from '@/pages/home';
 
-import { snuttCloneCoding2Assignment } from './assignments/SnuttCloneCoding2';
-import { snuttCloneCoding3Assignment } from './assignments/SnuttCloneCoding3';
+import { ExternalLink } from './components/ExternalLink';
+import { InlineCode } from './components/InlineCode';
+import { StackBadge } from './components/StackBadge';
 
 export const pages: (
   | { type: 'index'; path: string; element: ReactNode }
@@ -66,7 +68,6 @@ export const pages: (
   { path: '/performance', ...performanceLecture },
   { path: '/infrastructure', ...infrastructureLecture },
   { path: '/testing', ...testingLecture },
-  { path: '/ecosystem', ...ecosystemLecture },
   { path: '/wrapup', ...wrapupLecture },
   {
     path: '/como-0',
@@ -152,30 +153,59 @@ export const pages: (
     title: 'vercel 대신 AWS에 배포',
   },
   {
-    path: '/refactoring-2048',
+    path: '/refactoring',
     member: '개인',
     type: 'assignment',
     due: new Date('2024-11-30 23:59:59'),
     element: (
       <div className="flex flex-col justify-center gap-6">
+        <div>두 달 전에 짰던 2048 코드를 다시 봅시다</div>
         <div>
-          두 달 동안 많이 성장했을 테니, 두 달 전에 짰던 2048 코드를 다시 봅시다
+          두 달이라는 시간 동안 성장했을 거고, 분명히 문제점이나 개선점이 보일
+          거예요 (TypeScript, CSS, 아키텍처, 폴더구조, 변수명 등등)
         </div>
         <div>
-          성장을 했다면 분명히 문제점이나 개선점이 보일 거예요 (TypeScript
-          사용법, CSS, 성능 등. 문제점이 안 보이면 어떡하지..)
+          개선점이 하나도 안 보인다면 DM 주시면 확인해서 무슨 리팩토링을 하면
+          될지 가이드 드리겠습니다!
         </div>
         <div>
-          리팩토링 PR을 1개 이상 올린 다음, 각자 머지하고, 머지한 PR의 링크를
-          올려주세요
+          리팩토링 PR을 1개 이상 올린 다음 PR 링크를 잡담채널에 올려주세요
         </div>
+        <div>코드량은 최소 5줄 이상의 변경이어야 합니다.</div>
         <div>
-          무슨 문제점을 발견하여 어떻게 해결했는지 PR Description에 작성되어
-          있어야 합니다
+          PR Description이 충분히 자세하게 작성되어 있어야 합니다. 최소 100자
+          이상일 거라고 생각합니다. 무슨 문제점을 발견했고, 어떻게 개선했는지,
+          왜 그 때 짠 코드보다 지금 코드가 낫다고 생각하는지 (새로운 좋은 기술을
+          알게 되었다거나) 등이 들어가야 합니다.
         </div>
       </div>
     ),
     title: '리팩토링',
+  },
+  {
+    path: '/unit-test',
+    member: '개인',
+    type: 'assignment',
+    due: new Date('2024-11-30 23:59:59'),
+    element: (
+      <div className="flex flex-col justify-center gap-6">
+        <p>
+          2048에 로직이 많으니, 적당한 함수를 하나 골라 단위테스트를 작성하고
+          돌려 주세요.
+        </p>
+        <br />
+        <div>
+          빠르고 설정도 간편한 <StackBadge stack="Vitest" /> 를 쓰겠습니다.
+          <ExternalLink href="https://vitest.dev/guide/" label="공식문서" /> 를
+          참고해서 셋업하고, 테스트 파일을 최소 1개 작성하고, 터미널에서{' '}
+          <InlineCode code="yarn vitest --run" />을 돌려서 테스트가 통과한
+          결과를 캡쳐하고, PR을 올리고, PR Description 에 앞에서 캡쳐한 사진을
+          첨부해 주세요.
+        </div>
+        <div>PR 링크를 잡담방에 올려서 제출해 주세요.</div>
+      </div>
+    ),
+    title: '단위테스트 작성',
   },
   {
     path: '/blog-2',
@@ -183,10 +213,17 @@ export const pages: (
     type: 'assignment',
     due: new Date('2024-11-30 23:59:59'),
     element: (
-      <div>
-        저번이랑 비슷하게 블로그 한 편 더 작성
+      <div className="flex flex-col justify-center gap-6">
+        <p>
+          저번 블로그1 과제처럼, 플랫폼 하나를 골라서 블로그 한 편 더 작성하고
+          제출해 주시면 됩니다.
+        </p>
         <br />
-        TIL / 배운 내용 정리 / 와플 루키 후기 등등
+        <p>
+          단, 이번에는{' '}
+          <strong>개발 철학이나 관점이 반영된 자신의 의견이 반드시 포함</strong>
+          되어야 합니다.
+        </p>
       </div>
     ),
     title: '개발 블로그 작성 (2)',

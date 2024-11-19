@@ -35,7 +35,8 @@ export const StackBadge = ({
     | 'React Router'
     | 'Axios'
     | 'Svelte'
-    | 'GitHub Actions';
+    | 'GitHub Actions'
+    | 'Vitest';
 }) => {
   const image = {
     Zustand:
@@ -93,6 +94,7 @@ export const StackBadge = ({
       'https://seeklogo.com/images/S/svelte-logo-E3497608CB-seeklogo.com.png',
     'GitHub Actions':
       'https://seeklogo.com/images/G/github-actions-logo-031704BDC6-seeklogo.com.png',
+    Vitest: 'https://vitest.dev/logo.svg',
   }[stack];
 
   return (
