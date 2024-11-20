@@ -279,11 +279,23 @@ export const testingLecture = getLectureItem({
           ),
         },
         {
+          title: '테스트를 짜면 생기는 장단점들 (4) 테스트 유지보수도 비용이다',
+          content: (
+            <div>
+              <p>기획 변경으로 코드를 바꿨다면 테스트도 맞춰서 바꿔야 한다</p>
+              <p>
+                이때 테스트를 바꾸는 데에 시간이 생각보다 많이 들어가긴 합니다
+              </p>
+              <p>테스트도 코드이므로, 잘 짜서 유지보수 비용을 낮춰야 합니다</p>
+            </div>
+          ),
+        },
+        {
           title:
             '프론트엔드에서의 또 다른 테스트 방법: 브라우저를 돌리는 테스트',
           content: (
-            <div>
-              <p>지금까지 알아본 건 자바스크립트 함수만 테스트할 수 있다</p>
+            <div className="flex flex-col gap-8">
+              <p>지금까지 알아본 건 자바스크립트 함수만 테스트할 수 있습니다</p>
               <p>
                 프론트엔드가 만드는건 웹 어플리케이션인데, 이건 어떻게
                 테스트하지?
@@ -302,7 +314,7 @@ export const testingLecture = getLectureItem({
                 label="이때의 테스트코드"
               />
               <p>
-                작년 세미나에서는 이걸 다뤘었는데, 이번에는 그냥 이런 게 있다~
+                작년 세미나에서는 이것도 다뤘었는데, 이번에는 그냥 이런 게 있다~
                 정도만 알고 넘어갑시다
               </p>
             </div>
@@ -320,13 +332,17 @@ export const testingLecture = getLectureItem({
         {
           title: '프론트엔드의 테스트 문화',
           content: (
-            <div>
+            <div className="flex flex-col gap-4">
               <p>
                 Input이 너무 많고, Output도 너무 많고, 그에 비해 로직은 적다
               </p>
               <p>
                 로직이 복잡하고 input/output이 간단해야 테스트를 짜는 효과가
                 확실한데, 프론트 (클라이언트도 마찬가지) 는 보통 반대입니다
+              </p>
+              <p>
+                그런 면에서 2048은 다소 예외적으로 프론트 로직이 복잡하고
+                input/output 은 간단해서 테스트를 짜기 쉬운 케이스
               </p>
               <p>
                 그래서 현재 프론트엔드에서 테스트는 <i>하면 좋긴 한데...</i>의
