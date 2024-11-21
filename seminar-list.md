@@ -63,7 +63,7 @@
 | 박준병 | jby2021@snu.ac.kr |         |         |         |
 | 이경표 | imsmile2004@naver.com |         |         |         |
 | 문재영 | 1234aiden@naver.com |         |         |         |
-| 김동규 | kimdk0824@naver.com |         |         |         |
+| 김동규 | kimdk0824@naver.com | fastapi | android | frontend |
 | 허태윤 | hty050216@gmail.com |         |         |         |
 | 이권재 | gwonjae@icloud.com |         |         |         |
 | 김재민 | odumag99@snu.ac.kr |         |         |         |
