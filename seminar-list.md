@@ -116,7 +116,7 @@
 | 신정민 | tlswjdals535@snu.ac.kr |         |         |         |
 | 정희우 | huiwooj@snu.ac.kr |         |         |         |
 | 주정연 | jjy051221@gmail.com |         |         |         |
-| 임수호 | dalitravan@gmail.com |         |         |         |
+| 임수호 | dalitravan@gmail.com | fastapi | spring | android |
 | 안우진 | awj1204@snu.ac.kr |         |         |         |
 | 김무진 | vladimir@snu.ac.kr |         |         |         |
 | 이찬회 | dlcksghl159@gmail.com |         |         |         |
