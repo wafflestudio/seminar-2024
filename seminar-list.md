@@ -58,7 +58,7 @@
 | 박정민 | james1990a@snu.ac.kr |         |         |         |
 | 박찬영 | pcy1203@snu.ac.kr |         |         |         |
 | 김연우 | ywk0524@snu.ac.kr |         |         |         |
-| 이준용 | leejunyong02@snu.ac.kr |         |         |         |
+| 이준용 | leejunyong02@snu.ac.kr | spring | fastapi | android |
 | 오민혁 | minhyuk5@snu.ac.kr |         |         |         |
 | 박준병 | jby2021@snu.ac.kr |         |         |         |
 | 이경표 | imsmile2004@naver.com |         |         |         |
