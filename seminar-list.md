@@ -66,7 +66,7 @@
 | 김동규 | kimdk0824@naver.com |         |         |         |
 | 허태윤 | hty050216@gmail.com |         |         |         |
 | 이권재 | gwonjae@icloud.com |         |         |         |
-| 김재민 | odumag99@snu.ac.kr |         |         |         |
+| 김재민 | odumag99@snu.ac.kr | fastapi | android | frontend |
 | 임우찬 | woochan226544@snu.ac.kr |         |         |         |
 | 박정현 | junghyunpark2001@naver.com |         |         |         |
 | 최승민 | seungmin960@gmail.com |         |         |         |
