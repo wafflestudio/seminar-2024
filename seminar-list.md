@@ -100,7 +100,7 @@
 | 이윤철 | yiyc02@naver.com |         |         |         |
 | 박종경 | jongkyung2005@gmail.com |         |         |         |
 | 이승원 | better4088@gmail.com |         |         |         |
-| 박수인 | hyperion1019@naver.com |         |         |         |
+| 박수인 | hyperion1019@naver.com |    fastapi|  spring|  frontend|
 | 곽승연 | tmddus0723@snu.ac.kr |         |         |         |
 | 서종환 | mujigae1020@gmail.com |         |         |         |
 | 조유진 | uzinfamily@naver.com |         |         |         |
