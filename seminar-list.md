@@ -81,7 +81,7 @@
 | 오정윤 | jungyun_01@snu.ac.kr |         |         |         |
 | 서준빈 | sjb8032@gmail.com |         |         |         |
 | 김도연 | pega501@snu.ac.kr |         |         |         |
-| 심형오 | amma0209@naver.com |         |         |         |
+| 심형오 | amma0209@naver.com |    ios     |    frontend     |    android     |
 | 김용범 | kybs0627@snu.ac.kr |         |         |         |
 | 임형석 | anvil1028@snu.ac.kr |         |         |         |
 | 이재현 | jhlee2483@gmail.com |         |         |         |
