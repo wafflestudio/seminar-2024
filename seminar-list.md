@@ -69,7 +69,7 @@
 | 김재민 | odumag99@snu.ac.kr |         |         |         |
 | 임우찬 | woochan226544@snu.ac.kr |         |         |         |
 | 박정현 | junghyunpark2001@naver.com |         |         |         |
-| 최승민 | seungmin960@gmail.com |         |         |         |
+| 최승민 | seungmin960@gmail.com | spring | frontend | android |
 | 김온 | kimon2002@snu.ac.kr |         |         |         |
 | 강명석 | tomskang@naver.com |         |         |         |
 | 김인호 | inho524890@gmail.com |         |         |         |
