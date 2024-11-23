@@ -87,7 +87,7 @@
 | 이재현 | jhlee2483@gmail.com |         |         |         |
 | 구자운 | k45238376@gmail.com |         |         |         |
 | 전종원 | cjw107@snu.ac.kr |         |         |         |
-| 허용재 | quad.heo@snu.ac.kr |         |         |         |
+| 허용재 | quad.heo@snu.ac.kr | frontend | fastapi |   iOS   |
 | 류수영 | ryuswimming@snu.ac.kr |         |         |         |
 | 인소윤 | snu1127@snu.ac.kr |         |         |         |
 | 권재영 | jaylions@snu.ac.kr |         |         |         |
