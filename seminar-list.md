@@ -89,7 +89,7 @@
 | 전종원 | cjw107@snu.ac.kr |         |         |         |
 | 허용재 | quad.heo@snu.ac.kr |         |         |         |
 | 류수영 | ryuswimming@snu.ac.kr |         |         |         |
-| 인소윤 | snu1127@snu.ac.kr |         |         |         |
+| 인소윤 | snu1127@snu.ac.kr | frontend |  iOS  |  android  |
 | 권재영 | jaylions@snu.ac.kr |         |         |         |
 | 최재혁 | jaychoi2001@gmail.com |         |         |         |
 | 박예현 | pyh0275@snu.ac.kr |         |         |         |
