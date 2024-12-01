@@ -49,7 +49,7 @@
 | 정해찬 | qdrptd@gmail.com |         |         |         |
 | 윤시헌 | honeyyyoon64@snu.ac.kr |         |         |         |
 | 윤석민 | yunsukmin522@snu.ac.kr |         |         |         |
-| 박세준 | oraelonge@gmail.com |         |         |         |
+| 박세준 | oraelonge@gmail.com | frontend | fastapi | spring |
 | 박인혁 | alexander211@naver.com |         |         |         |
 | 김민수 | dennis0405@snu.ac.kr |         |         |         |
 | 박선홍 | twinpsh1@gmail.com |         |         |         |
