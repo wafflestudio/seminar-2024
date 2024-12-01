@@ -14,7 +14,9 @@ export const CodeSnippet = ({
     | 'javascript'
     | 'typescript'
     | 'jsx'
-    | 'tsx';
+    | 'tsx'
+    | 'c'
+    | 'yaml';
 }) => {
   return (
     <Prism

@@ -1,0 +1,37 @@
+name: frontend-deploy-dev
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend/lecture
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.11.1"
+
+      - name: Build & Export
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy to S3 and Invalidate Cloudfront
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.FRONTEND_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.FRONTEND_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ap-northeast-2
+        run: |
+          aws s3 sync ./dist s3://wafflestudio-seminar-2024-frontend-dev --delete
+          aws cloudfront create-invalidation --distribution-id E1TIL5DT79CZVA --paths "/*"
