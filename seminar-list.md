@@ -101,7 +101,7 @@
 | 박종경 | jongkyung2005@gmail.com |         |         |         |
 | 이승원 | better4088@gmail.com |         |         |         |
 | 박수인 | hyperion1019@naver.com |         |         |         |
-| 곽승연 | tmddus0723@snu.ac.kr |         |         |         |
+| 곽승연 | tmddus0723@snu.ac.kr | fastapi | frontend | android |
 | 서종환 | mujigae1020@gmail.com |         |         |         |
 | 조유진 | uzinfamily@naver.com |         |         |         |
 | 이상우 | dltkddn233@snu.ac.kr |         |         |         |
