@@ -72,7 +72,7 @@
 | 최승민 | seungmin960@gmail.com |         |         |         |
 | 김온 | kimon2002@snu.ac.kr |         |         |         |
 | 강명석 | tomskang@naver.com |         |         |         |
-| 김인호 | inho524890@gmail.com |         |         |         |
+| 김인호 | inho524890@gmail.com | spring | android | fastapi |
 | 권혁준 | todd4@naver.ac.kr |         |         |         |
 | 최진모 | jinmo040320@gmail.com |         |         |         |
 | 이우열 | wooyeol0519@snu.ac.kr |         |         |         |
