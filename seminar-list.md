@@ -131,6 +131,6 @@
 | 변민규 | seatosky2002@gmail.com |         |         |         |
 | 안진영 | andy0808opp@snu.ac.kr |         |         |         |
 | 정택진 | yeo7965@snu.ac.kr |         |         |         |
-| 이호석 | hslee0324@snu.ac.kr |         |         |         |
+| 이호석 | hslee0324@snu.ac.kr | fastapi | frontend | android |
 | 전용재 | 050609j@gmail.com |         |         |         |
 
