@@ -126,7 +126,7 @@
 | 이건무 | lgmoo2002@snu.ac.kr |         |         |         |
 | 오지현 | math_98@naver.com |         |         |         |
 | 김민성 | skywood0526@snu.ac.kr |         |         |         |
-| 이종호 | leafguyk@gmail.com |         |         |         |
+| 이종호 | leafguyk@gmail.com | spring | frontend | android |
 | 원종범 | jim8697@snu.ac.kr |         |         |         |
 | 변민규 | seatosky2002@gmail.com |         |         |         |
 | 안진영 | andy0808opp@snu.ac.kr |         |         |         |
