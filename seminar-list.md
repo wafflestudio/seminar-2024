@@ -118,7 +118,7 @@
 | 주정연 | jjy051221@gmail.com |         |         |         |
 | 임수호 | dalitravan@gmail.com |         |         |         |
 | 안우진 | awj1204@snu.ac.kr |         |         |         |
-| 김무진 | vladimir@snu.ac.kr |         |         |         |
+| 김무진 | vladimir@snu.ac.kr |  spring   |  fastapi    |  frontend   |
 | 이찬회 | dlcksghl159@gmail.com |         |         |         |
 | 박규동 | gyudong0909@snu.ac.kr |         |         |         |
 | 이종현 | lukeqwaszx@snu.ac.kr |         |         |         |
