@@ -80,7 +80,7 @@
 | 김진서 | jsjamie05@gmail.com |         |         |         |
 | 오정윤 | jungyun_01@snu.ac.kr |         |         |         |
 | 서준빈 | sjb8032@gmail.com |         |         |         |
-| 김도연 | pega501@snu.ac.kr |         |         |         |
+| 김도연 | pega501@snu.ac.kr |  spring  | fastapi | frontend |
 | 심형오 | amma0209@naver.com |         |         |         |
 | 김용범 | kybs0627@snu.ac.kr |         |         |         |
 | 임형석 | anvil1028@snu.ac.kr |         |         |         |
