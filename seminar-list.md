@@ -46,7 +46,7 @@
 | 박원석 | pws031122@snu.ac.kr |         |         |         |
 | 조용현 | dyddyd8574@snu.ac.kr |         |         |         |
 | 박준영 | ezypuz@snu.ac.kr |         |         |         |
-| 정해찬 | qdrptd@gmail.com |         |         |         |
+| 정해찬 | qdrptd@gmail.com |  android |  frontend |   spring  |
 | 윤시헌 | honeyyyoon64@snu.ac.kr |         |         |         |
 | 윤석민 | yunsukmin522@snu.ac.kr |         |         |         |
 | 박세준 | oraelonge@gmail.com |         |         |         |
