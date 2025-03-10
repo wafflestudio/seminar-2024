@@ -124,7 +124,7 @@
 | 이종현 | lukeqwaszx@snu.ac.kr |         |         |         |
 | 권성안 | sungahn0206@gmail.com |         |         |         |
 | 이건무 | lgmoo2002@snu.ac.kr |         |         |         |
-| 오지현 | math_98@naver.com |         |         |         |
+| 오지현 | math_98@naver.com |  spring  |  fastapi  |  android  |
 | 김민성 | skywood0526@snu.ac.kr |         |         |         |
 | 이종호 | leafguyk@gmail.com |         |         |         |
 | 원종범 | jim8697@snu.ac.kr |         |         |         |
