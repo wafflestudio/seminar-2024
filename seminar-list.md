@@ -132,5 +132,5 @@
 | 안진영 | andy0808opp@snu.ac.kr |         |         |         |
 | 정택진 | yeo7965@snu.ac.kr |         |         |         |
 | 이호석 | hslee0324@snu.ac.kr |         |         |         |
-| 전용재 | 050609j@gmail.com |         |         |         |
+| 전용재 | 050609j@gmail.com | spring | frontend | fastapi |
 
