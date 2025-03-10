@@ -33,7 +33,7 @@
 | 박재민 | arnoldpark03@gmail.com |         |         |         |
 | 조민경 | oke08034@snu.ac.kr |         |         |         |
 | 이채영 | cyrhee7@snu.ac.kr |         |         |         |
-| 오하준 | ohajun@snu.ac.kr |         |         |         |
+| 오하준 | ohajun@snu.ac.kr | spring | fastapi | frontend |
 | 신지원 | shinjigo221@snu.ac.kr |         |         |         |
 | 최은우 | soarhigh03@gmail.com |         |         |         |
 | 김창민 | akuxxr0422@gmail.com |         |         |         |
