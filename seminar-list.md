@@ -99,7 +99,7 @@
 | 최장혁 | goranikin@snu.ac.kr |         |         |         |
 | 이윤철 | yiyc02@naver.com |         |         |         |
 | 박종경 | jongkyung2005@gmail.com |         |         |         |
-| 이승원 | better4088@gmail.com |         |         |         |
+| 이승원 | better4088@gmail.com |  frontend  | spring | iOS |
 | 박수인 | hyperion1019@naver.com |         |         |         |
 | 곽승연 | tmddus0723@snu.ac.kr |         |         |         |
 | 서종환 | mujigae1020@gmail.com |         |         |         |
