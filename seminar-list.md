@@ -48,7 +48,7 @@
 | 박준영 | ezypuz@snu.ac.kr |         |         |         |
 | 정해찬 | qdrptd@gmail.com |         |         |         |
 | 윤시헌 | honeyyyoon64@snu.ac.kr |         |         |         |
-| 윤석민 | yunsukmin522@snu.ac.kr |         |         |         |
+| 윤석민 | yunsukmin522@snu.ac.kr | frontend | iOS | spring |
 | 박세준 | oraelonge@gmail.com |         |         |         |
 | 박인혁 | alexander211@naver.com |         |         |         |
 | 김민수 | dennis0405@snu.ac.kr |         |         |         |
