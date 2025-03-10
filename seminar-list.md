@@ -114,7 +114,7 @@
 | 임광섭 | endermaru@snu.ac.kr |         |         |         |
 | 이현우 | hwlee0@snu.ac.kr |         |         |         |
 | 신정민 | tlswjdals535@snu.ac.kr |         |         |         |
-| 정희우 | huiwooj@snu.ac.kr |         |         |         |
+| 정희우 | huiwooj@snu.ac.kr | android | spring | fastapi |
 | 주정연 | jjy051221@gmail.com |         |         |         |
 | 임수호 | dalitravan@gmail.com |         |         |         |
 | 안우진 | awj1204@snu.ac.kr |         |         |         |
