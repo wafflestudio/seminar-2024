@@ -53,7 +53,7 @@
 | 박인혁 | alexander211@naver.com |         |         |         |
 | 김민수 | dennis0405@snu.ac.kr |         |         |         |
 | 박선홍 | twinpsh1@gmail.com |         |         |         |
-| 최지웅 | anggodji2422@snu.ac.kr |         |         |         |
+| 최지웅 | anggodji2422@snu.ac.kr | frontend | android | fastapi |
 | 박상현 | qkrtkdgus39@snu.ac.kr |         |         |         |
 | 박정민 | james1990a@snu.ac.kr |         |         |         |
 | 박찬영 | pcy1203@snu.ac.kr |         |         |         |
