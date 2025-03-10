@@ -50,7 +50,7 @@
 | 윤시헌 | honeyyyoon64@snu.ac.kr |         |         |         |
 | 윤석민 | yunsukmin522@snu.ac.kr |         |         |         |
 | 박세준 | oraelonge@gmail.com |         |         |         |
-| 박인혁 | alexander211@naver.com |         |         |         |
+| 박인혁 | alexander211@naver.com |frontend|android|fastapi|
 | 김민수 | dennis0405@snu.ac.kr |         |         |         |
 | 박선홍 | twinpsh1@gmail.com |         |         |         |
 | 최지웅 | anggodji2422@snu.ac.kr |         |         |         |
