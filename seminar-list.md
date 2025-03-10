@@ -106,7 +106,7 @@
 | 조유진 | uzinfamily@naver.com |         |         |         |
 | 이상우 | dltkddn233@snu.ac.kr |         |         |         |
 | 킨웨이 | khinwaiyan@snu.ac.kr |         |         |         |
-| 조인우 | hanoinwoo@snu.ac.kr |         |         |         |
+| 조인우 | hanoinwoo@snu.ac.kr |  spring       |   fastapi      |     android    |
 | 임혁준 | dlagurwns03@gmail.com |         |         |         |
 | 김범준 | johnbie0627@gmail.com |         |         |         |
 | 전진현 | jjh8477mtl@gmail.com |         |         |         |
