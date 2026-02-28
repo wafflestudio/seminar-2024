@@ -85,7 +85,7 @@
 | 김용범 | kybs0627@snu.ac.kr |         |         |         |
 | 임형석 | anvil1028@snu.ac.kr |         |         |         |
 | 이재현 | jhlee2483@gmail.com |         |         |         |
-| 구자운 | k45238376@gmail.com |         |         |         |
+| 구자운 | k45238376@gmail.com | frontend | android | fastapi |
 | 전종원 | cjw107@snu.ac.kr |         |         |         |
 | 허용재 | quad.heo@snu.ac.kr |         |         |         |
 | 류수영 | ryuswimming@snu.ac.kr |         |         |         |
